@@ -3,13 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Banjarese Learning System</title>
+    <title>Enhanced Banjarese Learning System</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        // Load CSV from remote URL (your hosted CSV)
+        async function loadRemoteCSV() {
+            try {
+                showUploadStatus('Loading Banjarese vocabulary from GitHub...', 'success');
+                
+                // Your GitHub raw CSV URL
+                const csvUrl = 'https://raw.githubusercontent.com/venarum/banjarese/refs/heads/main/banjar.csv';
+                
+                const response = await fetch(csvUrl, {
+                    mode: 'cors',
+                    headers: {
+                        'Accept': 'text/csv,text/plain,*/*'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const csvData = await response.text();
+                const lines = csvData.split('\n').filter(line => line.trim());
+                
+                // Clear existing data
+                db.run("DELETE FROM words");
+                
+                // Skip header row and process data
+                let imported = 0;
+                let skipped = 0;
+                
+                for (let i = 1; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (!line) continue;
+                    
+                    // Enhanced CSV parsing to handle quotes and commas
+                    const parts = parseCSVLine(line);
+                    if (parts.length >= 11) {
+                        try {
+                            // Validate required fields
+                            if (parts[0] && parts[1]) { // Must have english_word and transliteration
+                                db.run(`INSERT INTO words (
+                                    english_word, transliteration, arabic_script_1, arabic_script_2,
+                                    part_of_speech, difficulty_level, category, banjarese_phrase,
+                                    english_phrase, image_url, sequence_number
+                                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, parts);
+                                imported++;
+                            } else {
+                                skipped++;
+                            }
+                        } catch (dbError) {
+                            console.warn('Skipping row due to data issue:', parts[0]);
+                            skipped++;
+                        }
+                    } else {
+                        skipped++;
+                    }
+                }
+                
+                showUploadStatus(`🎉 Successfully loaded ${imported} Banjarese words from your GitHub repo! ${skipped > 0 ? `(${skipped} rows skipped)` : ''}`, 'success');
+                populateWordGrid();
+                updateStats();
+                
+                // Update learning area with first word
+                if (imported > 0) {
+                    const firstWord = db.exec("SELECT * FROM words ORDER BY sequence_number ASC LIMIT 1")[0];
+                    if (firstWord && firstWord.values[0]) {
+                        const word = firstWord.values[0];
+                        updateFlashcard(word[2], word[1], word[5], word[10], word[9]);
+                    }
+                }
+                
+                document.getElementById('predictionBox').innerHTML = 'Banjar vocabulary loaded! Type something to see predictions...';
+                
+            } catch (error) {
+                showUploadStatus('Could not load GitHub CSV. Click "Load Sample Data" to try the system!', 'error');
+                console.error('GitHub CSV load error:', error);
+                // Don't auto-load sample data, let user choose
+            }
+        }
+        
+        // Load sample data for testing
+        function loadSampleData() {
+            // Clear existing data
+            db.run("DELETE FROM words");
+            
+            // Sample data based on your CSV structure
+            const sampleWords = [
+                ['judge', 'hakim', 'هاکيم', 'هاکيم', 'noun', 2, 'wasit', 'Hakim adil bijaksana', 'Judge is fair and wise', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 60],
+                ['water', 'air', 'اير', 'اير', 'noun', 1, 'nature', 'Air ini jernih sekali', 'This water is very clear', 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center', 1],
+                ['eat', 'makan', 'ماکن', 'ماکن', 'verb', 1, 'action', 'Makan dulu sebelum pergi', 'Eat first before going', 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center', 2],
+                ['house', 'rumah', 'رومح', 'رومح', 'noun', 1, 'place', 'Rumah aku jauh dari sini', 'My house is far from here', 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center', 3],
+                ['beautiful', 'cantik', 'چانتيک', 'چانتيک', 'adjective', 2, 'description', 'Gadis itu cantik sekali', 'That girl is very beautiful', 'https://images.unsplash.com/photo-1494790108755-2616c479e4f4?w=200&h=200&fit=crop&crop=face', 4],
+                ['book', 'buku', 'بوکو', 'بوکو', 'noun', 1, 'education', 'Buku ini bagus untuk dibaca', 'This book is good to read', 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center', 5],
+                ['go', 'pergi', 'ڤرگي', 'ڤرگي', 'verb', 1, 'action', 'Aku mau pergi ke pasar', 'I want to go to the market', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center', 6],
+                ['good', 'bagus', 'باگوس', 'باگوس', 'adjective', 1, 'description', 'Cuaca hari ini bagus', 'The weather today is good', 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?w=200&h=200&fit=crop&crop=center', 7],
+                ['friend', 'kawan', 'کاون', 'کاون', 'noun', 1, 'relationship', 'Kawan aku baik hati', 'My friend is kind-hearted', 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&h=200&fit=crop&crop=face', 8],
+                ['come', 'datang', 'داتڠ', 'داتڠ', 'verb', 1, 'action', 'Sidin datang kemarin sore', 'He/she came yesterday afternoon', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 9]
+            ];
+            
+            sampleWords.forEach(word => {
+                db.run(`INSERT INTO words (
+                    english_word, transliteration, arabic_script_1, arabic_script_2,
+                    part_of_speech, difficulty_level, category, banjarese_phrase,
+                    english_phrase, image_url, sequence_number
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, word);
+            });
+            
+            showUploadStatus(`Loaded ${sampleWords.length} sample words! Now you can test all features.`, 'success');
+            populateWordGrid();
+            updateStats();
+            
+            // Show first word
+            const firstWord = sampleWords[0];
+            updateFlashcard(firstWord[2], firstWord[0], firstWord[4], firstWord[9], firstWord[8]);
+            document.getElementById('predictionBox').innerHTML = 'Sample data loaded! Type something to see predictions...';
         }
         
         body {
@@ -38,6 +154,8 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .hud-title {
@@ -51,6 +169,24 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .csv-upload {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .csv-upload input[type="file"] {
+            position: absolute;
+            left: -9999px;
         }
         
         .mode-toggle {
@@ -104,6 +240,7 @@
         .filter-group {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .filter-btn {
@@ -149,7 +286,7 @@
         
         .container {
             max-width: 1400px;
-            margin: 100px auto 0;
+            margin: 120px auto 0;
             padding: 30px;
         }
         
@@ -305,6 +442,10 @@
             background: linear-gradient(135deg, #ffd700, #ffed4e);
         }
         
+        .btn-game {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        }
+        
         .multiple-choice {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -381,6 +522,105 @@
             width: 0%;
         }
         
+        /* Game Styles */
+        .game-area {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            min-height: 400px;
+        }
+        
+        .game-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .falling-word {
+            position: absolute;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #2c3e50;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fall 4s linear;
+            z-index: 10;
+        }
+        
+        .falling-word:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes fall {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(400px);
+            }
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .sentence-builder {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .sentence-parts {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .sentence-part {
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .sentence-part:hover {
+            transform: scale(1.05);
+        }
+        
+        .sentence-part.used {
+            background: #95a5a6;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .built-sentence {
+            background: white;
+            color: #2c3e50;
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -402,18 +642,52 @@
             }
             
             .container {
-                margin-top: 150px;
+                margin-top: 200px;
                 padding: 15px;
             }
+            
+            .hud-controls {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        
+        .upload-status {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+        }
+        
+        .error-status {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
     </style>
 </head>
 <body>
     <div class="hud-overlay">
         <div class="hud-content">
-            <div class="hud-title">🇮🇩 Advanced Banjarese Learning System</div>
+            <div class="hud-title">🇮🇩 Enhanced Banjarese Learning System</div>
             
             <div class="hud-controls">
+                <button class="btn" onclick="loadRemoteCSV()" style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 8px 16px; border-radius: 20px; border: none; cursor: pointer; font-weight: 600;">
+                    🌐 Load Banjar Vocabulary
+                </button>
+                
+                <label class="csv-upload">
+                    📁 Import Custom CSV
+                    <input type="file" id="csvFile" accept=".csv" onchange="handleFileUpload(event)">
+                </label>
+                
+                <button class="btn" onclick="loadSampleData()" style="background: linear-gradient(135deg, #28a745, #34ce57); color: white; padding: 8px 16px; border-radius: 20px; border: none; cursor: pointer; font-weight: 600;">
+                    🎯 Load Sample Data
+                </button>
+                
                 <label class="mode-toggle">
                     <input type="checkbox" id="modeToggle">
                     <span class="toggle-slider">
@@ -443,11 +717,17 @@
                     <div class="stat-mini-number" id="miniAccuracy">0%</div>
                     <div class="stat-mini-label">Accuracy</div>
                 </div>
+                <div class="stat-mini">
+                    <div class="stat-mini-number" id="miniWords">0</div>
+                    <div class="stat-mini-label">Words</div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container">
+        <div class="upload-status" id="uploadStatus"></div>
+        
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill"></div>
         </div>
@@ -457,13 +737,15 @@
                 <h2>🎯 Smart Practice</h2>
                 <input type="text" class="smart-input" id="practiceInput" placeholder="Start typing in English...">
                 <div class="prediction-box" id="predictionBox">
-                    Type something to see predictions...
+                    Import your CSV file to start learning!
                 </div>
                 
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button class="btn btn-primary" onclick="generateRandomSentence()">Random Sentence</button>
+                <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="generateSmartSentence()">🎲 Smart Sentence</button>
                     <button class="btn" onclick="switchToFlashcards()">📚 Flashcards</button>
-                    <button class="btn" onclick="switchToMultipleChoice()">🎲 Quiz Mode</button>
+                    <button class="btn" onclick="switchToMultipleChoice()">🎯 Quiz Mode</button>
+                    <button class="btn btn-game" onclick="startFallingWordsGame()">🎮 Word Game</button>
+                    <button class="btn btn-game" onclick="startSentenceBuilder()">🔧 Sentence Builder</button>
                 </div>
             </div>
 
@@ -474,7 +756,7 @@
                         <div class="flashcard-front">
                             <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?w=200&h=200&fit=crop&crop=center" 
                                  alt="Word image" class="word-image" id="wordImage">
-                            <div class="word-main" id="wordMain">Click "Random Sentence" to start</div>
+                            <div class="word-main" id="wordMain">Import your CSV file to start</div>
                             <div class="word-scripts" id="wordScripts"></div>
                             <div class="word-type" id="wordType"></div>
                         </div>
@@ -490,16 +772,44 @@
         <div class="card full-width">
             <h2>📚 Vocabulary Explorer</h2>
             <div class="word-grid" id="wordGrid">
-                <!-- Words will be populated here -->
+                <div style="text-align: center; grid-column: 1 / -1; padding: 40px; color: #7f8c8d;">
+                    Import your CSV file to explore vocabulary
+                </div>
             </div>
         </div>
         
-        <div class="card full-width" id="multipleChoiceCard" style="display: none;">
-            <h2>🎯 Multiple Choice Quiz</h2>
-            <div class="flashcard">
-                <div class="word-main" id="quizQuestion">What does "makan" mean?</div>
-                <div class="multiple-choice" id="multipleChoices">
-                    <!-- Choices will be populated here -->
+        <!-- Game Area -->
+        <div class="card full-width" id="gameArea" style="display: none;">
+            <div class="game-area">
+                <div class="game-title">🎮 Falling Words Game</div>
+                <div class="game-stats">
+                    <div>Score: <span id="gameScore">0</span></div>
+                    <div>Lives: <span id="gameLives">3</span></div>
+                    <div>Level: <span id="gameLevel">1</span></div>
+                </div>
+                <div style="position: relative; height: 300px; overflow: hidden;" id="gameCanvas">
+                    <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); padding: 10px; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                        Target: <span id="gameTarget">Click Start!</span>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="startGame()">Start Game</button>
+                    <button class="btn" onclick="pauseGame()">Pause</button>
+                    <button class="btn" onclick="endGame()">End Game</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sentence Builder Game -->
+        <div class="card full-width" id="sentenceBuilderArea" style="display: none;">
+            <div class="sentence-builder">
+                <h2 style="color: white; text-align: center;">🔧 Sentence Builder Challenge</h2>
+                <div class="sentence-parts" id="sentenceParts"></div>
+                <div class="built-sentence" id="builtSentence">Build your sentence here...</div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="checkSentence()">Check Sentence</button>
+                    <button class="btn" onclick="clearSentence()">Clear</button>
+                    <button class="btn" onclick="newSentenceChallenge()">New Challenge</button>
                 </div>
             </div>
         </div>
@@ -507,18 +817,33 @@
 
     <script>
         let db;
-        let currentMode = 'en-to-bj'; // 'en-to-bj' or 'bj-to-en'
+        let currentMode = 'en-to-bj';
         let currentFilter = 'all';
-        let learningMode = 'flashcard'; // 'flashcard' or 'multiple-choice'
+        let learningMode = 'flashcard';
         let currentWord = null;
+        let gameState = {
+            active: false,
+            score: 0,
+            lives: 3,
+            level: 1,
+            words: [],
+            target: null,
+            interval: null
+        };
+        let sentenceChallenge = {
+            targetSentence: '',
+            parts: [],
+            built: []
+        };
         let stats = {
             total: 0,
             correct: 0,
             streak: 0,
-            maxStreak: 0
+            maxStreak: 0,
+            totalWords: 0
         };
 
-        // Initialize the database with extensive vocabulary
+        // Initialize the database
         async function initDB() {
             const SQL = await initSqlJs({
                 locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
@@ -526,78 +851,117 @@
             
             db = new SQL.Database();
             
-            // Create comprehensive words table
+            // Create table matching your CSV structure
             db.run(`
                 CREATE TABLE words (
-                    id INTEGER PRIMARY KEY,
-                    english TEXT,
-                    banjarese TEXT,
-                    pegon TEXT,
-                    jawi TEXT,
-                    word_type TEXT,
-                    difficulty INTEGER,
-                    synonyms TEXT,
-                    example_sentence TEXT,
-                    example_translation TEXT,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    english_word TEXT,
+                    transliteration TEXT,
+                    arabic_script_1 TEXT,
+                    arabic_script_2 TEXT,
+                    part_of_speech TEXT,
+                    difficulty_level INTEGER,
+                    category TEXT,
+                    banjarese_phrase TEXT,
+                    english_phrase TEXT,
                     image_url TEXT,
-                    frequency INTEGER
+                    sequence_number INTEGER
                 );
             `);
             
-            // Insert comprehensive vocabulary (this would be your CSV data)
-            const words = [
-                // Basic Pronouns
-                ['I/me', 'aku', 'اکو', 'اکو', 'pronoun', 1, 'ulun', 'Aku makan nasi', 'I eat rice', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face', 100],
-                ['you', 'ikam', 'ايکم', 'ايکم', 'pronoun', 1, 'pian', 'Ikam baik hati', 'You are kind', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face', 100],
-                ['he/she', 'sidin', 'سيدين', 'سيدين', 'pronoun', 1, 'dia', 'Sidin datang kemari', 'He/she comes here', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 90],
-                
-                // Food & Eating
-                ['rice', 'nasi', 'ناسي', 'ناسي', 'noun', 1, 'beras', 'Nasi ini enak', 'This rice is delicious', 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center', 95],
-                ['eat', 'makan', 'ماکن', 'ماکن', 'verb', 1, 'santap', 'Makan dulu sebelum pergi', 'Eat first before going', 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center', 95],
-                ['drink', 'minum', 'مينوم', 'مينوم', 'verb', 1, 'teguk', 'Minum air putih banyak-banyak', 'Drink lots of water', 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center', 90],
-                ['water', 'air', 'اير', 'اير', 'noun', 1, 'banyu', 'Air ini jernih', 'This water is clear', 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center', 100],
-                ['fish', 'iwak', 'ايوک', 'ايوک', 'noun', 1, 'ikan', 'Iwak bakar enak', 'Grilled fish is delicious', 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center', 85],
-                
-                // Body Parts
-                ['hand', 'tangan', 'تڠن', 'تڠن', 'noun', 1, 'jari', 'Tangan ku sakit', 'My hand hurts', 'https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center', 85],
-                ['eye', 'mata', 'ماتا', 'ماتا', 'noun', 1, 'pandang', 'Mata nya indah', 'His/her eyes are beautiful', 'https://images.unsplash.com/photo-1582593089820-c8f8b9d98769?w=200&h=200&fit=crop&crop=center', 80],
-                ['head', 'kepala', 'کڤالا', 'کڤالا', 'noun', 1, 'ubun', 'Kepala ku pusing', 'My head is dizzy', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop&crop=center', 75],
-                
-                // Actions/Verbs
-                ['want/will', 'mau', 'ماو', 'ماو', 'verb', 1, 'hendak', 'Aku mau makan', 'I want to eat', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 95],
-                ['go', 'pergi', 'ڤرگي', 'ڤرگي', 'verb', 1, 'berangkat', 'Aku mau pergi', 'I want to go', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center', 90],
-                ['come', 'datang', 'داتڠ', 'داتڠ', 'verb', 1, 'sampai', 'Sidin datang tadi', 'He/she came earlier', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 85],
-                ['sleep', 'tidur', 'تيدور', 'تيدور', 'verb', 1, 'istirahat', 'Aku mau tidur', 'I want to sleep', 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center', 80],
-                
-                // Adjectives
-                ['good/beautiful', 'bagus', 'باگوس', 'باگوس', 'adjective', 1, 'cantik', 'Rumah ini bagus', 'This house is beautiful', 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center', 85],
-                ['big', 'besar', 'بسر', 'بسر', 'adjective', 1, 'gede', 'Rumah nya besar', 'His house is big', 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=200&h=200&fit=crop&crop=center', 80],
-                ['small', 'kecil', 'کچيل', 'کچيل', 'adjective', 1, 'cilik', 'Anjing kecil lucu', 'Small dogs are cute', 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&crop=center', 80],
-                
-                // Common Expressions
-                ['already', 'sudah', 'سودح', 'سودح', 'adverb', 2, 'telah', 'Aku sudah makan', 'I have already eaten', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 90],
-                ['not yet', 'belum', 'بلوم', 'بلوم', 'adverb', 2, 'durung', 'Aku belum makan', 'I have not eaten yet', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 85],
-                ['very', 'sangat', 'سڠت', 'سڠت', 'adverb', 2, 'banget', 'Sangat bagus', 'Very good', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75],
-                
-                // Places
-                ['house', 'rumah', 'رومح', 'رومح', 'noun', 1, 'balai', 'Rumah aku jauh', 'My house is far', 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center', 90],
-                ['school', 'sekolah', 'سکولح', 'سکولح', 'noun', 2, 'madrasah', 'Sekolah tutup hari ini', 'School is closed today', 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center', 85],
-                ['market', 'pasar', 'ڤاسر', 'ڤاسر', 'noun', 2, 'warung', 'Ke pasar beli sayur', 'Go to market to buy vegetables', 'https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center', 80],
-                
-                // Time
-                ['now', 'sekarang', 'سکرڠ', 'سکرڠ', 'adverb', 2, 'kini', 'Sekarang hujan', 'It is raining now', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 85],
-                ['morning', 'pagi', 'ڤاگي', 'ڤاگي', 'noun', 1, 'subuh', 'Pagi ini cerah', 'This morning is bright', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75],
-                ['night', 'malam', 'مالم', 'مالم', 'noun', 1, 'wengi', 'Malam ini dingin', 'Tonight is cold', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75]
-            ];
-            
-            words.forEach((word, i) => {
-                db.run(`INSERT INTO words VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
-                    [i+1, word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7], word[8], word[9], word[10]]);
-            });
-            
-            populateWordGrid();
             setupEventListeners();
-            updateProgressBar();
+            updateStats();
+        }
+
+        async function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            try {
+                const text = await file.text();
+                const lines = text.split('\n').filter(line => line.trim());
+                
+                // Clear existing data
+                db.run("DELETE FROM words");
+                
+                // Skip header row and process data
+                let imported = 0;
+                for (let i = 1; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (!line) continue;
+                    
+                    // Enhanced CSV parsing to handle quotes and commas
+                    const parts = parseCSVLine(line);
+                    if (parts.length >= 11) {
+                        try {
+                            db.run(`INSERT INTO words (
+                                english_word, transliteration, arabic_script_1, arabic_script_2,
+                                part_of_speech, difficulty_level, category, banjarese_phrase,
+                                english_phrase, image_url, sequence_number
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, parts);
+                            imported++;
+                        } catch (dbError) {
+                            console.warn('Skipping row due to data issue:', parts[0]);
+                        }
+                    }
+                }
+                
+                showUploadStatus(`Successfully imported ${imported} words from ${lines.length - 1} rows!`, 'success');
+                populateWordGrid();
+                updateStats();
+                
+                // Update learning area with first word
+                if (imported > 0) {
+                    const firstWord = db.exec("SELECT * FROM words LIMIT 1")[0];
+                    if (firstWord && firstWord.values[0]) {
+                        const word = firstWord.values[0];
+                        updateFlashcard(word[2], word[1], word[5], word[10], word[9]);
+                    }
+                }
+                
+                document.getElementById('predictionBox').innerHTML = 'CSV loaded! Type something to see predictions...';
+                
+            } catch (error) {
+                showUploadStatus('Error importing CSV file. Please check the format.', 'error');
+                console.error('CSV import error:', error);
+            }
+        }
+
+        // Enhanced CSV parsing function to handle quotes and embedded commas
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            
+            // Add the last field
+            result.push(current.trim());
+            
+            // Clean up quotes from fields
+            return result.map(field => field.replace(/^"|"$/g, ''));
+        }
+
+        function showUploadStatus(message, type) {
+            const statusDiv = document.getElementById('uploadStatus');
+            statusDiv.textContent = message;
+            statusDiv.className = type === 'error' ? 'upload-status error-status' : 'upload-status';
+            statusDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 3000);
         }
 
         function setupEventListeners() {
@@ -646,12 +1010,14 @@
             const words = input.toLowerCase().split(' ');
             const lastWord = words[words.length - 1];
             
-            // Simple prediction based on partial matches
+            // Enhanced prediction with your CSV structure
             let query;
             if (currentMode === 'en-to-bj') {
-                query = `SELECT banjarese, pegon, jawi, word_type FROM words WHERE english LIKE '%${lastWord}%' LIMIT 5`;
+                query = `SELECT transliteration, arabic_script_1, arabic_script_2, part_of_speech, banjarese_phrase 
+                        FROM words WHERE english_word LIKE '%${lastWord}%' OR english_phrase LIKE '%${lastWord}%' LIMIT 5`;
             } else {
-                query = `SELECT english, word_type FROM words WHERE banjarese LIKE '%${lastWord}%' LIMIT 5`;
+                query = `SELECT english_word, english_phrase, part_of_speech 
+                        FROM words WHERE transliteration LIKE '%${lastWord}%' OR banjarese_phrase LIKE '%${lastWord}%' LIMIT 5`;
             }
             
             try {
@@ -664,10 +1030,12 @@
                             predictions += `<div style="margin: 5px 0; padding: 8px; background: rgba(255,255,255,0.8); border-radius: 8px;">
                                 <strong>${row[0]}</strong> ${scripts ? `<span style="color: #7f8c8d;">{${scripts}}</span>` : ''} 
                                 <span style="color: #2c3e50; font-size: 0.9em;">(${row[3]})</span>
+                                <div style="font-style: italic; color: #666; font-size: 0.85em;">${row[4]}</div>
                             </div>`;
                         } else {
                             predictions += `<div style="margin: 5px 0; padding: 8px; background: rgba(255,255,255,0.8); border-radius: 8px;">
-                                <strong>${row[0]}</strong> <span style="color: #2c3e50; font-size: 0.9em;">(${row[1]})</span>
+                                <strong>${row[0]}</strong> <span style="color: #2c3e50; font-size: 0.9em;">(${row[2]})</span>
+                                <div style="font-style: italic; color: #666; font-size: 0.85em;">${row[1]}</div>
                             </div>`;
                         }
                     });
@@ -676,47 +1044,66 @@
                     document.getElementById('predictionBox').innerHTML = 'No matches found. Try a different word!';
                 }
             } catch (error) {
-                document.getElementById('predictionBox').innerHTML = 'Type something to see predictions...';
+                document.getElementById('predictionBox').innerHTML = 'Import CSV data to see predictions...';
             }
         }
         
-        function generateRandomSentence() {
-            // Get random words for sentence construction
-            const subjects = db.exec("SELECT * FROM words WHERE word_type = 'pronoun' ORDER BY RANDOM() LIMIT 1")[0];
-            const verbs = db.exec("SELECT * FROM words WHERE word_type = 'verb' ORDER BY RANDOM() LIMIT 1")[0];
-            const objects = db.exec("SELECT * FROM words WHERE word_type = 'noun' ORDER BY RANDOM() LIMIT 1")[0];
-            const adjectives = db.exec("SELECT * FROM words WHERE word_type = 'adjective' ORDER BY RANDOM() LIMIT 1")[0];
-            
-            if (subjects && verbs && objects) {
-                const subj = subjects.values[0];
-                const verb = verbs.values[0];
-                const obj = objects.values[0];
-                const adj = adjectives ? adjectives.values[0] : null;
+        function generateSmartSentence() {
+            try {
+                // Enhanced sentence generation using your CSV data structure
+                const allWords = db.exec("SELECT * FROM words ORDER BY RANDOM() LIMIT 10")[0];
+                if (!allWords || allWords.values.length === 0) {
+                    showUploadStatus('Please import CSV data first!', 'error');
+                    return;
+                }
                 
-                // Create sentence patterns
+                // Get words by category for better sentence construction
+                const subjects = allWords.values.filter(word => 
+                    word[5] === 'pronoun' || word[1].toLowerCase().includes('i') || word[1].toLowerCase().includes('you'));
+                const verbs = allWords.values.filter(word => word[5] === 'verb');
+                const nouns = allWords.values.filter(word => word[5] === 'noun');
+                const adjectives = allWords.values.filter(word => word[5] === 'adjective');
+                
+                // Fallback to any words if categories are empty
+                const subj = subjects[0] || allWords.values[0];
+                const verb = verbs[0] || allWords.values[1];
+                const obj = nouns[0] || allWords.values[2];
+                const adj = adjectives[0] || allWords.values[3];
+                
+                // Create more natural sentence patterns
                 let banjareseSentence, englishSentence;
+                const pattern = Math.floor(Math.random() * 3);
                 
-                if (Math.random() > 0.5 && adj) {
-                    // With adjective: Subject + Verb + Adjective + Object
-                    banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]} ${adj[2]}`;
-                    englishSentence = `${subj[1]} ${verb[1]} ${adj[1]} ${obj[1]}`;
-                } else {
-                    // Simple SVO: Subject + Verb + Object
-                    banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]}`;
-                    englishSentence = `${subj[1]} ${verb[1]} ${obj[1]}`;
+                switch(pattern) {
+                    case 0: // Subject + Verb + Object
+                        banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]}`;
+                        englishSentence = `${subj[1]} ${verb[1]} ${obj[1]}`;
+                        break;
+                    case 1: // Subject + Verb + Adjective + Object  
+                        banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]} ${adj[2]}`;
+                        englishSentence = `${subj[1]} ${verb[1]} ${adj[1]} ${obj[1]}`;
+                        break;
+                    case 2: // Use phrase directly
+                        banjareseSentence = subj[8] || `${subj[2]} ${verb[2]}`;
+                        englishSentence = subj[9] || `${subj[1]} ${verb[1]}`;
+                        break;
                 }
                 
                 // Display in flashcard
-                updateFlashcard(banjareseSentence, englishSentence, 'sentence', obj[10], `Example: ${banjareseSentence} = ${englishSentence}`);
+                updateFlashcard(
+                    currentMode === 'en-to-bj' ? englishSentence : banjareseSentence,
+                    currentMode === 'en-to-bj' ? banjareseSentence : englishSentence,
+                    'Generated Sentence',
+                    subj[10] || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+                    `${banjareseSentence} = ${englishSentence}`
+                );
                 
-                // Update input based on mode
-                if (currentMode === 'en-to-bj') {
-                    document.getElementById('practiceInput').value = englishSentence;
-                    predictSentence(englishSentence);
-                } else {
-                    document.getElementById('practiceInput').value = banjareseSentence;
-                    predictSentence(banjareseSentence);
-                }
+                // Update input
+                document.getElementById('practiceInput').value = currentMode === 'en-to-bj' ? englishSentence : banjareseSentence;
+                predictSentence(document.getElementById('practiceInput').value);
+                
+            } catch (error) {
+                showUploadStatus('Error generating sentence. Please import CSV data first.', 'error');
             }
         }
         
@@ -746,7 +1133,7 @@
                     <div class="flashcard-front">
                         <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?w=200&h=200&fit=crop&crop=center" 
                              alt="Word image" class="word-image" id="wordImage">
-                        <div class="word-main" id="wordMain">Click "Random Sentence" to start</div>
+                        <div class="word-main" id="wordMain">Click "Smart Sentence" to start</div>
                         <div class="word-scripts" id="wordScripts"></div>
                         <div class="word-type" id="wordType"></div>
                     </div>
@@ -764,25 +1151,32 @@
         }
         
         function generateMultipleChoiceQuestion() {
-            const allWords = db.exec("SELECT * FROM words ORDER BY RANDOM() LIMIT 4")[0];
-            if (!allWords || allWords.values.length < 4) return;
-            
-            const correctAnswer = allWords.values[0];
-            const wrongAnswers = allWords.values.slice(1, 4);
-            
-            currentWord = {
-                correct: currentMode === 'en-to-bj' ? correctAnswer[2] : correctAnswer[1],
-                question: currentMode === 'en-to-bj' ? correctAnswer[1] : correctAnswer[2]
-            };
-            
-            document.getElementById('learningArea').innerHTML = `
-                <div class="flashcard">
-                    <div class="word-main">What does "${currentWord.question}" mean?</div>
-                    <div class="multiple-choice" id="multipleChoices">
-                        ${generateChoices([correctAnswer, ...wrongAnswers])}
+            try {
+                const allWords = db.exec("SELECT * FROM words ORDER BY RANDOM() LIMIT 4")[0];
+                if (!allWords || allWords.values.length < 4) {
+                    showUploadStatus('Need at least 4 words. Please import more CSV data.', 'error');
+                    return;
+                }
+                
+                const correctAnswer = allWords.values[0];
+                const wrongAnswers = allWords.values.slice(1, 4);
+                
+                currentWord = {
+                    correct: currentMode === 'en-to-bj' ? correctAnswer[2] : correctAnswer[1],
+                    question: currentMode === 'en-to-bj' ? correctAnswer[1] : correctAnswer[2]
+                };
+                
+                document.getElementById('learningArea').innerHTML = `
+                    <div class="flashcard">
+                        <div class="word-main">What does "${currentWord.question}" mean?</div>
+                        <div class="multiple-choice" id="multipleChoices">
+                            ${generateChoices([correctAnswer, ...wrongAnswers])}
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            } catch (error) {
+                showUploadStatus('Error generating quiz. Please import CSV data first.', 'error');
+            }
         }
         
         function generateChoices(words) {
@@ -790,7 +1184,7 @@
             return shuffled.map((word, index) => {
                 const answer = currentMode === 'en-to-bj' ? word[2] : word[1];
                 const scripts = currentMode === 'en-to-bj' && word[3] && word[4] ? 
-                    ` <span style="color: #7f8c8d;">{${word[3]} | ${word[4]}}</span>` : '';
+                    ` <span style="color: #7f8c8d; font-size: 0.9em;">{${word[3]} | ${word[4]}}</span>` : '';
                 return `<div class="choice-btn" onclick="checkChoice(this, '${answer}')">${answer}${scripts}</div>`;
             }).join('');
         }
@@ -807,14 +1201,237 @@
                 }
             });
             
-            updateStats(isCorrect);
+            updateStatsScore(isCorrect);
             
             setTimeout(() => {
                 generateMultipleChoiceQuestion();
             }, 2000);
         }
         
-        function updateStats(isCorrect) {
+        // FALLING WORDS GAME
+        function startFallingWordsGame() {
+            document.getElementById('gameArea').style.display = 'block';
+            document.getElementById('gameArea').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function startGame() {
+            try {
+                const words = db.exec("SELECT english_word, transliteration, part_of_speech FROM words ORDER BY RANDOM() LIMIT 20")[0];
+                if (!words || words.values.length === 0) {
+                    showUploadStatus('Please import CSV data to play the game!', 'error');
+                    return;
+                }
+                
+                gameState = {
+                    active: true,
+                    score: 0,
+                    lives: 3,
+                    level: 1,
+                    words: words.values,
+                    target: null,
+                    interval: null
+                };
+                
+                updateGameStats();
+                nextWord();
+                gameState.interval = setInterval(dropWord, 2000 - (gameState.level * 100));
+                
+            } catch (error) {
+                showUploadStatus('Error starting game. Please import CSV data first.', 'error');
+            }
+        }
+        
+        function nextWord() {
+            if (gameState.words.length === 0) {
+                endGame();
+                return;
+            }
+            
+            const randomWord = gameState.words[Math.floor(Math.random() * gameState.words.length)];
+            gameState.target = {
+                english: randomWord[0],
+                banjarese: randomWord[1],
+                type: randomWord[2]
+            };
+            
+            document.getElementById('gameTarget').textContent = 
+                currentMode === 'en-to-bj' ? gameState.target.english : gameState.target.banjarese;
+        }
+        
+        function dropWord() {
+            if (!gameState.active) return;
+            
+            const canvas = document.getElementById('gameCanvas');
+            const randomWord = gameState.words[Math.floor(Math.random() * gameState.words.length)];
+            
+            const wordDiv = document.createElement('div');
+            wordDiv.className = 'falling-word';
+            wordDiv.textContent = currentMode === 'en-to-bj' ? randomWord[1] : randomWord[0];
+            wordDiv.style.left = Math.random() * (canvas.offsetWidth - 100) + 'px';
+            
+            const isCorrect = (currentMode === 'en-to-bj') ? 
+                randomWord[0] === gameState.target.english :
+                randomWord[1] === gameState.target.banjarese;
+            
+            wordDiv.onclick = () => {
+                if (isCorrect) {
+                    gameState.score += 10 * gameState.level;
+                    wordDiv.style.background = 'linear-gradient(135deg, #28a745, #34ce57)';
+                    setTimeout(() => {
+                        if (wordDiv.parentNode) wordDiv.parentNode.removeChild(wordDiv);
+                    }, 300);
+                    nextWord();
+                } else {
+                    gameState.lives--;
+                    wordDiv.style.background = 'linear-gradient(135deg, #dc3545, #f56565)';
+                    setTimeout(() => {
+                        if (wordDiv.parentNode) wordDiv.parentNode.removeChild(wordDiv);
+                    }, 300);
+                }
+                updateGameStats();
+                if (gameState.lives <= 0) endGame();
+            };
+            
+            canvas.appendChild(wordDiv);
+            
+            // Remove word when animation ends
+            setTimeout(() => {
+                if (wordDiv.parentNode && isCorrect) {
+                    gameState.lives--;
+                    updateGameStats();
+                    if (gameState.lives <= 0) endGame();
+                }
+                if (wordDiv.parentNode) wordDiv.parentNode.removeChild(wordDiv);
+            }, 4000);
+            
+            // Level up every 100 points
+            if (gameState.score > 0 && gameState.score % 100 === 0) {
+                gameState.level++;
+                clearInterval(gameState.interval);
+                gameState.interval = setInterval(dropWord, Math.max(500, 2000 - (gameState.level * 100)));
+            }
+        }
+        
+        function updateGameStats() {
+            document.getElementById('gameScore').textContent = gameState.score;
+            document.getElementById('gameLives').textContent = gameState.lives;
+            document.getElementById('gameLevel').textContent = gameState.level;
+        }
+        
+        function pauseGame() {
+            gameState.active = !gameState.active;
+            if (gameState.active) {
+                gameState.interval = setInterval(dropWord, 2000 - (gameState.level * 100));
+            } else {
+                clearInterval(gameState.interval);
+            }
+        }
+        
+        function endGame() {
+            gameState.active = false;
+            clearInterval(gameState.interval);
+            document.querySelectorAll('.falling-word').forEach(word => {
+                if (word.parentNode) word.parentNode.removeChild(word);
+            });
+            
+            updateStatsScore(true, gameState.score); // Add game score to stats
+            alert(`Game Over! Final Score: ${gameState.score}`);
+        }
+        
+        // SENTENCE BUILDER GAME
+        function startSentenceBuilder() {
+            document.getElementById('sentenceBuilderArea').style.display = 'block';
+            document.getElementById('sentenceBuilderArea').scrollIntoView({ behavior: 'smooth' });
+            newSentenceChallenge();
+        }
+        
+        function newSentenceChallenge() {
+            try {
+                const words = db.exec("SELECT * FROM words ORDER BY RANDOM() LIMIT 6")[0];
+                if (!words || words.values.length < 3) {
+                    showUploadStatus('Please import more CSV data for sentence building!', 'error');
+                    return;
+                }
+                
+                // Create a target sentence
+                const selectedWords = words.values.slice(0, 4);
+                sentenceChallenge.targetSentence = selectedWords.map(w => w[2]).join(' ');
+                sentenceChallenge.parts = selectedWords.map(w => ({
+                    banjarese: w[2],
+                    english: w[1],
+                    used: false
+                }));
+                
+                // Add some distractor words
+                const distractors = words.values.slice(4, 6).map(w => ({
+                    banjarese: w[2],
+                    english: w[1],
+                    used: false
+                }));
+                
+                sentenceChallenge.parts = [...sentenceChallenge.parts, ...distractors];
+                sentenceChallenge.parts.sort(() => 0.5 - Math.random());
+                sentenceChallenge.built = [];
+                
+                displaySentenceParts();
+                document.getElementById('builtSentence').textContent = 'Build your sentence here...';
+                
+            } catch (error) {
+                showUploadStatus('Error creating sentence challenge. Please import CSV data first.', 'error');
+            }
+        }
+        
+        function displaySentenceParts() {
+            const partsContainer = document.getElementById('sentenceParts');
+            partsContainer.innerHTML = sentenceChallenge.parts.map((part, index) => 
+                `<div class="sentence-part ${part.used ? 'used' : ''}" onclick="addToBuild(${index})">
+                    ${currentMode === 'en-to-bj' ? part.english : part.banjarese}
+                </div>`
+            ).join('');
+        }
+        
+        function addToBuild(index) {
+            if (sentenceChallenge.parts[index].used) return;
+            
+            sentenceChallenge.parts[index].used = true;
+            sentenceChallenge.built.push(sentenceChallenge.parts[index]);
+            
+            const builtText = sentenceChallenge.built.map(part => 
+                currentMode === 'en-to-bj' ? part.banjarese : part.english
+            ).join(' ');
+            
+            document.getElementById('builtSentence').textContent = builtText || 'Build your sentence here...';
+            displaySentenceParts();
+        }
+        
+        function clearSentence() {
+            sentenceChallenge.parts.forEach(part => part.used = false);
+            sentenceChallenge.built = [];
+            document.getElementById('builtSentence').textContent = 'Build your sentence here...';
+            displaySentenceParts();
+        }
+        
+        function checkSentence() {
+            const builtSentence = sentenceChallenge.built.map(part => part.banjarese).join(' ');
+            const isCorrect = builtSentence === sentenceChallenge.targetSentence;
+            
+            if (isCorrect) {
+                document.getElementById('builtSentence').style.background = '#d4edda';
+                updateStatsScore(true);
+                setTimeout(() => {
+                    document.getElementById('builtSentence').style.background = 'white';
+                    newSentenceChallenge();
+                }, 2000);
+            } else {
+                document.getElementById('builtSentence').style.background = '#f8d7da';
+                updateStatsScore(false);
+                setTimeout(() => {
+                    document.getElementById('builtSentence').style.background = 'white';
+                }, 1000);
+            }
+        }
+        
+        function updateStatsScore(isCorrect, bonus = 0) {
             stats.total++;
             if (isCorrect) {
                 stats.correct++;
@@ -824,46 +1441,76 @@
                 stats.streak = 0;
             }
             
+            updateStats();
+        }
+        
+        function updateStats() {
             const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
             
             document.getElementById('miniCorrect').textContent = stats.correct;
             document.getElementById('miniStreak').textContent = stats.streak;
             document.getElementById('miniAccuracy').textContent = accuracy + '%';
             
+            // Update word count from database
+            try {
+                const result = db.exec("SELECT COUNT(*) FROM words");
+                if (result[0]) {
+                    stats.totalWords = result[0].values[0][0];
+                    document.getElementById('miniWords').textContent = stats.totalWords;
+                }
+            } catch (error) {
+                document.getElementById('miniWords').textContent = '0';
+            }
+            
             updateProgressBar();
         }
         
         function updateProgressBar() {
-            const progress = Math.min((stats.correct / 20) * 100, 100); // Progress to 20 correct answers
+            const progress = Math.min((stats.correct / 50) * 100, 100); // Progress to 50 correct answers
             document.getElementById('progressFill').style.width = progress + '%';
         }
         
         function populateWordGrid() {
-            let query = "SELECT * FROM words";
-            if (currentFilter !== 'all') {
-                query += ` WHERE word_type = '${currentFilter}'`;
-            }
-            query += " ORDER BY frequency DESC LIMIT 50";
-            
-            const result = db.exec(query);
-            const wordGrid = document.getElementById('wordGrid');
-            
-            if (result[0]) {
-                wordGrid.innerHTML = result[0].values.map(word => {
-                    const scripts = [word[3], word[4]].filter(s => s && s !== word[2]).join(' | ');
-                    return `
-                        <div class="word-card" onclick="showWordDetails('${word[1]}', '${word[2]}', '${word[5]}', '${word[10]}', '${word[8]}')">
-                            <div style="font-weight: bold; color: #2c3e50;">${word[1]}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">${word[2]} ${scripts ? `{${scripts}}` : ''}</div>
-                            <div style="background: #ffd700; color: #2c3e50; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; display: inline-block; margin-top: 5px;">${word[5]}</div>
+            try {
+                let query = "SELECT * FROM words";
+                if (currentFilter !== 'all') {
+                    query += ` WHERE part_of_speech = '${currentFilter}'`;
+                }
+                query += " ORDER BY sequence_number ASC LIMIT 50";
+                
+                const result = db.exec(query);
+                const wordGrid = document.getElementById('wordGrid');
+                
+                if (result[0] && result[0].values.length > 0) {
+                    wordGrid.innerHTML = result[0].values.map(word => {
+                        const scripts = [word[3], word[4]].filter(s => s && s !== word[2]).join(' | ');
+                        return `
+                            <div class="word-card" onclick="showWordDetails('${word[1]}', '${word[2]}', '${word[5]}', '${word[10]}', '${word[9]}')">
+                                <div style="font-weight: bold; color: #2c3e50;">${word[1]}</div>
+                                <div style="color: #7f8c8d; font-size: 0.9em;">${word[2]} ${scripts ? `{${scripts}}` : ''}</div>
+                                <div style="background: #ffd700; color: #2c3e50; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; display: inline-block; margin-top: 5px;">${word[5]}</div>
+                                <div style="font-size: 0.8em; color: #666; margin-top: 5px;">${word[8] || ''}</div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    wordGrid.innerHTML = `
+                        <div style="text-align: center; grid-column: 1 / -1; padding: 40px; color: #7f8c8d;">
+                            ${stats.totalWords === 0 ? 'Import your CSV file to explore vocabulary' : 'No words found for this filter'}
                         </div>
                     `;
-                }).join('');
+                }
+            } catch (error) {
+                document.getElementById('wordGrid').innerHTML = `
+                    <div style="text-align: center; grid-column: 1 / -1; padding: 40px; color: #7f8c8d;">
+                        Import your CSV file to explore vocabulary
+                    </div>
+                `;
             }
         }
         
-        function showWordDetails(english, banjarese, type, imageUrl, example) {
-            updateFlashcard(banjarese, english, type, imageUrl, example);
+        function showWordDetails(english, banjarese, type, imageUrl, phrase) {
+            updateFlashcard(banjarese, english, type, imageUrl, phrase);
             document.getElementById('practiceInput').value = currentMode === 'en-to-bj' ? english : banjarese;
             predictSentence(document.getElementById('practiceInput').value);
         }
@@ -872,19 +1519,18 @@
             const input = document.getElementById('practiceInput').value.trim();
             if (!input) return;
             
-            // Simple check - in a real app, you'd have more sophisticated matching
-            stats.total++;
-            const isCorrect = Math.random() > 0.3; // Placeholder logic
-            updateStats(isCorrect);
+            // Enhanced prediction checking
+            updateStatsScore(Math.random() > 0.3); // Placeholder logic - enhance this
             
-            // Clear input for next practice
             document.getElementById('practiceInput').value = '';
             document.getElementById('predictionBox').innerHTML = 'Great practice! Try another sentence.';
         }
         
-        
         // Initialize the database when the page loads
-        initDB();
+        initDB().then(() => {
+            // Try to auto-load the remote CSV on startup, but don't force it
+            // loadRemoteCSV();  // Commented out - let users click the button instead
+        });
     </script>
 </body>
 </html>

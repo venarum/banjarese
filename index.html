@@ -15,7 +15,6 @@
             min-height: 100vh;
             color: #333;
         }
-        
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -23,14 +22,12 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
         }
-        
         h1 {
             text-align: center;
             color: #4a5568;
             margin-bottom: 30px;
             font-size: 2.2em;
         }
-        
         .section {
             margin-bottom: 30px;
             background: #f8f9fa;
@@ -38,25 +35,11 @@
             border-radius: 10px;
             border-left: 4px solid #667eea;
         }
-        
         .section h2 {
             color: #667eea;
             margin-top: 0;
             margin-bottom: 15px;
         }
-        
-        .sql-area {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 14px;
-            white-space: pre-wrap;
-            overflow-x: auto;
-            margin-bottom: 15px;
-        }
-        
         button {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -68,36 +51,19 @@
             margin: 5px;
             transition: all 0.3s ease;
         }
-        
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-        
-        .results {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
-            min-height: 100px;
-        }
-        
-        .sentence-builder {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        select {
+        select, input[type="text"] {
             padding: 10px;
             border: 2px solid #e2e8f0;
             border-radius: 6px;
             font-size: 16px;
             background: white;
+            width: 100%;
+            box-sizing: border-box;
         }
-        
         .generated-sentence {
             background: linear-gradient(135deg, #48bb78, #38a169);
             color: white;
@@ -107,40 +73,20 @@
             font-size: 18px;
             text-align: center;
         }
-        
         .practice-area {
             background: #fff5d6;
             padding: 20px;
             border-radius: 10px;
             margin-top: 15px;
         }
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        
-        .correct {
-            background-color: #c6f6d5 !important;
-            border-color: #48bb78 !important;
-        }
-        
-        .incorrect {
-            background-color: #fed7d7 !important;
-            border-color: #f56565 !important;
-        }
-        
+        .correct { background-color: #c6f6d5 !important; border-color: #48bb78 !important; }
+        .incorrect { background-color: #fed7d7 !important; border-color: #f56565 !important; }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-        
         .stat-card {
             background: white;
             padding: 15px;
@@ -148,89 +94,114 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #667eea;
-        }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .sentence-builder { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🇮🇩 Banjarese SQL Language Learning System</h1>
-        
-        <div class="section">
-            <h2>📈 Learning Stats</h2>
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalAttempts">0</div>
-                    <div>Total Attempts</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="correctAnswers">0</div>
-                    <div>Correct</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="accuracy">0%</div>
-                    <div>Accuracy</div>
-                </div>
-            </div>
+<div class="container">
+    <h1>🇮🇩 Banjarese SQL Language Learning System</h1>
+
+    <div class="section">
+        <h2>📈 Learning Stats</h2>
+        <div class="stats">
+            <div class="stat-card"><div class="stat-number" id="totalAttempts">0</div>Total Attempts</div>
+            <div class="stat-card"><div class="stat-number" id="correctAnswers">0</div>Correct</div>
+            <div class="stat-card"><div class="stat-number" id="accuracy">0%</div>Accuracy</div>
         </div>
-        
-        <div class="section">
-            <h2>🔧 Sentence Builder</h2>
-            <p>Build sentences using SQL relationships and grammar rules:</p>
-            <div class="sentence-builder">
-                <select id="subjectSelect">
-                    <option value="">Select Subject</option>
-                </select>
-                <select id="verbSelect">
-                    <option value="">Select Verb</option>
-                </select>
-                <select id="objectSelect">
-                    <option value="">Select Object</option>
-                </select>
-                <select id="adjSelect">
-                    <option value="">Add Adjective (Optional)</option>
-                </select>
-            </div>
-            <button onclick="generateSentence()">Generate Sentence</button>
-            <button onclick="randomSentence()">Random Sentence</button>
-            <div id="generatedSentence"></div>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Sentence Builder</h2>
+        <p>Build sentences using SQL relationships and grammar rules:</p>
+        <div class="sentence-builder">
+            <select id="subjectSelect"><option value="">Select Subject</option></select>
+            <select id="verbSelect"><option value="">Select Verb</option></select>
+            <select id="objectSelect"><option value="">Select Object</option></select>
+            <select id="adjSelect"><option value="">Add Adjective (Optional)</option></select>
         </div>
-        
-        <div class="section">
-            <h2>✍️ Practice Mode</h2>
-            <div class="practice-area">
-                <div id="practicePrompt">Click "New Practice" to start!</div>
-                <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
-                <button onclick="newPractice()">New Practice</button>
-                <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
-                <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
-                <div id="feedback"></div>
-            </div>
+        <button onclick="generateSentence()">Generate Sentence</button>
+        <button onclick="randomSentence()">Random Sentence</button>
+        <div id="generatedSentence"></div>
+    </div>
+
+    <div class="section">
+        <h2>✍️ Practice Mode</h2>
+        <div class="practice-area">
+            <div id="practicePrompt">Click "New Practice" to start!</div>
+            <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
+            <button onclick="newPractice()">New Practice</button>
+            <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
+            <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
+            <div id="feedback"></div>
         </div>
-        
-		<script>
+    </div>
+</div>
+
+<script>
+// ======== Sentence Builder ========
+const subjects = ["Ulun", "Dia", "Kami", "Pian"];
+const verbs = ["makan", "lari", "tidur", "baca"];
+const objects = ["kue", "buku", "pasar", "rumah"];
+const adjectives = ["besar", "kecil", "panas", "dingin"];
+
+// Populate selects
+function populateSelect(id, items) {
+    const select = document.getElementById(id);
+    items.forEach(item => {
+        const option = document.createElement("option");
+        option.value = item;
+        option.text = item;
+        select.appendChild(option);
+    });
+}
+populateSelect("subjectSelect", subjects);
+populateSelect("verbSelect", verbs);
+populateSelect("objectSelect", objects);
+populateSelect("adjSelect", adjectives);
+
+function generateSentence() {
+    const subject = document.getElementById("subjectSelect").value;
+    const verb = document.getElementById("verbSelect").value;
+    const object = document.getElementById("objectSelect").value;
+    const adj = document.getElementById("adjSelect").value;
+    if (!subject || !verb || !object) {
+        alert("Please select Subject, Verb, and Object!");
+        return;
+    }
+    let sentence = `${subject} ${verb} ${object}`;
+    if(adj) sentence += ` ${adj}`;
+    document.getElementById("generatedSentence").innerText = sentence;
+}
+
+function randomSentence() {
+    const subject = subjects[Math.floor(Math.random()*subjects.length)];
+    const verb = verbs[Math.floor(Math.random()*verbs.length)];
+    const object = objects[Math.floor(Math.random()*objects.length)];
+    const adj = adjectives[Math.floor(Math.random()*adjectives.length)];
+    let sentence = `${subject} ${verb} ${object}`;
+    if(adj) sentence += ` ${adj}`;
+    document.getElementById("generatedSentence").innerText = sentence;
+}
+
+// ======== Practice Mode ========
 const practiceSentences = [
     "Ulun kada paham ini.",
     "Apa pian gasan?",
     "Dia lagi di pasar.",
     "Kami makan kue."
 ];
-
 let currentSentence = "";
+let totalAttempts = 0;
+let correctAnswers = 0;
 
 function newPractice() {
     const index = Math.floor(Math.random() * practiceSentences.length);
     currentSentence = practiceSentences[index];
-    
     document.getElementById("practicePrompt").innerText = "Translate or type: " + currentSentence;
     const input = document.getElementById("practiceInput");
     input.value = "";
     input.style.display = "block";
-    
     document.getElementById("checkBtn").style.display = "inline-block";
     document.getElementById("hintBtn").style.display = "inline-block";
     document.getElementById("feedback").innerText = "";
@@ -239,7 +210,6 @@ function newPractice() {
 function checkAnswer() {
     const userInput = document.getElementById("practiceInput").value.trim();
     const feedback = document.getElementById("feedback");
-    
     if (userInput.toLowerCase() === currentSentence.toLowerCase()) {
         feedback.innerText = "✅ Correct!";
         feedback.style.color = "green";
@@ -256,20 +226,21 @@ function showAnswer() {
     document.getElementById("feedback").style.color = "#555";
 }
 
-let totalAttempts = 0;
-let correctAnswers = 0;
-
 function updateStats(correct) {
     totalAttempts++;
     if (correct) correctAnswers++;
-    
     document.getElementById("totalAttempts").innerText = totalAttempts;
     document.getElementById("correctAnswers").innerText = correctAnswers;
     document.getElementById("accuracy").innerText = Math.round((correctAnswers / totalAttempts) * 100) + "%";
 }
+
+// ======== Future CSV Loading (placeholder) ========
+// You could fetch a CSV like:
+// fetch('words.csv')
+//   .then(r => r.text())
+//   .then(text => {
+//       // parse CSV and populate subjects, verbs, objects, adjectives
+//   });
 </script>
-
-
-
 </body>
 </html>

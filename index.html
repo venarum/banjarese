@@ -1,1176 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banjarese SQL Language Learning System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .sql-area {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .results {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 100px;
+        }
+        
+        .sentence-builder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        select {
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 16px;
+            background: white;
+        }
+        
+        .generated-sentence {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .practice-area {
+            background: #fff5d6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .correct {
+            background-color: #c6f6d5 !important;
+            border-color: #48bb78 !important;
+        }
+        
+        .incorrect {
+            background-color: #fed7d7 !important;
+            border-color: #f56565 !important;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <h1>🇮🇩 Banjarese SQL Language Learning System</h1>
-
-
-
+        
         <div class="section">
-
-
-            <h2>📊 Database Schema</h2>
-
-
-            <div class="sql-area" id="schema">Loading database...</div>
-
-
-            <button onclick="showSchema()">Show Schema</button>
-
-
-            <button onclick="showGrammarRules()">Show Grammar Rules</button>
-
-
             <h2>📈 Learning Stats</h2>
-
-
             <div class="stats">
-
-
                 <div class="stat-card">
-
-
                     <div class="stat-number" id="totalAttempts">0</div>
-
-
                     <div>Total Attempts</div>
-
-
                 </div>
-
-
                 <div class="stat-card">
-
-
                     <div class="stat-number" id="correctAnswers">0</div>
-
-
                     <div>Correct</div>
-
-
                 </div>
-
-
                 <div class="stat-card">
-
-
                     <div class="stat-number" id="accuracy">0%</div>
-
-
                     <div>Accuracy</div>
-
-
                 </div>
-
-
             </div>
-
         </div>
-
-
-
+        
         <div class="section">
-
-@@ -201,371 +212,7 @@ <h2>✍️ Practice Mode</h2>
-
+            <h2>🔧 Sentence Builder</h2>
+            <p>Build sentences using SQL relationships and grammar rules:</p>
+            <div class="sentence-builder">
+                <select id="subjectSelect">
+                    <option value="">Select Subject</option>
+                </select>
+                <select id="verbSelect">
+                    <option value="">Select Verb</option>
+                </select>
+                <select id="objectSelect">
+                    <option value="">Select Object</option>
+                </select>
+                <select id="adjSelect">
+                    <option value="">Add Adjective (Optional)</option>
+                </select>
             </div>
-
+            <button onclick="generateSentence()">Generate Sentence</button>
+            <button onclick="randomSentence()">Random Sentence</button>
+            <div id="generatedSentence"></div>
         </div>
-
-
-
-
+        
         <div class="section">
-
-
-            <h2>📈 Learning Stats</h2>
-
-
-            <div class="stats">
-
-
-                <div class="stat-card">
-
-
-                    <div class="stat-number" id="totalAttempts">0</div>
-
-
-                    <div>Total Attempts</div>
-
-
-                </div>
-
-
-                <div class="stat-card">
-
-
-                    <div class="stat-number" id="correctAnswers">0</div>
-
-
-                    <div>Correct</div>
-
-
-                </div>
-
-
-                <div class="stat-card">
-
-
-                    <div class="stat-number" id="accuracy">0%</div>
-
-
-                    <div>Accuracy</div>
-
-
-                </div>
-
-
+            <h2>✍️ Practice Mode</h2>
+            <div class="practice-area">
+                <div id="practicePrompt">Click "New Practice" to start!</div>
+                <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
+                <button onclick="newPractice()">New Practice</button>
+                <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
+                <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
+                <div id="feedback"></div>
             </div>
-
-
         </div>
-
-
         
+		<script>
+const practiceSentences = [
+    "Ulun kada paham ini.",
+    "Apa pian gasan?",
+    "Dia lagi di pasar.",
+    "Kami makan kue."
+];
+
+let currentSentence = "";
+
+function newPractice() {
+    const index = Math.floor(Math.random() * practiceSentences.length);
+    currentSentence = practiceSentences[index];
+    
+    document.getElementById("practicePrompt").innerText = "Translate or type: " + currentSentence;
+    const input = document.getElementById("practiceInput");
+    input.value = "";
+    input.style.display = "block";
+    
+    document.getElementById("checkBtn").style.display = "inline-block";
+    document.getElementById("hintBtn").style.display = "inline-block";
+    document.getElementById("feedback").innerText = "";
+}
+
+function checkAnswer() {
+    const userInput = document.getElementById("practiceInput").value.trim();
+    const feedback = document.getElementById("feedback");
+    
+    if (userInput.toLowerCase() === currentSentence.toLowerCase()) {
+        feedback.innerText = "✅ Correct!";
+        feedback.style.color = "green";
+        updateStats(true);
+    } else {
+        feedback.innerText = "❌ Incorrect, try again!";
+        feedback.style.color = "red";
+        updateStats(false);
+    }
+}
+
+function showAnswer() {
+    document.getElementById("feedback").innerText = "💡 Answer: " + currentSentence;
+    document.getElementById("feedback").style.color = "#555";
+}
+
+let totalAttempts = 0;
+let correctAnswers = 0;
+
+function updateStats(correct) {
+    totalAttempts++;
+    if (correct) correctAnswers++;
+    
+    document.getElementById("totalAttempts").innerText = totalAttempts;
+    document.getElementById("correctAnswers").innerText = correctAnswers;
+    document.getElementById("accuracy").innerText = Math.round((correctAnswers / totalAttempts) * 100) + "%";
+}
+</script>
 
 
-        <div class="section">
-
-
-            <h2>🔍 Custom SQL Query</h2>
-
-
-            <p>Write your own SQL queries to explore the language data:</p>
-
-
-            <textarea id="customQuery" style="width: 100%; height: 100px; padding: 10px; border-radius: 6px; border: 2px solid #e2e8f0;" placeholder="SELECT * FROM words WHERE word_type = 'noun';"></textarea>
-
-
-            <br>
-
-
-            <button onclick="executeCustomQuery()">Execute Query</button>
-
-
-            <div class="results" id="customResults"></div>
-
-
-        </div>
-
-
-        
-
-
-        <div class="results" id="results"></div>
-
-
-    </div>
-
-
-
-
-
-    <script>
-
-
-        let db;
-
-
-        let currentPractice = null;
-
-
-        let stats = {
-
-
-            total: 0,
-
-
-            correct: 0
-
-
-        };
-
-
-
-
-
-        // Initialize the database
-
-
-        async function initDB() {
-
-
-            const SQL = await initSqlJs({
-
-
-                locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
-
-
-            });
-
-
-            
-
-
-            db = new SQL.Database();
-
-
-            
-
-
-            // Create grammar rules table
-
-
-            db.run(`
-
-
-                CREATE TABLE grammar_rules (
-
-
-                    id INTEGER PRIMARY KEY,
-
-
-                    rule_name TEXT,
-
-
-                    structure TEXT,
-
-
-                    description TEXT,
-
-
-                    example_banjarese TEXT,
-
-
-                    example_english TEXT
-
-
-                );
-
-
-            `);
-
-
-            
-
-
-            // Create words table
-
-
-            db.run(`
-
-
-                CREATE TABLE words (
-
-
-                    id INTEGER PRIMARY KEY,
-
-
-                    banjarese TEXT,
-
-
-                    english TEXT,
-
-
-                    word_type TEXT,
-
-
-                    difficulty INTEGER
-
-
-                );
-
-
-            `);
-
-
-            
-
-
-            // Insert grammar rules (based on typical Austronesian patterns)
-
-
-            const grammarRules = [
-
-
-                ['SVO Basic', 'Subject + Verb + Object', 'Basic sentence structure', 'Aku makan nasi', 'I eat rice'],
-
-
-                ['VSO Emphasis', 'Verb + Subject + Object', 'For emphasis or questions', 'Makan aku nasi', 'I eat rice (emphatic)'],
-
-
-                ['Adjective Post', 'Noun + Adjective', 'Adjectives follow nouns', 'rumah bagus', 'beautiful house'],
-
-
-                ['Possessive', 'Possessed + Possessor', 'Possession structure', 'rumah aku', 'my house'],
-
-
-                ['Question Word', 'Question + Rest', 'Question formation', 'Apa yang dimakan?', 'What is eaten?']
-
-
-            ];
-
-
-            
-
-
-            grammarRules.forEach((rule, i) => {
-
-
-                db.run(`INSERT INTO grammar_rules VALUES (?, ?, ?, ?, ?, ?)`, 
-
-
-                    [i+1, rule[0], rule[1], rule[2], rule[3], rule[4]]);
-
-
-            });
-
-
-            
-
-
-            // Insert sample vocabulary (expanded Banjarese words)
-
-
-            const words = [
-
-
-                // Pronouns
-
-
-                ['aku', 'I/me', 'pronoun', 1],
-
-
-                ['ikam', 'you', 'pronoun', 1],
-
-
-                ['sidin', 'he/she', 'pronoun', 1],
-
-
-                ['kami', 'we (exclusive)', 'pronoun', 2],
-
-
-                ['kita', 'we (inclusive)', 'pronoun', 2],
-
-
-                
-
-
-                // Nouns
-
-
-                ['nasi', 'rice', 'noun', 1],
-
-
-                ['rumah', 'house', 'noun', 1],
-
-
-                ['air', 'water', 'noun', 1],
-
-
-                ['buku', 'book', 'noun', 1],
-
-
-                ['mata', 'eye', 'noun', 1],
-
-
-                ['tangan', 'hand', 'noun', 1],
-
-
-                ['kaki', 'foot/leg', 'noun', 1],
-
-
-                ['kepala', 'head', 'noun', 1],
-
-
-                ['mobil', 'car', 'noun', 2],
-
-
-                ['sekolah', 'school', 'noun', 2],
-
-
-                
-
-
-                // Verbs
-
-
-                ['makan', 'eat', 'verb', 1],
-
-
-                ['minum', 'drink', 'verb', 1],
-
-
-                ['tidur', 'sleep', 'verb', 1],
-
-
-                ['jalan', 'walk', 'verb', 1],
-
-
-                ['duduk', 'sit', 'verb', 1],
-
-
-                ['berdiri', 'stand', 'verb', 2],
-
-
-                ['membaca', 'read', 'verb', 2],
-
-
-                ['menulis', 'write', 'verb', 2],
-
-
-                ['berlari', 'run', 'verb', 2],
-
-
-                
-
-
-                // Adjectives
-
-
-                ['bagus', 'good/beautiful', 'adjective', 1],
-
-
-                ['besar', 'big', 'adjective', 1],
-
-
-                ['kecil', 'small', 'adjective', 1],
-
-
-                ['tinggi', 'tall', 'adjective', 1],
-
-
-                ['pendek', 'short', 'adjective', 1],
-
-
-                ['merah', 'red', 'adjective', 1],
-
-
-                ['putih', 'white', 'adjective', 1],
-
-
-                ['hitam', 'black', 'adjective', 1],
-
-
-                
-
-
-                // Question words
-
-
-                ['apa', 'what', 'question', 2],
-
-
-                ['siapa', 'who', 'question', 2],
-
-
-                ['dimana', 'where', 'question', 2],
-
-
-                ['kapan', 'when', 'question', 2]
-
-
-            ];
-
-
-            
-
-
-            words.forEach((word, i) => {
-
-
-                db.run(`INSERT INTO words VALUES (?, ?, ?, ?, ?)`, 
-
-
-                    [i+1, word[0], word[1], word[2], word[3]]);
-
-
-            });
-
-
-            
-
-
-            populateSelects();
-
-
-            document.getElementById('schema').textContent = 'Database initialized successfully!';
-
-
-        }
-
-
-        
-
-
-        function populateSelects() {
-
-
-            const subjects = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'pronoun'")[0];
-
-
-            const verbs = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'verb'")[0];
-
-
-            const objects = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'noun'")[0];
-
-
-            const adjectives = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'adjective'")[0];
-
-
-            
-
-
-            if (subjects) {
-
-
-                const subjectSelect = document.getElementById('subjectSelect');
-
-
-                subjects.values.forEach(row => {
-
-
-                    const option = document.createElement('option');
-
-
-                    option.value = row[0];
-
-
-                    option.textContent = `${row[0]} (${row[1]})`;
-
-
-                    subjectSelect.appendChild(option);
-
-
-                });
-
-
-            }
-
-
-            
-
-
-            if (verbs) {
-
-
-                const verbSelect = document.getElementById('verbSelect');
-
-
-                verbs.values.forEach(row => {
-
-
-                    const option = document.createElement('option');
-
-
-                    option.value = row[0];
-
-
-                    option.textContent = `${row[0]} (${row[1]})`;
-
-
-                    verbSelect.appendChild(option);
-
-
-                });
-
-
-            }
-
-
-            
-
-
-            if (objects) {
-
-
-                const objectSelect = document.getElementById('objectSelect');
-
-
-                objects.values.forEach(row => {
-
-
-                    const option = document.createElement('option');
-
-
-                    option.value = row[0];
-
-
-                    option.textContent = `${row[0]} (${row[1]})`;
-
-
-                    objectSelect.appendChild(option);
-
-
-                });
-
-
-            }
-
-
-            
-
-
-            if (adjectives) {
-
-
-                const adjSelect = document.getElementById('adjSelect');
-
-
-                adjectives.values.forEach(row => {
-
-
-                    const option = document.createElement('option');
-
-
-                    option.value = row[0];
-
-
-                    option.textContent = `${row[0]} (${row[1]})`;
-
-
-                    adjSelect.appendChild(option);
-
-
-                });
-
-
-            }
-
-
-        }
-
-
-        
-
-
-        function showSchema() {
-
-
-            const schema = `
-
-
--- Grammar Rules Table
-
-
-CREATE TABLE grammar_rules (
-
-
-    id INTEGER PRIMARY KEY,
-
-
-    rule_name TEXT,
-
-
-    structure TEXT,
-
-
-    description TEXT,
-
-
-    example_banjarese TEXT,
-
-
-    example_english TEXT
-
-
-);
-
-
-
-
--- Words Table  
-
-
-CREATE TABLE words (
-
-
-    id INTEGER PRIMARY KEY,
-
-
-    banjarese TEXT,
-
-
-    english TEXT,
-
-
-    word_type TEXT,
-
-
-    difficulty INTEGER
-
-
-);
-
-
-
-
--- Sample Queries:
-
-
-SELECT * FROM words WHERE word_type = 'verb';
-
-
-SELECT * FROM grammar_rules WHERE rule_name LIKE '%SVO%';
-
-
-            `;
-
-
-            document.getElementById('results').innerHTML = `<pre>${schema}</pre>`;
-
-
-        }
-
-
-        
-
-
-        function showGrammarRules() {
-
-
-            const result = db.exec("SELECT rule_name, structure, example_banjarese, example_english FROM grammar_rules");
-
-
-            if (result[0]) {
-
-
-                let html = '<table border="1" style="width:100%; border-collapse: collapse;"><tr><th>Rule</th><th>Structure</th><th>Banjarese Example</th><th>English</th></tr>';
-
-
-                result[0].values.forEach(row => {
-
-
-                    html += `<tr><td>${row[0]}</td><td>${row[1]}</td><td><strong>${row[2]}</strong></td><td>${row[3]}</td></tr>`;
-
-
-                });
-
-
-                html += '</table>';
-
-
-                document.getElementById('results').innerHTML = html;
-
-
-            }
-
-
-        }
-
-
-        
-
-
-        function generateSentence() {
-
-
-            const subject = document.getElementById('subjectSelect').value;
-
-
-            const verb = document.getElementById('verbSelect').value;
-
-
-            const object = document.getElementById('objectSelect').value;
-
-
-            const adj = document.getElementById('adjSelect').value;
-
-
-            
-
-
-            if (!subject || !verb || !object) {
-
-
-                alert('Please select at least Subject, Verb, and Object');
-
-
-                return;
-
-
-            }
-
-
-            
-
-
-            // Basic SVO structure with optional adjective
-
-
-            let sentence = `${subject} ${verb} ${object}`;
-
-
-            if (adj) {
-
-
-                sentence = `${subject} ${verb} ${object} ${adj}`;
-
-
-            }
-
-
-            
-
-
-            // Get English translation
-
-
-            const subjectEng = getEnglishTranslation(subject);
-
-
-            const verbEng = getEnglishTranslation(verb);
-
-
-            const objectEng = getEnglishTranslation(object);
-
-
-            const adjEng = adj ? getEnglishTranslation(adj) : '';
-
-
-            
-
-
-            let englishSentence = `${subjectEng} ${verbEng} ${objectEng}`;
-
-
-            if (adjEng) {
-
-
-                englishSentence = `${subjectEng} ${verbEng} ${adjEng} ${objectEng}`;
-
-
-            }
-
-
-            
-
-
-            document.getElementById('generatedSentence').innerHTML = `
-
-
-                <div class="generated-sentence">
-
-
-                    <strong>Banjarese:</strong> ${sentence}<br>
-
-
-                    <strong>English:</strong> ${englishSentence}
-
-
-                </div>
-
-
-            `;
-
-
-        }
-
-
-        
-
-
-        function randomSentence() {
-
-
-            // Get random words from each category
-
-
-            const subjects = db.exec("SELECT banjarese FROM words WHERE word_type = 'pronoun' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            const verbs = db.exec("SELECT banjarese FROM words WHERE word_type = 'verb' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            const objects = db.exec("SELECT banjarese FROM words WHERE word_type = 'noun' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            
-
-
-            if (subjects && verbs && objects) {
-
-
-                document.getElementById('subjectSelect').value = subjects.values[0][0];
-
-
-                document.getElementById('verbSelect').value = verbs.values[0][0];
-
-
-                document.getElementById('objectSelect').value = objects.values[0][0];
-
-
-                generateSentence();
-
-
-            }
-
-
-        }
-
-
-        
-
-
-        function getEnglishTranslation(banjarese) {
-
-
-            const result = db.exec("SELECT english FROM words WHERE banjarese = ?", [banjarese]);
-
-
-            return result[0] ? result[0].values[0][0] : banjarese;
-
-
-        }
-
-
-        
-
-
-        function newPractice() {
-
-
-            // Generate a random English sentence and ask for Banjarese translation
-
-
-            const subjects = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'pronoun' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            const verbs = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'verb' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            const objects = db.exec("SELECT banjarese, english FROM words WHERE word_type = 'noun' ORDER BY RANDOM() LIMIT 1")[0];
-
-
-            
-
-
-            if (subjects && verbs && objects) {
-
-
-                const banjarese = `${subjects.values[0][0]} ${verbs.values[0][0]} ${objects.values[0][0]}`;
-
-
-                const english = `${subjects.values[0][1]} ${verbs.values[0][1]} ${objects.values[0][1]}`;
-
-
-                
-
-
-                currentPractice = {
-
-
-                    english: english,
-
-
-                    banjarese: banjarese
-
-
-                };
-
-
-                
-
-
-                document.getElementById('practicePrompt').textContent = `Translate to Banjarese: "${english}"`;
-
-
-                document.getElementById('practiceInput').style.display = 'block';
-
-
-                document.getElementById('practiceInput').value = '';
-
-
-                document.getElementById('checkBtn').style.display = 'inline-block';
-
-
-                document.getElementById('hintBtn').style.display = 'inline-block';
-
-
-                document.getElementById('feedback').innerHTML = '';
-
-
-                document.getElementById('practiceInput').focus();
-
-
-            }
-
-
-        }
-
-
-        
-
-
-        function checkAnswer() {
-
-
-            const userAnswer = document.getElementById('practiceInput').value.toLowerCase().trim();
-
-
-            const correctAnswer = currentPractice.banjarese.toLowerCase();
-
-
-            
-
-
-            stats.total++;
-
-
-            
-
-
-            if (userAnswer === correctAnswer) {
-
-
-                stats.correct++;
-
-
-                document.getElementById('practiceInput').className = 'correct';
-
-
-                document.getElementById('feedback').innerHTML = '<div style="color: green; font-weight: bold;">✅ Correct! Great job!</div>';
-
-
-            } else {
-
-
-                document.getElementById('practiceInput').className = 'incorrect';
-
-
-                document.getElementById('feedback').innerHTML = `<div style="color: red; font-weight: bold;">❌ Not quite. The correct answer is: <strong>${currentPractice.banjarese}</strong></div>`;
-
-
-            }
-
-
-            
-
-
-            updateStats();
-
-
-        }
-
-
-        
-
-
-        function showAnswer() {
-
-
-            document.getElementById('feedback').innerHTML = `<div style="color: blue; font-weight: bold;">💡 Answer: <strong>${currentPractice.banjarese}</strong></div>`;
-
-
-        }
-
-
-        
-
-
-        function updateStats() {
-
-
-            document.getElementById('totalAttempts').textContent = stats.total;
-
-
-            document.getElementById('correctAnswers').textContent = stats.correct;
-
-
-            document.getElementById('accuracy').textContent = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) + '%' : '0%';
-
-
-        }
-
-
-        
-
-
-        function executeCustomQuery() {
-
-
-            const query = document.getElementById('customQuery').value;
-
-
-            try {
-
-
-                const result = db.exec(query);
-
-
-                if (result.length > 0) {
-
-
-                    let html = '<table border="1" style="width:100%; border-collapse: collapse;"><tr>';
-
-
-                    result[0].columns.forEach(col => {
-
-
-                        html += `<th>${col}</th>`;
-
-
-                    });
-
-
-                    html += '</tr>';
-
-
-                    result[0].values.forEach(row => {
-
-
-                        html += '<tr>';
-
-
-                        row.forEach(cell => {
-
-
-                            html += `<td>${cell}</td>`;
-
-
-                        });
-
-
-                        html += '</tr>';
-
-
-                    });
-
-
-                    html += '</table>';
-
-
-                    document.getElementById('customResults').innerHTML = html;
-
-
-                } else {
-
-
-                    document.getElementById('customResults').innerHTML = 'Query executed successfully (no results returned)';
-
-
-                }
-
-
-            } catch (error) {
-
-
-                document.getElementById('customResults').innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
-
-
-            }
-
-
-        }
-
-
-        
-
-
-        // Initialize the database when the page loads
-
-
-        initDB();
-
-
-    </script>
 
 </body>
-
 </html>

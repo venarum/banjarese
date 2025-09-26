@@ -3,236 +3,337 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banjarese-English Learning</title>
+<title>Banjarese-English Learning System</title>
 <style>
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
     min-height: 100vh;
-    color: #333;
+    color:#333;
 }
 .container {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.95);
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
     backdrop-filter: blur(10px);
 }
-h1 { text-align:center; color:#4a5568; margin-bottom:30px; font-size:2.2em; }
-.section { margin-bottom:30px; background:#f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #667eea; }
-.section h2 { color:#667eea; margin-top:0; margin-bottom:15px; }
+h1 {
+    text-align:center;
+    color:#4a5568;
+    margin-bottom:30px;
+    font-size:2.2em;
+}
+.section {
+    margin-bottom:30px;
+    background:#f8f9fa;
+    padding:20px;
+    border-radius:10px;
+    border-left:4px solid #667eea;
+    box-shadow:0 4px 6px rgba(0,0,0,0.05);
+}
+.section h2 {
+    color:#667eea;
+    margin-top:0;
+    margin-bottom:15px;
+}
+select, input[type="text"] {
+    padding:10px;
+    border:2px solid #e2e8f0;
+    border-radius:6px;
+    font-size:16px;
+    background:white;
+}
+select {
+    min-width:120px;
+}
 button {
     background: linear-gradient(135deg,#667eea,#764ba2);
-    color:white; border:none; padding:12px 25px; border-radius:8px;
-    cursor:pointer; font-size:16px; margin:5px; transition:all 0.3s ease;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    margin:5px;
+    transition: all 0.3s ease;
 }
-button:hover { transform: translateY(-2px); box-shadow:0 5px 15px rgba(102,126,234,0.4); }
-select, input[type="text"] { padding:10px; border:2px solid #e2e8f0; border-radius:6px; font-size:16px; background:white; margin-bottom:10px; }
-.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:15px; margin-top:20px; }
-.stat-card { background:white; padding:15px; border-radius:8px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
-.stat-number { font-size:2em; font-weight:bold; color:#667eea; }
-table { width:100%; border-collapse:collapse; margin-top:15px; }
-table th, table td { border:1px solid #ddd; padding:10px; text-align:center; font-size:16px; }
-table th { background:#667eea; color:white; }
-.generated-sentence { margin-top:15px; font-size:18px; text-align:center; }
-.practice-area { background:#fff5d6; padding:20px; border-radius:10px; margin-top:15px; }
-.correct { background-color:#c6f6d5 !important; border-color:#48bb78 !important; }
-.incorrect { background-color:#fed7d7 !important; border-color:#f56565 !important; }
+button:hover {
+    transform: translateY(-2px);
+    box-shadow:0 5px 15px rgba(102,126,234,0.4);
+}
+.table-container {
+    overflow-x:auto;
+    margin-top:15px;
+}
+#sentenceTable {
+    border-collapse: collapse;
+    width:100%;
+}
+#sentenceTable th, #sentenceTable td {
+    border:1px solid #667eea;
+    padding:10px;
+    text-align:center;
+}
+#sentenceTable th {
+    background:#667eea;
+    color:white;
+}
+.generated-sentence {
+    background: linear-gradient(135deg,#48bb78,#38a169);
+    color:white;
+    padding:15px;
+    border-radius:8px;
+    margin:10px 0;
+    font-size:18px;
+    text-align:center;
+}
+.practice-area {
+    background:#fff5d6;
+    padding:20px;
+    border-radius:10px;
+    margin-top:15px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+}
+#practiceInput {
+    width:100%;
+    height:60px;
+}
+.stats {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+.stat-card {
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+}
+.stat-number {
+    font-size:2em;
+    font-weight:bold;
+    color:#667eea;
+}
+.toggle-container {
+    text-align:right;
+    margin-bottom:10px;
+}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>🇮🇩 Banjarese-English Learning</h1>
 
-<!-- Learning Stats -->
 <div class="section">
-    <h2>📈 Learning Stats</h2>
-    <div class="stats">
-        <div class="stat-card">
-            <div class="stat-number" id="totalAttempts">0</div>
-            <div>Total Attempts</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number" id="correctAnswers">0</div>
-            <div>Correct</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number" id="accuracy">0%</div>
-            <div>Accuracy</div>
-        </div>
-    </div>
+<h2>📈 Learning Stats</h2>
+<div class="stats">
+<div class="stat-card">
+    <div class="stat-number" id="totalAttempts">0</div>
+    <div>Total Attempts</div>
+</div>
+<div class="stat-card">
+    <div class="stat-number" id="correctAnswers">0</div>
+    <div>Correct</div>
+</div>
+<div class="stat-card">
+    <div class="stat-number" id="accuracy">0%</div>
+    <div>Accuracy</div>
+</div>
+</div>
 </div>
 
-<!-- Sentence Builder -->
 <div class="section">
 <h2>🔧 Sentence Builder</h2>
-<p>Select words to fill in the sentence table:</p>
+<p>Build sentences using grammar categories:</p>
+
 <div class="sentence-builder">
-    <div>
-        <label>Subject</label><br>
-        <select id="subjectSelect"><option value="">Select Subject</option></select>
-    </div>
-    <div>
-        <label>Verb</label><br>
-        <select id="verbSelect"><option value="">Select Verb</option></select>
-    </div>
-    <div>
-        <label>Object</label><br>
-        <select id="objectSelect"><option value="">Select Object</option></select>
-    </div>
-    <div>
-        <label>Adjective</label><br>
-        <select id="adjSelect"><option value="">Select Adjective</option></select>
-    </div>
+    <label>Subject<br><select id="subjectSelect"></select></label>
+    <div style="width:1px;background:#667eea;"></div>
+    <label>Verb<br><select id="verbSelect"></select></label>
+    <div style="width:1px;background:#667eea;"></div>
+    <label>Object<br><select id="objectSelect"></select></label>
+    <div style="width:1px;background:#667eea;"></div>
+    <label>Adjective<br><select id="adjSelect"></select></label>
+    <div style="width:1px;background:#667eea;"></div>
+    <label>Pronoun<br><select id="pronounSelect"></select></label>
+    <div style="width:1px;background:#667eea;"></div>
+    <label>Conjunction<br><select id="conjSelect"></select></label>
 </div>
 
-<!-- Table showing selected words -->
-<table>
-    <thead>
-        <tr>
-            <th>Subject</th>
-            <th>Verb</th>
-            <th>Object</th>
-            <th>Adjective</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td id="tblSubject">&nbsp;</td>
-            <td id="tblVerb">&nbsp;</td>
-            <td id="tblObject">&nbsp;</td>
-            <td id="tblAdj">&nbsp;</td>
-        </tr>
-    </tbody>
+<button onclick="generateSentence()">Generate Sentence</button>
+
+<div class="table-container">
+<table id="sentenceTable">
+<tr>
+<th>Subject</th>
+<th>Verb</th>
+<th>Object</th>
+<th>Adjective</th>
+<th>Pronoun</th>
+<th>Conjunction</th>
+</tr>
+<tr id="sentenceRow">
+<td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 </table>
-
-<div class="generated-sentence" id="generatedSentence"></div>
 </div>
 
-<!-- Random Sentence -->
+<div id="generatedSentence" class="generated-sentence"></div>
+</div>
+
 <div class="section">
 <h2>📝 Random Sentence</h2>
-<div id="randomSentenceDisplay">Click "Random Sentence" to see one!</div>
-<button onclick="randomSentence()">Random Sentence</button>
+<div id="randomSentence" class="generated-sentence"></div>
+<button onclick="randomSentence()">Generate Random Sentence</button>
 </div>
 
-<!-- Practice Mode -->
 <div class="section">
+<div class="toggle-container">
+<label><input type="checkbox" id="toggleMode"> English ↔ Banjarese Mode</label>
+</div>
 <h2>✍️ Practice Mode</h2>
 <div class="practice-area">
-    <div id="practicePrompt">Click "New Practice" to start!</div>
-    <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
-    <button onclick="newPractice()">New Practice</button>
-    <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
-    <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
-    <div id="feedback"></div>
+<div id="practicePrompt">Click "New Practice" to start!</div>
+<input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
+<button onclick="newPractice()">New Practice</button>
+<button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
+<button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
+<div id="feedback"></div>
 </div>
 </div>
 
 <script>
-// Word lists with English definitions
-const words = {
-    subjects: { "Ulun": "I", "Dia": "He/She", "Kami": "We", "Kamu": "You" },
-    verbs: { "makan": "eat", "lari": "run", "tidur": "sleep", "paham": "understand" },
-    objects: { "kue": "cake", "roti": "bread", "pasar": "market", "buku": "book" },
-    adjectives: { "besar": "big", "kecil": "small", "panjang": "long", "baru": "new" }
-};
+// --- Word Dictionary ---
+const dictionary = [
+    {banjar:"ulun", jawi:"اُلُن", english:"I"},
+    {banjar:"kada", jawi:"كادا", english:"not"},
+    {banjar:"paham", jawi:"فهم", english:"understand"},
+    {banjar:"ini", jawi:"اِني", english:"this"},
+    {banjar:"apa", jawi:"أڤا", english:"what"},
+    {banjar:"pian", jawi:"ڤيان", english:"you"},
+    {banjar:"gasan", jawi:"ڬاسان", english:"doing"},
+    {banjar:"dia", jawi:"ديا", english:"he/she"},
+    {banjar:"lagi", jawi:"لاڬي", english:"currently"},
+    {banjar:"di", jawi:"دي", english:"at"},
+    {banjar:"pasar", jawi:"ڤاسار", english:"market"},
+    {banjar:"kami", jawi:"كامي", english:"we"},
+    {banjar:"makan", jawi:"ماكن", english:"eat"},
+    {banjar:"kue", jawi:"كوي", english:"cake"},
+    {banjar:"besar", jawi:"بڠار", english:"big"},
+    {banjar:"dan", jawi:"دان", english:"and"},
+    {banjar:"saya", jawi:"سايا", english:"I"},
+    {banjar:"lari", jawi:"لاري", english:"run"},
+    // ... add more words to reach 100+ entries
+];
 
-// Populate selects
-function populateSelect(selectId, wordObj) {
-    const sel = document.getElementById(selectId);
-    for (let word in wordObj) {
-        const opt = document.createElement("option");
-        opt.value = word;
-        opt.innerText = `${word} (${wordObj[word]})`;
-        sel.appendChild(opt);
-    }
-}
-populateSelect("subjectSelect", words.subjects);
-populateSelect("verbSelect", words.verbs);
-populateSelect("objectSelect", words.objects);
-populateSelect("adjSelect", words.adjectives);
-
-// Update table when selected
-function updateTable() {
-    document.getElementById("tblSubject").innerText = document.getElementById("subjectSelect").value;
-    document.getElementById("tblVerb").innerText = document.getElementById("verbSelect").value;
-    document.getElementById("tblObject").innerText = document.getElementById("objectSelect").value;
-    document.getElementById("tblAdj").innerText = document.getElementById("adjSelect").value;
-}
-["subjectSelect","verbSelect","objectSelect","adjSelect"].forEach(id=>{
-    document.getElementById(id).addEventListener("change", updateTable);
+// --- Populate selects ---
+const selects = ["subjectSelect","verbSelect","objectSelect","adjSelect","pronounSelect","conjSelect"];
+selects.forEach(id=>{
+    const sel = document.getElementById(id);
+    dictionary.forEach(word=>{
+        const option = document.createElement("option");
+        option.value = word.banjar;
+        option.innerText = word.banjar;
+        sel.appendChild(option);
+    });
 });
 
-// Generate Sentence
-function generateSentence() {
-    const s = document.getElementById("subjectSelect").value;
-    const v = document.getElementById("verbSelect").value;
-    const o = document.getElementById("objectSelect").value;
-    const a = document.getElementById("adjSelect").value;
-    const sentence = [s,v,o,a].filter(Boolean).join(" ");
+// --- Sentence Builder ---
+function generateSentence(){
+    const row=document.getElementById("sentenceRow");
+    row.cells[0].innerText=document.getElementById("subjectSelect").value;
+    row.cells[1].innerText=document.getElementById("verbSelect").value;
+    row.cells[2].innerText=document.getElementById("objectSelect").value;
+    row.cells[3].innerText=document.getElementById("adjSelect").value;
+    row.cells[4].innerText=document.getElementById("pronounSelect").value;
+    row.cells[5].innerText=document.getElementById("conjSelect").value;
+
+    const sentence = Array.from(row.cells).map(c=>c.innerText).filter(t=>t).join(" ");
     document.getElementById("generatedSentence").innerText = sentence;
 }
 
-// Random Sentence for practice
-const practiceSentences = [
-    "Ulun kada paham ini.",
-    "Apa pian gasan?",
-    "Dia lagi di pasar.",
-    "Kami makan kue."
-];
-
-let currentSentence = "";
-function randomSentence() {
-    const index = Math.floor(Math.random() * practiceSentences.length);
-    currentSentence = practiceSentences[index];
-    document.getElementById("randomSentenceDisplay").innerText = currentSentence;
+// --- Random Sentence ---
+function randomSentence(){
+    const idx=Math.floor(Math.random()*dictionary.length);
+    const word=dictionary[idx];
+    document.getElementById("randomSentence").innerText=word.banjar+" ("+word.jawi+") = "+word.english;
 }
 
-// Practice Mode
-function newPractice() {
-    const index = Math.floor(Math.random() * practiceSentences.length);
-    currentSentence = practiceSentences[index];
-    document.getElementById("practicePrompt").innerText = "Translate or type: " + currentSentence;
-    const input = document.getElementById("practiceInput");
-    input.value = "";
-    input.style.display = "block";
-    document.getElementById("checkBtn").style.display = "inline-block";
-    document.getElementById("hintBtn").style.display = "inline-block";
-    document.getElementById("feedback").innerText = "";
-}
-function checkAnswer() {
-    const userInput = document.getElementById("practiceInput").value.trim();
-    const feedback = document.getElementById("feedback");
-    if (userInput.toLowerCase() === currentSentence.toLowerCase()) {
-        feedback.innerText = "✅ Correct!";
-        feedback.style.color = "green";
-        updateStats(true);
+// --- Practice Mode ---
+let practiceMode = "banjar"; // "banjar" or "english"
+document.getElementById("toggleMode").addEventListener("change",()=>{
+    practiceMode=document.getElementById("toggleMode").checked?"english":"banjar";
+});
+
+let totalAttempts=0;
+let correctAnswers=0;
+let currentSentence={};
+
+function newPractice(){
+    const idx=Math.floor(Math.random()*dictionary.length);
+    const word=dictionary[idx];
+    currentSentence=word;
+    const prompt=document.getElementById("practicePrompt");
+    const input=document.getElementById("practiceInput");
+    input.value="";
+    input.style.display="block";
+    document.getElementById("checkBtn").style.display="inline-block";
+    document.getElementById("hintBtn").style.display="inline-block";
+    if(practiceMode==="banjar"){
+        prompt.innerText=word.banjar+"\n("+word.jawi+")";
     } else {
-        feedback.innerText = "❌ Incorrect, try again!";
-        feedback.style.color = "red";
-        updateStats(false);
+        prompt.innerText=word.english;
     }
-}
-function showAnswer() {
-    document.getElementById("feedback").innerText = "💡 Answer: " + currentSentence;
-    document.getElementById("feedback").style.color = "#555";
+    document.getElementById("feedback").innerText="";
 }
 
-// Stats tracking
-let totalAttempts = 0;
-let correctAnswers = 0;
-function updateStats(correct) {
+function checkAnswer(){
+    const userInput=document.getElementById("practiceInput").value.trim();
+    const feedback=document.getElementById("feedback");
     totalAttempts++;
-    if(correct) correctAnswers++;
-    document.getElementById("totalAttempts").innerText = totalAttempts;
-    document.getElementById("correctAnswers").innerText = correctAnswers;
-    document.getElementById("accuracy").innerText = Math.round((correctAnswers/totalAttempts)*100)+"%";
+    if(practiceMode==="banjar"){
+        if(userInput.toLowerCase()===currentSentence.english.toLowerCase()){
+            feedback.innerText="✅ Correct!";
+            feedback.style.color="green";
+            correctAnswers++;
+        } else {
+            feedback.innerText="❌ Incorrect, try again!";
+            feedback.style.color="red";
+        }
+    } else {
+        if(userInput.toLowerCase()===currentSentence.banjar.toLowerCase()){
+            feedback.innerText="✅ Correct!";
+            feedback.style.color="green";
+            correctAnswers++;
+        } else {
+            feedback.innerText="❌ Incorrect, try again!";
+            feedback.style.color="red";
+        }
+    }
+    updateStats();
+}
+
+function showAnswer(){
+    const feedback=document.getElementById("feedback");
+    if(practiceMode==="banjar"){
+        feedback.innerText="💡 English: "+currentSentence.english;
+    } else {
+        feedback.innerText="💡 Banjarese: "+currentSentence.banjar+" ("+currentSentence.jawi+")";
+    }
+    feedback.style.color="#555";
+}
+
+function updateStats(){
+    document.getElementById("totalAttempts").innerText=totalAttempts;
+    document.getElementById("correctAnswers").innerText=correctAnswers;
+    document.getElementById("accuracy").innerText=totalAttempts===0?"0%":Math.round(correctAnswers/totalAttempts*100)+"%";
 }
 </script>
-
 </body>
 </html>

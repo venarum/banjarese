@@ -19,176 +19,182 @@ body {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
-h1 { text-align: center; color: #4a5568; margin-bottom: 30px; font-size: 2.2em; }
-.section { margin-bottom: 30px; background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #667eea; }
-.section h2 { color: #667eea; margin-top: 0; margin-bottom: 15px; }
-button { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 5px; }
-button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); }
-select, input[type="text"] { width: 100%; padding: 10px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 16px; margin-bottom: 10px; }
-.generated-sentence, #randomSentenceResult { background: linear-gradient(135deg, #48bb78, #38a169); color: white; padding: 15px; border-radius: 8px; margin: 10px 0; font-size: 18px; white-space: pre-wrap; }
-.practice-area { background: #fff5d6; padding: 20px; border-radius: 10px; margin-top: 15px; }
-.correct { background-color: #c6f6d5 !important; border-color: #48bb78 !important; }
-.incorrect { background-color: #fed7d7 !important; border-color: #f56565 !important; }
-.stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #667eea;
-        }
-.grammar-label { font-weight: bold; margin-bottom: 5px; }
+h1 { text-align:center; color:#4a5568; margin-bottom:30px; font-size:2.2em; }
+.section { margin-bottom:30px; background:#f8f9fa; padding:20px; border-radius:10px; border-left:4px solid #667eea; }
+.section h2 { color:#667eea; margin-top:0; margin-bottom:15px; }
+button {
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color:white; border:none; padding:12px 25px; border-radius:8px;
+    cursor:pointer; font-size:16px; margin:5px; transition:all 0.3s ease;
+}
+button:hover { transform: translateY(-2px); box-shadow:0 5px 15px rgba(102,126,234,0.4); }
+select, input[type="text"] { padding:10px; border:2px solid #e2e8f0; border-radius:6px; font-size:16px; background:white; margin-bottom:10px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:15px; margin-top:20px; }
+.stat-card { background:white; padding:15px; border-radius:8px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+.stat-number { font-size:2em; font-weight:bold; color:#667eea; }
+table { width:100%; border-collapse:collapse; margin-top:15px; }
+table th, table td { border:1px solid #ddd; padding:10px; text-align:center; font-size:16px; }
+table th { background:#667eea; color:white; }
+.generated-sentence { margin-top:15px; font-size:18px; text-align:center; }
+.practice-area { background:#fff5d6; padding:20px; border-radius:10px; margin-top:15px; }
+.correct { background-color:#c6f6d5 !important; border-color:#48bb78 !important; }
+.incorrect { background-color:#fed7d7 !important; border-color:#f56565 !important; }
 </style>
 </head>
 <body>
 <div class="container">
 <h1>🇮🇩 Banjarese-English Learning</h1>
+
 <!-- Learning Stats -->
-            <div class="section">
-            <h2>📈 Learning Stats</h2>
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalAttempts">0</div>
-                    <div>Total Attempts</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="correctAnswers">0</div>
-                    <div>Correct</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="accuracy">0%</div>
-                    <div>Accuracy</div>
-                </div>
-            </div>
+<div class="section">
+    <h2>📈 Learning Stats</h2>
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="totalAttempts">0</div>
+            <div>Total Attempts</div>
         </div>
+        <div class="stat-card">
+            <div class="stat-number" id="correctAnswers">0</div>
+            <div>Correct</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="accuracy">0%</div>
+            <div>Accuracy</div>
+        </div>
+    </div>
+</div>
+
 <!-- Sentence Builder -->
 <div class="section">
 <h2>🔧 Sentence Builder</h2>
-<p>Build sentences using grammar categories:</p>
+<p>Select words to fill in the sentence table:</p>
 <div class="sentence-builder">
-<div><div class="grammar-label">Subject</div><select id="subjectSelect"><option value="">Select Subject</option></select></div>
-<div><div class="grammar-label">Verb</div><select id="verbSelect"><option value="">Select Verb</option></select></div>
-<div><div class="grammar-label">Object</div><select id="objectSelect"><option value="">Select Object</option></select></div>
-<div><div class="grammar-label">Adjective</div><select id="adjSelect"><option value="">Add Adjective</option></select></div>
-<div><div class="grammar-label">Conjunction</div><select id="conjSelect"><option value="">Select Conjunction</option></select></div>
-<div><div class="grammar-label">Pronoun</div><select id="pronounSelect"><option value="">Select Pronoun</option></select></div>
-<div><div class="grammar-label">Noun</div><select id="nounSelect"><option value="">Select Noun</option></select></div>
+    <div>
+        <label>Subject</label><br>
+        <select id="subjectSelect"><option value="">Select Subject</option></select>
+    </div>
+    <div>
+        <label>Verb</label><br>
+        <select id="verbSelect"><option value="">Select Verb</option></select>
+    </div>
+    <div>
+        <label>Object</label><br>
+        <select id="objectSelect"><option value="">Select Object</option></select>
+    </div>
+    <div>
+        <label>Adjective</label><br>
+        <select id="adjSelect"><option value="">Select Adjective</option></select>
+    </div>
 </div>
-<button onclick="generateSentence()">Generate Sentence</button>
-<div id="generatedSentence" class="generated-sentence"></div>
+
+<!-- Table showing selected words -->
+<table>
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Verb</th>
+            <th>Object</th>
+            <th>Adjective</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="tblSubject">&nbsp;</td>
+            <td id="tblVerb">&nbsp;</td>
+            <td id="tblObject">&nbsp;</td>
+            <td id="tblAdj">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="generated-sentence" id="generatedSentence"></div>
 </div>
 
 <!-- Random Sentence -->
 <div class="section">
-<h2>🎲 Random Sentence</h2>
-<div id="randomSentenceResult">Click "New Random" to start!</div>
-<button onclick="randomSentence()">New Random Sentence</button>
+<h2>📝 Random Sentence</h2>
+<div id="randomSentenceDisplay">Click "Random Sentence" to see one!</div>
+<button onclick="randomSentence()">Random Sentence</button>
 </div>
 
 <!-- Practice Mode -->
 <div class="section">
 <h2>✍️ Practice Mode</h2>
 <div class="practice-area">
-<div id="practicePrompt">Click "New Practice" to start!</div>
-<input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
-<button onclick="newPractice()">New Practice</button>
-<button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
-<button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
-<div id="feedback"></div>
+    <div id="practicePrompt">Click "New Practice" to start!</div>
+    <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
+    <button onclick="newPractice()">New Practice</button>
+    <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
+    <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
+    <div id="feedback"></div>
 </div>
 </div>
 
 <script>
-// --- Dictionary ---
-const dictionary = {
-    "Ulun": { jawi: "اولون", en: "I / me" },
-    "Dia": { jawi: "ديا", en: "He / she / they" },
-    "Kami": { jawi: "كامي", en: "We" },
-    "Pian": { jawi: "ڤيان", en: "You" },
-    "Makan": { jawi: "ماكن", en: "Eat" },
-    "Lari": { jawi: "لاري", en: "Run" },
-    "Tidur": { jawi: "تيدور", en: "Sleep" },
-    "Baca": { jawi: "باچا", en: "Read" },
-    "Kue": { jawi: "كويه", en: "Cake" },
-    "Buku": { jawi: "بوكو", en: "Book" },
-    "Pasar": { jawi: "ڤاسار", en: "Market" },
-    "Rumah": { jawi: "روماه", en: "House" },
-    "Besar": { jawi: "بيسار", en: "Big" },
-    "Kecil": { jawi: "كچيل", en: "Small" }
+// Word lists with English definitions
+const words = {
+    subjects: { "Ulun": "I", "Dia": "He/She", "Kami": "We", "Kamu": "You" },
+    verbs: { "makan": "eat", "lari": "run", "tidur": "sleep", "paham": "understand" },
+    objects: { "kue": "cake", "roti": "bread", "pasar": "market", "buku": "book" },
+    adjectives: { "besar": "big", "kecil": "small", "panjang": "long", "baru": "new" }
 };
 
-// --- Populate selects ---
-const subjects = ["Ulun","Dia","Kami","Pian"];
-const verbs = ["Makan","Lari","Tidur","Baca"];
-const objects = ["Kue","Buku","Pasar","Rumah"];
-const adjectives = ["Besar","Kecil"];
-const conjunctions = ["Dan","Atau","Tetapi"];
-const pronouns = ["Ulun","Dia","Kami","Pian"];
-const nouns = ["Anak","Bapa","Ibu","Teman"];
-
-function populateSelect(id, array){
-    const select = document.getElementById(id);
-    array.forEach(word => {
-        const option = document.createElement("option");
-        option.value = word;
-        option.innerText = word;
-        select.appendChild(option);
-    });
+// Populate selects
+function populateSelect(selectId, wordObj) {
+    const sel = document.getElementById(selectId);
+    for (let word in wordObj) {
+        const opt = document.createElement("option");
+        opt.value = word;
+        opt.innerText = `${word} (${wordObj[word]})`;
+        sel.appendChild(opt);
+    }
 }
-populateSelect("subjectSelect", subjects);
-populateSelect("verbSelect", verbs);
-populateSelect("objectSelect", objects);
-populateSelect("adjSelect", adjectives);
-populateSelect("conjSelect", conjunctions);
-populateSelect("pronounSelect", pronouns);
-populateSelect("nounSelect", nouns);
+populateSelect("subjectSelect", words.subjects);
+populateSelect("verbSelect", words.verbs);
+populateSelect("objectSelect", words.objects);
+populateSelect("adjSelect", words.adjectives);
 
-// --- Display sentence with Jawi and English ---
-function displaySentence(sentence){
-    const words = sentence.split(" ");
-    let jawi = words.map(w=>dictionary[w]?dictionary[w].jawi:w).join(" ");
-    let english = words.map(w=>dictionary[w]?dictionary[w].en:w).join(" ");
-    return `${sentence}\n(${jawi})\n"${english}"`;
+// Update table when selected
+function updateTable() {
+    document.getElementById("tblSubject").innerText = document.getElementById("subjectSelect").value;
+    document.getElementById("tblVerb").innerText = document.getElementById("verbSelect").value;
+    document.getElementById("tblObject").innerText = document.getElementById("objectSelect").value;
+    document.getElementById("tblAdj").innerText = document.getElementById("adjSelect").value;
 }
+["subjectSelect","verbSelect","objectSelect","adjSelect"].forEach(id=>{
+    document.getElementById(id).addEventListener("change", updateTable);
+});
 
-// --- Sentence Builder ---
-function generateSentence(){
+// Generate Sentence
+function generateSentence() {
     const s = document.getElementById("subjectSelect").value;
     const v = document.getElementById("verbSelect").value;
     const o = document.getElementById("objectSelect").value;
     const a = document.getElementById("adjSelect").value;
-    const c = document.getElementById("conjSelect").value;
-    const p = document.getElementById("pronounSelect").value;
-    const n = document.getElementById("nounSelect").value;
-    const parts = [s,v,o,a,c,p,n].filter(x=>x).join(" ");
-    document.getElementById("generatedSentence").innerText = displaySentence(parts);
+    const sentence = [s,v,o,a].filter(Boolean).join(" ");
+    document.getElementById("generatedSentence").innerText = sentence;
 }
 
-// --- Random Sentences ---
-const practiceSentences = ["Ulun makan kue","Dia lari besar","Kami tidur di rumah","Pian baca buku"];
+// Random Sentence for practice
+const practiceSentences = [
+    "Ulun kada paham ini.",
+    "Apa pian gasan?",
+    "Dia lagi di pasar.",
+    "Kami makan kue."
+];
+
 let currentSentence = "";
-function randomSentence(){
-    const index = Math.floor(Math.random()*practiceSentences.length);
+function randomSentence() {
+    const index = Math.floor(Math.random() * practiceSentences.length);
     currentSentence = practiceSentences[index];
-    document.getElementById("randomSentenceResult").innerText = displaySentence(currentSentence);
+    document.getElementById("randomSentenceDisplay").innerText = currentSentence;
 }
 
-// --- Practice Mode ---
-function newPractice(){
-    const index = Math.floor(Math.random()*practiceSentences.length);
+// Practice Mode
+function newPractice() {
+    const index = Math.floor(Math.random() * practiceSentences.length);
     currentSentence = practiceSentences[index];
     document.getElementById("practicePrompt").innerText = "Translate or type: " + currentSentence;
     const input = document.getElementById("practiceInput");
@@ -198,37 +204,35 @@ function newPractice(){
     document.getElementById("hintBtn").style.display = "inline-block";
     document.getElementById("feedback").innerText = "";
 }
-
-function checkAnswer(){
+function checkAnswer() {
     const userInput = document.getElementById("practiceInput").value.trim();
     const feedback = document.getElementById("feedback");
-    if(userInput.toLowerCase() === currentSentence.toLowerCase()){
+    if (userInput.toLowerCase() === currentSentence.toLowerCase()) {
         feedback.innerText = "✅ Correct!";
         feedback.style.color = "green";
         updateStats(true);
-    }else{
+    } else {
         feedback.innerText = "❌ Incorrect, try again!";
         feedback.style.color = "red";
         updateStats(false);
     }
 }
-
-function showAnswer(){
+function showAnswer() {
     document.getElementById("feedback").innerText = "💡 Answer: " + currentSentence;
     document.getElementById("feedback").style.color = "#555";
 }
 
-// --- Stats ---
+// Stats tracking
 let totalAttempts = 0;
 let correctAnswers = 0;
-function updateStats(correct){
+function updateStats(correct) {
     totalAttempts++;
     if(correct) correctAnswers++;
     document.getElementById("totalAttempts").innerText = totalAttempts;
     document.getElementById("correctAnswers").innerText = correctAnswers;
-    document.getElementById("accuracy").innerText = Math.round((correctAnswers / totalAttempts) * 100) + "%";
+    document.getElementById("accuracy").innerText = Math.round((correctAnswers/totalAttempts)*100)+"%";
 }
 </script>
-</div>
+
 </body>
 </html>

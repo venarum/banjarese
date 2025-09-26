@@ -1,0 +1,921 @@
+english_word,transliteration,arabic_script_1,arabic_script_2,part_of_speech,difficulty_level,category,banjarese_phrase,english_phrase,image_url,sequence_number,
+judge,hakim,هاکيم,هاکيم,noun,2,wasit,Hakim adil bijaksana,Judge is fair and wise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+lawyer,pengacara,ڤڠاچارا,ڤڠاچارا,noun,3,advokat,Pengacara pintar berpidato,Lawyer is smart at speaking,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+crime,kejahatan,کجاهاتان,کجاهاتان,noun,3,angkara,Kejahatan harus dihukum,Crime must be punished,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+criminal,penjahat,ڤنجاهات,ڤنجاهات,noun,2,durjana,Penjahat ditangkap polisi,Criminal arrested by police,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+thief,pencuri,ڤنچوري,ڤنچوري,noun,2,maling,Pencuri masuk rumah,Thief enters house,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+steal,mencuri,منچوري,منچوري,verb,2,nyolong,Mencuri itu dosa,Stealing is a sin,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+robbery,perampokan,ڤرامڤوکان,ڤرامڤوکان,noun,3,rampok,Perampokan di bank,Robbery at the bank,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,45
+prison,penjara,ڤنجارا,ڤنجارا,noun,2,bui,Penjara untuk penjahat,Prison for criminals,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,50
+punishment,hukuman,هوکومان,هوکومان,noun,3,siksa,Hukuman sesuai kejahatan,Punishment fits the crime,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,55
+justice,keadilan,کعاديلان,کعاديلان,noun,3,kabenaran,Keadilan untuk semua,Justice for all,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,60
+election,pemilihan,ڤميليهان,ڤميليهان,noun,3,pilkada,Pemilihan presiden demokratis,Presidential election is democratic,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,55
+vote,memilih,مميليح,مميليح,verb,2,nyoblos,Memilih calon terbaik,Vote for the best candidate,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,60
+president,presiden,ڤرسيدن,ڤرسيدن,noun,2,presiden,Presiden memimpin negara,President leads the country,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+minister,menteri,منتري,منتري,noun,2,menteri,Menteri pendidikan pintar,Education minister is smart,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+mayor,walikota,واليکوتا,واليکوتا,noun,2,walikota,Walikota peduli rakyat,Mayor cares for the people,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,50
+governor,gubernur,ګوبرنور,ګوبرنور,noun,2,gubernur,Gubernur Kalimantan Selatan,Governor of South Kalimantan,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,45
+country,negara,نګارا,نګارا,noun,2,bangsa,Negara Indonesia besar,Indonesia is a big country,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+nation,bangsa,باڠسا,باڠسا,noun,2,nasion,Bangsa Indonesia beragam,Indonesian nation is diverse,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,70
+citizen,warga negara,وارګا نګارا,وارګا نګارا,noun,3,rakyat,Warga negara yang baik,Good citizens,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+flag,bendera,بنديرا,بنديرا,noun,2,umbul-umbul,Bendera merah putih,Red and white flag,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,70
+independence,kemerdekaan,کمرديکاان,کمرديکاان,noun,4,kamardikan,Kemerdekaan 17 Agustus,Independence August 17,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,60
+freedom,kebebasan,کببسان,کببسان,noun,3,kamardikan,Kebebasan berpendapat penting,Freedom of opinion is important,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+peace,perdamaian,ڤرداماايان,ڤرداماايان,noun,3,tentrem,Perdamaian dunia penting,World peace is important,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+war,perang,ڤرڠ,ڤرڠ,noun,2,peperangan,Perang membawa penderitaan,War brings suffering,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+soldier,tentara,تنتارا,تنتارا,noun,2,prajurit,Tentara melindungi negara,Soldiers protect the country,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+weapon,senjata,سنجاتا,سنجاتا,noun,2,gegaman,Senjata berbahaya,Weapons are dangerous,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+fight,bertarung,برتاروڠ,برتاروڠ,verb,2,gelut,Bertarung melawan kejahatan,Fight against crime,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+defend,membela,مببلا,مببلا,verb,2,mbela,Membela yang benar,Defend what is right,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+attack,menyerang,مڽرڠ,مڽرڠ,verb,2,nyerang,Menyerang musuh,Attack the enemy,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,50
+victory,kemenangan,کمناڠان,کمناڠان,noun,3,menang,Kemenangan tim favorit,Victory of the favorite team,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+defeat,kekalahan,ککالاهان,ککالاهان,noun,3,kalah,Kekalahan mengecewakan,Defeat is disappointing,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,55
+win,menang,مناڠ,مناڠ,verb,2,juara,Menang lomba lari,Win the running race,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+lose,kalah,کالح,کالح,verb,1,eleh,Kalah main catur,Lose at chess,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+competition,perlombaan,ڤرلومباان,ڤرلومباان,noun,3,lomba,Perlombaan 17 Agustus,August 17 competition,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+prize,hadiah,هادياح,هادياح,noun,2,pelajaran,Hadiah untuk juara,Prize for the winner,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,70
+champion,juara,جوارا,جوارا,noun,2,jawara,Juara satu dapat medali,First champion gets medal,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+medal,medali,مدالي,مدالي,noun,2,pingat,Medali emas berkilau,Gold medal shines,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+trophy,piala,ڤيالا,ڤيالا,noun,2,trophy,Piala juara besar,Champion trophy is big,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+team,tim,تيم,تيم,noun,1,grup,Tim sepak bola kuat,Football team is strong,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+player,pemain,ڤماين,ڤماين,noun,2,atlet,Pemain bola terkenal,Football player is famous,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+coach,pelatih,ڤلاتيح,ڤلاتيح,noun,2,guru,Pelatih berpengalaman,Experienced coach,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+referee,wasit,واسيت,واسيت,noun,2,juri,Wasit adil memimpin,Referee fairly leads,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+stadium,stadion,ستاديون,ستاديون,noun,2,lapangan,Stadion penuh penonton,Stadium full of spectators,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+audience,penonton,ڤنونتون,ڤنونتون,noun,2,pamirsa,Penonton bersorak gembira,Audience cheers happily,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+cheer,bersorak,برسوراک,برسوراک,verb,2,seneng,Bersorak untuk tim,Cheer for the team,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+goal,gol,ګول,ګول,noun,1,goal,Gol indah spektakuler,Beautiful spectacular goal,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+score,skor,سکور,سکور,noun,1,angka,Skor akhir dua satu,Final score two one,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+match,pertandingan,ڤرتانديڠان,ڤرتانديڠان,noun,3,tandhing,Pertandingan seru menarik,Exciting interesting match,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+game,permainan,ڤرماينان,ڤرماينان,noun,3,dolanan,Permainan anak tradisional,Traditional children's games,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,80
+ball,bola,بولا,بولا,noun,1,bal,Bola sepak bulat,Football is round,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,85
+kick,tendang,تندڠ,تندڠ,verb,2,sepak,Tendang bola ke gawang,Kick ball to goal,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+throw,lempar,لمڤار,لمڤار,verb,2,buwang,Lempar bola jauh,Throw ball far,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+field,lapangan,لاڤڠان,لاڤڠان,noun,2,alun-alun,Lapangan rumput hijau,Green grass field,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+court,lapangan,لاڤڠان,لاڤڠان,noun,2,alun-alun,Lapangan basket indoor,Indoor basketball court,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+pool,kolam,کولم,کولم,noun,1,embung,Kolam renang bersih,Swimming pool is clean,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+gym,gymnasium,ګيمناسيوم,ګيمناسيوم,noun,3,tempat olahraga,Gym lengkap modern,Complete modern gym,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+equipment,peralatan,ڤرالاتان,ڤرالاتان,noun,3,piranti,Peralatan olahraga lengkap,Complete sports equipment,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+uniform,seragam,سراګم,سراګم,noun,2,baju seragam,Seragam sekolah rapi,School uniform is neat,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,70
+holiday,liburan,ليبوران,ليبوران,noun,2,preian,Liburan ke pantai,Holiday to the beach,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+vacation,cuti,چوتي,چوتي,noun,2,preian,Cuti panjang menyenangkan,Long vacation is fun,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+travel,perjalanan,ڤرجالانان,ڤرجالانان,noun,3,lelungan,Perjalanan jauh melelahkan,Long journey is tiring,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,70
+trip,wisata,ويساتا,ويساتا,noun,2,piknik,Wisata keluarga seru,Family trip is fun,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,75
+tourist,wisatawan,ويساتاوان,ويساتاوان,noun,3,turis,Wisatawan asing banyak,Many foreign tourists,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+guide,pemandu,ڤماندو,ڤماندو,noun,2,guide,Pemandu wisata ramah,Tour guide is friendly,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+hotel,hotel,هوتل,هوتل,noun,2,penginapan,Hotel mewah mahal,Luxury hotel is expensive,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+resort,resor,رسور,رسور,noun,2,wisma,Resor pantai indah,Beach resort is beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+booking,reservasi,رسرواسي,رسرواسي,noun,3,pesan,Reservasi kamar hotel,Hotel room booking,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,55
+passport,paspor,ڤاسڤور,ڤاسڤور,noun,2,surat jalan,Paspor untuk ke luar negeri,Passport for going abroad,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,60
+visa,visa,ويسا,ويسا,noun,2,izin,Visa turis tiga bulan,Tourist visa three months,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,55
+airport,bandara,باندارا,باندارا,noun,2,lapangan terbang,Bandara internasional besar,Big international airport,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,65
+flight,penerbangan,ڤنربڠان,ڤنربڠان,noun,3,terbang,Penerbangan delay dua jam,Flight delayed two hours,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,60
+pilot,pilot,ڤيلوت,ڤيلوت,noun,2,penerbang,Pilot pesawat berpengalaman,Airplane pilot is experienced,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+ticket,tiket,تيکت,تيکت,noun,2,karcis,Tiket pesawat mahal,Airplane ticket is expensive,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,70
+luggage,bagasi,باګاسي,باګاسي,noun,2,koper,Bagasi pesawat penuh,Airplane luggage is full,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center,60
+departure,keberangkatan,کبرڠکاتان,کبرڠکاتان,noun,4,budhal,Keberangkatan jam delapan,Departure at eight o'clock,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,55
+arrival,kedatangan,کداتڠان,کداتڠان,noun,3,rawuh,Kedatangan tamu penting,Arrival of important guest,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,60
+destination,tujuan,توجوان,توجوان,noun,2,target,Tujuan wisata populer,Popular tourist destination,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+distance,jarak,جاراک,جاراک,noun,2,adoh,Jarak tempuh jauh,Travel distance is far,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,70
+map,peta,ڤتا,ڤتا,noun,1,denah,Peta jalan akurat,Road map is accurate,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,70
+direction,arah,ارح,ارح,noun,2,kiblat,Arah mata angin,Cardinal direction,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,70
+north,utara,اوتارا,اوتارا,noun,2,lor,Utara Kalimantan dingin,North Kalimantan is cold,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+south,selatan,سلاتان,سلاتان,noun,2,kidul,Selatan Indonesia panas,South Indonesia is hot,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+east,timur,تيمور,تيمور,noun,2,wetan,Timur matahari terbit,East where sun rises,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+west,barat,بارات,بارات,noun,2,kulon,Barat matahari tenggelam,West where sun sets,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+center,tengah,تڠح,تڠح,noun,2,tengah,Tengah kota ramai,City center is busy,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,70
+left,kiri,کيري,کيري,adjective,1,kiwa,Belok kiri di lampu merah,Turn left at red light,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,80
+right,kanan,کانان,کانان,adjective,1,tengen,Belok kanan setelah jembatan,Turn right after bridge,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,80
+straight,lurus,لوروس,لوروس,adjective,2,jejeg,Jalan lurus panjang,Straight road is long,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,75
+near,dekat,ديکات,ديکات,adjective,2,cedhak,Rumah dekat sekolah,House is near school,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+far,jauh,جاووح,جاووح,adjective,1,adoh,Rumah jauh dari kota,House is far from city,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+inside,dalam,دالم,دالم,preposition,2,njero,Dalam rumah sejuk,Inside house is cool,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+outside,luar,لوار,لوار,preposition,2,njaba,Luar rumah panas,Outside house is hot,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+above,atas,اتاس,اتاس,preposition,2,ndhuwur,Atas meja ada buku,Above table there are books,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,70
+below,bawah,باووح,باووح,preposition,2,ngisor,Bawah meja ada kucing,Below table there is a cat,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,70
+between,antara,انتارا,انتارا,preposition,2,antarane,Antara rumah dan sekolah,Between house and school,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=centerfamous,terkenal,ترکنال,ترکنال,adjective,3,kondhang,Artis terkenal cantik,Famous artists are beautiful,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+unknown,tidak terkenal,تيدک ترکنال,تيدک ترکنال,adjective,4,ora kondhang,Orang tidak terkenal biasa,Unknown people are ordinary,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,50
+health,kesehatan,کسهاتان,کسهاتان,noun,3,waras,Kesehatan itu penting,Health is important,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+disease,penyakit,ڤڽاکيت,ڤڽاکيت,noun,2,lara,Penyakit menular berbahaya,Infectious diseases are dangerous,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+fever,demam,دمم,دمم,noun,2,mriyang,Demam tinggi bahaya,High fever is dangerous,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+cough,batuk,باتوک,باتوک,noun,1,watuk,Batuk tidak sembuh-sembuh,Cough doesn't heal,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+cold,pilek,ڤيليک,ڤيليک,noun,2,meler,Pilek karena kehujanan,Cold due to getting rained on,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+headache,sakit kepala,ساکيت کڤالا,ساکيت کڤالا,noun,3,mumet,Sakit kepala pusing,Headache is dizzy,https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop&crop=center,70
+toothache,sakit gigi,ساکيت ګيګي,ساکيت ګيګi,noun,3,linu,Sakit gigi tidak tahan,Toothache is unbearable,https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=200&h=200&fit=crop&crop=center,65
+stomachache,sakit perut,ساکيت ڤروت,ساکيت ڤروت,noun,3,mules,Sakit perut mulas,Stomachache cramps,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,70
+pain,sakit,ساکيت,ساکيت,noun,1,lara,Sakit badan demam,Body pain fever,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+wound,luka,لوکا,لوکا,noun,1,tatu,Luka berdarah parah,Wound bleeds severely,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,65
+blood,darah,دارح,دارح,noun,1,getih,Darah merah mengalir,Red blood flows,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,70
+bandage,perban,ڤربان,ڤربان,noun,2,tali,Perban untuk luka,Bandage for wounds,https://images.unsplash.com/photo-1585435557343-3b092031d8d8?w=200&h=200&fit=crop&crop=center,60
+injection,suntik,سونتيک,سونتيک,noun,2,injeksi,Suntik obat sakit,Inject medicine for pain,https://images.unsplash.com/photo-1585435557343-3b092031d8d8?w=200&h=200&fit=crop&crop=center,65
+surgery,operasi,اوڤراسي,اوڤراسي,noun,3,bedah,Operasi jantung berat,Heart surgery is heavy,https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=200&h=200&fit=crop&crop=center,55
+vitamins,vitamin,ويتامين,ويتامين,noun,2,gizi,Vitamin untuk kesehatan,Vitamins for health,https://images.unsplash.com/photo-1585435557343-3b092031d8d8?w=200&h=200&fit=crop&crop=center,65
+exercise,olahraga,اولهراګا,اولهراګا,noun,3,senam,Olahraga pagi sehat,Morning exercise is healthy,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+sport,olahraga,اولهراګا,اولهراګا,noun,3,dolanan,Olahraga bola favorit,Ball sports favorite,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+football,sepak bola,سڤک بولا,سڤک بولا,noun,3,bal-balan,Sepak bola olahraga populer,Football is popular sport,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+basketball,bola basket,بولا باسکت,بولا باسکت,noun,3,basket,Bola basket tinggi,Basketball is high,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+volleyball,bola voli,بولا وولي,بولا وولي,noun,3,voli,Bola voli tim putra,Volleyball men's team,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+badminton,bulu tangkis,بولو تڠکيس,بولو تڠکيس,noun,3,bulutangkis,Bulu tangkis Indonesia jago,Indonesia is good at badminton,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+tennis,tenis,تنيس,تنيس,noun,2,tenis,Tenis lapangan rumput,Tennis grass court,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,55
+swimming,berenang,برناڠ,برناڠ,noun,2,nglangi,Berenang di kolam,Swimming in the pool,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+running,lari,لاري,لاري,noun,1,mlayu,Lari pagi sehat,Morning running is healthy,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+cycling,bersepeda,برسڤدا,برسڤدا,noun,2,numpak pit,Bersepeda keliling kota,Cycling around the city,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,65
+music,musik,موسيک,موسيک,noun,2,gending,Musik klasik indah,Classical music is beautiful,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,75
+song,lagu,لاګو,لاګو,noun,1,tembang,Lagu daerah merdu,Regional songs are melodious,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,80
+sing,nyanyi,ڽڽي,ڽڽي,verb,2,nembang,Nyanyi lagu Banjar,Sing Banjarese songs,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,75
+dance,menari,مناري,مناري,verb,2,joged,Menari tarian tradisional,Dance traditional dances,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+guitar,gitar,ګيتار,ګيتار,noun,2,kecapi,Gitar akustik bagus,Acoustic guitar is good,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,70
+piano,piano,ڤيانو,ڤيانو,noun,2,piano,Piano klasik mahal,Classical piano is expensive,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,60
+drum,drum,دروم,دروم,noun,1,kendhang,Drum keras berisik,Drums are loud and noisy,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,65
+flute,seruling,سرولياڠ,سرولياڠ,noun,2,suling,Seruling bambu merdu,Bamboo flute is melodious,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,55
+art,seni,سني,سني,noun,2,kesenian,Seni lukis indah,Painting art is beautiful,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,65
+painting,lukisan,لوکيسان,لوکيسان,noun,2,gambar,Lukisan pemandangan alam,Nature landscape painting,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,60
+drawing,menggambar,مڠګامبار,مڠګامبار,verb,3,nggawe gambar,Menggambar bunga cantik,Drawing beautiful flowers,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,65
+color,warna,وارنا,وارنا,noun,2,warni,Warna pelangi indah,Rainbow colors are beautiful,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,75
+photo,foto,فوتو,فوتو,noun,1,gambar,Foto keluarga lengkap,Complete family photo,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,80
+camera,kamera,کامرا,کامرا,noun,2,kodak,Kamera digital canggih,Digital camera is sophisticated,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,65
+movie,film,فيلم,فيلم,noun,1,pilem,Film komedi lucu,Comedy movie is funny,https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=200&h=200&fit=crop&crop=center,75
+actor,aktor,اکتور,اکتور,noun,2,artis,Aktor terkenal ganteng,Famous actor is handsome,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+actress,aktris,اکتريس,اکتريس,noun,2,artis,Aktris cantik berbakat,Beautiful actress is talented,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,60
+story,cerita,چريتا,چريتا,noun,2,dongeng,Cerita rakyat menarik,Folk stories are interesting,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,75
+news,berita,بريتا,بريتا,noun,2,kabar,Berita hari ini penting,Today's news is important,https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=200&h=200&fit=crop&crop=center,80
+newspaper,koran,کوران,کوران,noun,2,surat kabar,Koran pagi sudah datang,Morning newspaper has arrived,https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&h=200&fit=crop&crop=center,70
+magazine,majalah,مجلح,مجلح,noun,2,tabloid,Majalah fashion terbaru,Latest fashion magazine,https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&h=200&fit=crop&crop=center,60
+letter,surat,سورات,سورات,noun,1,layang,Surat dari keluarga,Letter from family,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,75
+email,email,ايميل,ايميل,noun,2,surat elektronik,Email kantor penting,Office email is important,https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=200&fit=crop&crop=center,70
+internet,internet,اينترنت,اينترنت,noun,2,jaringan,Internet cepat bagus,Fast internet is good,https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=200&fit=crop&crop=center,75
+website,website,ويبسايت,ويبسايت,noun,2,situs,Website sekolah informatif,School website is informative,https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=200&fit=crop&crop=center,65
+social media,media sosial,ميديا سوسيال,ميديا سوسيال,noun,3,medsos,Media sosial populer,Social media is popular,https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&h=200&fit=crop&crop=center,70
+information,informasi,اينفورماسي,اينفورماسي,noun,3,katrangan,Informasi penting berguna,Important information is useful,https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&h=200&fit=crop&crop=center,75
+technology,teknologi,تکنولوګي,تکنولوګي,noun,3,teknologi,Teknologi berkembang pesat,Technology develops rapidly,https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=200&fit=crop&crop=center,70
+science,ilmu,ايلمو,ايلمو,noun,2,ngelmu,Ilmu pengetahuan bermanfaat,Science is beneficial,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,75
+knowledge,pengetahuan,ڤڠتاهوان,ڤڠتاهوان,noun,3,kawruh,Pengetahuan itu kekuatan,Knowledge is power,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+research,penelitian,ڤنليتيان,ڤنليتيان,noun,3,riset,Penelitian ilmiah penting,Scientific research is important,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,60
+experiment,percobaan,ڤرچوباان,ڤرچوباان,noun,3,eksperimen,Percobaan kimia berbahaya,Chemical experiments are dangerous,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,55
+laboratory,laboratorium,لابوراتوريوم,لابوراتوريوم,noun,4,lab,Laboratorium sekolah lengkap,School laboratory is complete,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,55
+library,perpustakaan,ڤرڤوستاکاان,ڤرڤوستاکاان,noun,4,pustaka,Perpustakaan buku lengkap,Library has complete books,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+university,universitas,اونيوررسيتاس,اونيوررسيتاس,noun,4,perguruan tinggi,Universitas negeri bagus,State university is good,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,60
+college,kuliah,کوليح,کوليح,noun,2,kampus,Kuliah di Jakarta,College in Jakarta,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,65
+degree,gelar,ګلار,ګلار,noun,2,ijazah,Gelar sarjana penting,Bachelor's degree is important,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,60
+graduation,kelulusan,کلولوسان,کلولوسان,noun,3,wisuda,Kelulusan bulan depan,Graduation next month,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,55
+scholarship,beasiswa,بايسوا,بايسوا,noun,3,bantuan kuliah,Beasiswa untuk mahasiswa,Scholarship for students,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,55
+job,pekerjaan,ڤکرجاان,ڤکرجاان,noun,3,gawe,Pekerjaan sulit dicari,Jobs are hard to find,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+office,kantor,کانتور,کانتور,noun,2,dinas,Kantor tutup hari Minggu,Office is closed on Sunday,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,75
+worker,pekerja,ڤکرجا,ڤکرجا,noun,2,buruh,Pekerja dapat gaji,Workers get salary,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+boss,bos,بوس,بوس,noun,1,atasan,Bos baik hati,Boss is kind-hearted,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+employee,karyawan,کاريوان,کاريوان,noun,3,pegawai,Karyawan rajin bekerja,Employees work diligently,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+salary,gaji,ګاجي,ګاجي,noun,2,upah,Gaji bulan ini naik,This month's salary increased,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,75
+money,uang,اواڠ,اواڠ,noun,1,duit,Uang untuk beli makanan,Money to buy food,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,90
+bank,bank,بانک,بانک,noun,1,bank,Bank tutup sore hari,Bank closes in the evening,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,75
+save,menabung,منابوڠ,منابوڠ,verb,2,nyimpen,Menabung untuk masa depan,Save for the future,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,70
+spend,belanja,بلانجا,بلانجا,verb,2,mbuwang,Belanja ke pasar,Shopping at the market,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,75
+expensive,mahal,مهال,مهال,adjective,2,larang,Makanan ini mahal,This food is expensive,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,80
+cheap,murah,موراح,موراح,adjective,2,murah,Sayur ini murah,These vegetables are cheap,https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop&crop=center,80
+free,gratis,ګراتيس,ګراتيس,adjective,2,cumuma,Masuk gratis hari ini,Free entry today,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+price,harga,هارګا,هارګا,noun,2,rega,Harga naik terus,Prices keep rising,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,80
+discount,diskon,ديسکون,ديسکون,noun,2,potongan,Diskon besar-besaran,Big discount,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,65
+business,bisnis,بيسنيس,بيسنيس,noun,2,dagang,Bisnis kuliner laris,Culinary business is selling well,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,70
+company,perusahaan,ڤروساهاان,ڤروساهاان,noun,3,firma,Perusahaan besar maju,Big company is advanced,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,65
+factory,pabrik,ڤابريک,ڤابريک,noun,2,industri,Pabrik tutup libur,Factory closes for holiday,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,65
+product,produk,ڤروداک,ڤروداک,noun,2,barang,Produk lokal berkualitas,Local products are quality,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,70
+service,layanan,لايانان,لايانان,noun,3,pelayanan,Layanan ramah memuaskan,Friendly service is satisfying,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+customer,pelanggan,ڤلڠن,ڤلڠن,noun,2,pembeli,Pelanggan setia loyal,Loyal customers are faithful,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+quality,kualitas,کواليتاس,کواليتاس,noun,3,mutu,Kualitas barang bagus,Product quality is good,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,65
+meeting,rapat,راڤات,راڤات,noun,2,patemon,Rapat penting besok,Important meeting tomorrow,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,70
+contract,kontrak,کونتراک,کونتراک,noun,2,perjanjian,Kontrak kerja satu tahun,One year work contract,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,60
+agreement,perjanjian,ڤرجانجيان,ڤرجانجيان,noun,3,persetujuan,Perjanjian disepakati,Agreement is approved,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,55
+government,pemerintah,ڤمرينتح,ڤمرينتح,noun,3,pamrentah,Pemerintah daerah baik,Local government is good,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,65
+law,hukum,هوکوم,هوکوم,noun,2,aturan,Hukum harus ditaati,Law must be obeyed,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,70
+police,polisi,ڤوليسي,ڤوليسي,noun,2,pulisi,Polisi jaga keamanan,Police maintain security,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+court,pengadilan,ڤڠاديلان,ڤڠاديلان,noun,3,sidang,Pengadilan memutus perkara,Court decides cases,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,55
+judge,hakim,هاwhile,selama,سلاما,سلاما,conjunction,2,sauntara,Selama hujan di rumah,While it rains stay home,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+although,walaupun,والاوڤون,والاوڤون,conjunction,3,sanajan,Walaupun hujan tetap pergi,Although it rains still go,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+so,jadi,جادي,جادي,conjunction,2,dadi,Hujan jadi tidak pergi,It's raining so not going,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+therefore,karena itu,کارنا ايتو,کارنا ايتو,conjunction,3,mulane,Karena itu harus hati-hati,Therefore must be careful,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+cat,kucing,کوچيڠ,کوچيڠ,noun,1,meong,Kucing hitam lucu,Black cat is cute,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,85
+dog,anjing,انجيڠ,انجيڠ,noun,1,asu,Anjing setia sama tuannya,Dogs are loyal to their owners,https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&crop=center,80
+bird,burung,بوروڠ,بوروڠ,noun,1,manuk,Burung terbang tinggi,Birds fly high,https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=200&h=200&fit=crop&crop=center,75
+cow,sapi,ساڤي,ساڤي,noun,1,lembu,Sapi makan rumput,Cows eat grass,https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200&h=200&fit=crop&crop=center,70
+buffalo,kerbau,کربو,کربو,noun,2,mahesa,Kerbau kuat sekali,Buffalo are very strong,https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200&h=200&fit=crop&crop=center,65
+goat,kambing,کامبيڠ,کامبيڠ,noun,1,wedhus,Kambing makan daun,Goats eat leaves,https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200&h=200&fit=crop&crop=center,70
+sheep,domba,دومبا,دومبا,noun,2,kibas,Domba putih gemuk,White sheep are fat,https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200&h=200&fit=crop&crop=center,60
+horse,kuda,کودا,کودا,noun,2,jaran,Kuda lari cepat,Horses run fast,https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=200&fit=crop&crop=center,65
+pig,babi,بابي,بابي,noun,1,celeng,Babi gemuk kotor,Pigs are fat and dirty,https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200&h=200&fit=crop&crop=center,60
+duck,bebek,ببيک,ببيک,noun,1,itik,Bebek berenang di kolam,Ducks swim in the pond,https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=200&h=200&fit=crop&crop=center,70
+chicken (rooster),ayam jantan,ايم جانتان,ايم جانتان,noun,3,jago,Ayam jantan berkokok,Rooster crows,https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=200&h=200&fit=crop&crop=center,65
+hen,ayam betina,ايم بتينا,ايم بتينا,noun,3,induk ayam,Ayam betina bertelur,Hen lays eggs,https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=200&h=200&fit=crop&crop=center,65
+rabbit,kelinci,کلينچي,کلينچي,noun,2,trewelu,Kelinci putih lompat,White rabbit jumps,https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=200&h=200&fit=crop&crop=center,60
+mouse,tikus,تيکوس,تيکوس,noun,1,jancik,Tikus kecil nakal,Small mice are naughty,https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=200&h=200&fit=crop&crop=center,65
+rat,tikus besar,تيکوس بسر,تيکوس بسر,noun,3,curut,Tikus besar kotor,Big rats are dirty,https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=200&h=200&fit=crop&crop=center,55
+elephant,gajah,ګاجح,ګاجح,noun,2,liman,Gajah besar kuat,Elephants are big and strong,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+tiger,harimau,هاريماو,هاريماو,noun,2,macan,Harimau buas ganas,Tigers are fierce and wild,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,45
+lion,singa,سيڠا,سيڠا,noun,2,singabarong,Singa raja hutan,Lion is king of the jungle,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,40
+monkey,monyet,مونيت,مونيت,noun,2,kethek,Monyet pandai memanjat,Monkeys are good at climbing,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,55
+snake,ular,اولار,اولار,noun,1,sawer,Ular merayap panjang,Snakes crawl long,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+crocodile,buaya,بوايا,بوايا,noun,2,baya,Buaya ganas di sungai,Fierce crocodile in the river,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,45
+turtle,kura-kura,کورا-کورا,کورا-کورا,noun,2,penyu,Kura-kura jalan lambat,Turtles walk slowly,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+frog,katak,کاتک,کاتک,noun,1,kodhok,Katak hijau melompat,Green frogs jump,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,60
+butterfly,kupu-kupu,کوڤو-کوڤو,کوڤو-کوڤو,noun,2,ulat bulu,Kupu-kupu terbang indah,Butterflies fly beautifully,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,55
+bee,lebah,لباح,لباح,noun,2,tawon,Lebah buat madu,Bees make honey,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+ant,semut,سموت,سموت,noun,1,laler,Semut hitam kecil,Black ants are small,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,60
+spider,laba-laba,لابا-لابا,لابا-لابا,noun,2,jaring-jaring,Laba-laba buat jaring,Spiders make webs,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+mosquito,nyamuk,ڽاموک,ڽاموک,noun,2,reged,Nyamuk mengganggu tidur,Mosquitoes disturb sleep,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,70
+fly,lalat,لالات,لالات,noun,1,laler,Lalat hinggap di makanan,Flies land on food,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,65
+cockroach,kecoa,کچوا,کچوا,noun,2,coro,Kecoa kotor menjijikkan,Cockroaches are dirty and disgusting,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,50
+one,satu,ساتو,ساتو,number,1,esa,Satu buah apel,One apple,https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=200&h=200&fit=crop&crop=center,95
+two,dua,دوا,دوا,number,1,loro,Dua ekor kucing,Two cats,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,95
+three,tiga,تيګا,تيګا,number,1,telu,Tiga buah buku,Three books,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,90
+four,empat,امڤات,امڤات,number,1,papat,Empat kaki meja,Four table legs,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,85
+five,lima,ليما,ليما,number,1,gangsal,Lima jari tangan,Five fingers,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,85
+six,enam,اينم,اينم,number,1,enem,Enam buah jeruk,Six oranges,https://images.unsplash.com/photo-1547514701-42782101795e?w=200&h=200&fit=crop&crop=center,80
+seven,tujuh,توجوح,توجوح,number,1,pitu,Tujuh hari seminggu,Seven days a week,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+eight,delapan,دلاڤان,دلاڤان,number,2,wolu,Delapan kaki laba-laba,Eight spider legs,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,75
+nine,sembilan,سمبيلان,سمبيلان,number,2,sanga,Sembilan bulan mengandung,Nine months pregnant,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,75
+ten,sepuluh,سڤولوح,سڤولوح,number,2,sedasa,Sepuluh jari kaki tangan,Ten fingers and toes,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,80
+eleven,sebelas,سبلاس,سبلاس,number,2,sewelas,Sebelas pemain sepak bola,Eleven football players,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+twelve,dua belas,دوا بلاس,دوا بلاس,number,3,rolas,Dua belas bulan setahun,Twelve months a year,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+twenty,dua puluh,دوا ڤولوح,دوا ڤولوح,number,3,rongpuluh,Dua puluh tahun umur,Twenty years old,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+thirty,tiga puluh,تيګا ڤولوح,تيګا ڤولوح,number,3,telungpuluh,Tiga puluh hari sebulan,Thirty days a month,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+fifty,lima puluh,ليما ڤولوح,ليما ڤولوح,number,3,seket,Lima puluh ribu rupiah,Fifty thousand rupiah,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,55
+hundred,seratus,سراتوس,سراتوس,number,2,satus,Seratus lembar kertas,One hundred sheets of paper,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,60
+thousand,seribu,سريبو,سريبو,number,2,sewu,Seribu rupiah,One thousand rupiah,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,55
+million,sejuta,سجوتا,سجوتا,number,3,yuta,Sejuta penduduk,One million population,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,45
+half,setengah,ستڠح,ستڠح,number,2,separo,Setengah jam lagi,Half an hour more,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,65
+quarter,seperempat,سڤرمڤات,سڤرمڤات,number,3,seprapat,Seperempat kilo gula,Quarter kilo of sugar,https://images.unsplash.com/photo-1581579181842-54e8af41c16d?w=200&h=200&fit=crop&crop=center,55
+double,ganda,ګاندا,ګاندا,number,2,kaping loro,Ganda lipat besar,Double fold big,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+first,pertama,ڤرتاما,ڤرتاما,number,3,kaping siji,Anak pertama pintar,First child is smart,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,65
+second,kedua,کدوا,کدوا,number,2,kaping loro,Anak kedua nakal,Second child is naughty,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,60
+third,ketiga,کتيګا,کتيګا,number,2,kaping telu,Anak ketiga lucu,Third child is cute,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,55
+last,terakhir,ترأخير,ترأخير,number,3,pungkasan,Anak terakhir manja,Last child is spoiled,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,60
+love,cinta,چينتا,چينتا,noun,2,sayang,Cinta kasih keluarga,Family love,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,90
+like,suka,سوکا,سوکا,verb,1,seneng,Aku suka makan nasi,I like eating rice,https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center,85
+hate,benci,بنچي,بنچي,verb,2,sengit,Benci sama penjahat,Hate criminals,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+happy,senang,سنڠ,سنڠ,adjective,1,girang,Hari ini senang sekali,Today is very happy,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+sad,sedih,سديح,سديح,adjective,1,susah,Jangan sedih lagi,Don't be sad anymore,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+angry,marah,مارح,مارح,adjective,1,nesu,Marah sama anak nakal,Angry with naughty children,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+afraid,takut,تاکوت,تاکوت,adjective,1,wedi,Takut sama hantu,Afraid of ghosts,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+brave,berani,برانيي,برانيي,adjective,2,wani,Berani lawan penjahat,Brave against criminals,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+excited,gembira,ګمبيرا,ګمبيرا,adjective,2,bingah,Gembira dapat hadiah,Excited to get a gift,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+surprised,kaget,کاګت,کاګت,adjective,1,gumun,Kaget dengar suara keras,Surprised to hear loud noise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+worried,khawatir,خاواتير,خاواتير,adjective,2,kuwatir,Khawatir sama anak,Worried about children,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+confused,bingung,بيڠوڠ,بيڠوڠ,adjective,2,pusing,Bingung cari jalan,Confused looking for the way,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+tired,capek,چاڤيک,چاڤيک,adjective,1,kesel,Capek kerja seharian,Tired from working all day,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+sleepy,mengantuk,مڠانتوک,مڠانتوک,adjective,2,turu,Mengantuk mau tidur,Sleepy want to sleep,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,75
+hungry,lapar,لاڤار,لاڤار,adjective,1,luwe,Lapar mau makan,Hungry want to eat,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,85
+thirsty,haus,هاوس,هاوس,adjective,1,ngelak,Haus mau minum,Thirsty want to drink,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,80
+full,kenyang,کڽڠ,کڽڠ,adjective,1,wareg,Kenyang sudah makan,Full already eaten,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,80
+beautiful,cantik,چانتيک,چانتيک,adjective,1,indah,Bunga cantik sekali,The flowers are very beautiful,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,85
+handsome,ganteng,ګانتڠ,ګانتڠ,adjective,2,bagus,Laki-laki ganteng,Handsome man,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+ugly,jelek,جليک,جليک,adjective,1,ala,Wajah jelek seram,Ugly face is scary,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+smart,pintar,ڤينتر,ڤينتر,adjective,2,pinter,Anak pintar rajin belajar,Smart children study diligently,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,80
+stupid,bodoh,بودوح,بودوح,adjective,2,goblok,Jangan bodoh begitu,Don't be so stupid,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+clever,pandai,ڤانداي,ڤانداي,adjective,2,pinter,Pandai main gitar,Clever at playing guitar,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,70
+lazy,malas,مالاس,مالاس,adjective,1,males,Malas kerja seharian,Lazy to work all day,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+diligent,rajin,راجين,راجين,adjective,2,sregep,Rajin belajar pintar,Diligent in studying makes you smart,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,75
+honest,jujur,جوجور,جوجور,adjective,2,ora ngapusi,Jujur itu baik,Being honest is good,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+lie,bohong,بوهوڠ,بوهوڠ,verb,2,ngapusi,Jangan bohong sama mama,Don't lie to mom,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+kind,baik,بايک,بايک,adjective,1,becik,Hati baik mulia,Kind heart is noble,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+cruel,jahat,جاهات,جاهات,adjective,2,ala,Orang jahat ditangkap,Bad people are arrested,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+patient,sabar,صابار,صابار,adjective,2,sabar,Sabar menunggu giliran,Patient waiting for turn,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+impatient,tidak sabar,تيدک صابار,تيدک صابار,adjective,3,ora sabar,Tidak sabar mau pulang,Impatient to go home,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+polite,sopan,سوڤان,سوڤان,adjective,2,tatas,Sopan sama orang tua,Polite to elders,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+rude,kasar,کاسر,کاسر,adjective,2,ora sopan,Kasar sama teman,Rude to friends,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+rich,kaya,کايا,کايا,adjective,2,sugih,Orang kaya dermawan,Rich people are generous,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+poor,miskin,مسکين,مسکين,adjective,2,mlarat,Orang miskin perlu bantuan,Poor people need help,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+famous,terkenal,ترکنال,ترکنال,adjective,3,kondhang,Artis terkenal cantik,Famous artists are beautiful,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&lamp,lampu,لامڤو,لامڤو,noun,1,blencong,Lampu kamar terang,Room lamp is bright,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,75
+mirror,cermin,چرمين,چرمين,noun,2,pangilon,Cermin kamar besar,Bedroom mirror is big,https://images.unsplash.com/photo-1506629905260-f24b2b3bb04a?w=200&h=200&fit=crop&crop=center,70
+picture,gambar,ګامبار,ګامبار,noun,2,photo,Gambar keluarga indah,Family picture is beautiful,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,70
+clothes,baju,باجو,باجو,noun,1,rasukan,Baju baru bagus,New clothes are nice,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,85
+shirt,kemeja,کميجا,کميجا,noun,2,kaos,Kemeja putih bersih,White shirt is clean,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,75
+pants,celana,چلانا,چلانا,noun,2,kathok,Celana panjang hitam,Black long pants,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,75
+dress,gaun,ګاون,ګاون,noun,2,longdress,Gaun merah cantik,Red dress is beautiful,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,70
+skirt,rok,روک,روک,noun,1,jarik,Rok pendek modis,Short skirt is fashionable,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,70
+shoes,sepatu,سڤاتو,سڤاتو,noun,2,kasut,Sepatu baru mahal,New shoes are expensive,https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=center,80
+socks,kaos kaki,کاوس کاکي,کاوس کاکي,noun,3,stoking,Kaos kaki putih bersih,White socks are clean,https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=center,65
+hat,topi,توڤي,توڤي,noun,1,peci,Topi hitam bagus,Black hat is nice,https://images.unsplash.com/photo-1521369909029-2afed882baee?w=200&h=200&fit=crop&crop=center,70
+jacket,jaket,جاکت,جاکت,noun,2,jas,Jaket tebal hangat,Thick jacket is warm,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,70
+belt,ikat pinggang,ايکات ڤيڠڠ,ايکات ڤيڠڠ,noun,3,sabuk,Ikat pinggang kulit,Leather belt,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,60
+watch,jam tangan,جم تڠن,جم تڠن,noun,3,arloji,Jam tangan emas mahal,Gold watch is expensive,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,65
+glasses,kacamata,کاچاماتا,کاچاماتا,noun,2,cermin mata,Kacamata minus tebal,Minus glasses are thick,https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop&crop=center,65
+father,bapak,باڤک,باڤک,noun,1,ayah,Bapak ku baik hati,My father is kind,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,90
+mother,mama,ماما,ماما,noun,1,ibu,Mama masak enak,Mom cooks deliciously,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,90
+child,anak,انک,انک,noun,1,budak,Anak kecil lucu,Small children are cute,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,85
+son,anak laki-laki,انک لاکي-لاکي,انک لاکي-لاکي,noun,3,putra,Anak laki-laki pintar,Son is smart,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,75
+daughter,anak perempuan,انک ڤرمڤوان,انک ڤرمڤوان,noun,3,putri,Anak perempuan cantik,Daughter is beautiful,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,75
+brother,kakak laki,کاکک لاکي,کاکک لاکي,noun,3,abang,Kakak ku tinggi,My brother is tall,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+sister,kakak perempuan,کاکک ڤرمڤوان,کاکک ڤرمڤوان,noun,3,teteh,Kakak ku cantik,My sister is beautiful,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,80
+grandfather,kakek,کاکک,کاکک,noun,2,aki,Kakek bijaksana sekali,Grandfather is very wise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+grandmother,nenek,ننيک,ننيک,noun,2,nini,Nenek masak enak,Grandmother cooks deliciously,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,70
+uncle,paman,ڤامان,ڤامان,noun,2,wa,Paman kerja di kota,Uncle works in the city,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+aunt,bibi,بيبي,بيبي,noun,2,bulik,Bibi cantik baik hati,Aunt is beautiful and kind,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,65
+cousin,sepupu,سڤوڤو,سڤوڤو,noun,2,misan,Sepupu main ke rumah,Cousin visits home,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+husband,suami,سواامي,سواامي,noun,2,laki,Suami baik pekerja keras,Husband is good and hardworking,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+wife,istri,ايستري,ايستري,noun,2,bini,Istri cantik pandai masak,Wife is beautiful and good at cooking,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,70
+baby,bayi,بايي,بايي,noun,2,jabang,Bayi tidur nyenyak,Baby sleeps soundly,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,75
+friend,teman,تمن,تمن,noun,1,sobat,Teman ku banyak,I have many friends,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,85
+neighbor,tetangga,تتڠګا,تتڠګا,noun,2,tangga,Tetangga baik hati,Neighbor is kind-hearted,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,70
+guest,tamu,تامو,تامو,noun,1,pandherektur,Tamu datang sore,Guest comes in the evening,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,70
+now,sekarang,سکرڠ,سکرڠ,adverb,2,kini,Sekarang hujan,It is raining now,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,85
+today,hari ini,هاري اين,هاري اين,noun,2,masa ini,Hari ini libur,Today is a holiday,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,85
+yesterday,kemarin,کمارين,کمارين,adverb,2,kamari,Kemarin hujan deras,Yesterday it rained heavily,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+tomorrow,besok,بسوک,بسوک,adverb,2,esok,Besok ada ujian,Tomorrow there is an exam,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+morning,pagi,ڤاګي,ڤاګي,noun,1,subuh,Pagi ini cerah,This morning is bright,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+afternoon,siang,سياڠ,سياڠ,noun,1,tengah hari,Siang ini panas,This afternoon is hot,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+evening,sore,سوري,سوري,noun,1,petang,Sore ini sejuk,This evening is cool,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+night,malam,مالم,مالم,noun,1,wengi,Malam ini dingin,Tonight is cold,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+dawn,subuh,سوبوح,سوبوح,noun,2,esuk,Subuh waktu sembahyang,Dawn is prayer time,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+midnight,tengah malam,تڠح مالم,تڠح مالم,noun,3,tengah wengi,Tengah malam sepi,Midnight is quiet,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+week,minggu,ميڠګو,ميڠګو,noun,2,pekan,Minggu depan libur,Next week is a holiday,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+month,bulan,بولان,بولان,noun,1,sasi,Bulan ini panas,This month is hot,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+year,tahun,تاهون,تاهون,noun,2,warsa,Tahun ini baik,This year is good,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+time,waktu,واکتو,واکتو,noun,2,wektu,Waktu cepat berlalu,Time passes quickly,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,80
+hour,jam,جم,جم,noun,1,arloji,Jam berapa sekarang?,What time is it now?,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,85
+minute,menit,منيت,منيت,noun,2,detik,Tunggu lima menit,Wait five minutes,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,75
+second,detik,ديتيک,ديتيک,noun,2,sekon,Satu detik saja,Just one second,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,70
+early,pagi,ڤاګي,ڤاګي,adjective,1,enjing,Bangun pagi sehat,Wake up early is healthy,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+late,terlambat,ترلامبات,ترلامبات,adjective,2,telat,Datang terlambat,Come late,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,70
+on time,tepat waktu,تڤات واکتو,تڤات واکتو,adverb,3,pas wektune,Datang tepat waktu,Come on time,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,65
+sun,matahari,ماتاهاري,ماتاهاري,noun,2,srengenge,Matahari terang benderang,The sun shines brightly,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+moon,bulan,بولان,بولان,noun,1,rembulan,Bulan purnama terang,Full moon is bright,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+star,bintang,بينتڠ,بينتڠ,noun,2,lintang,Bintang bersinar terang,Stars shine brightly,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+sky,langit,لڠيت,لڠيت,noun,1,awang-awang,Langit biru cerah,Blue sky is clear,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+cloud,awan,اوان,اوان,noun,1,mega,Awan putih bergerak,White clouds are moving,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+rain,hujan,هوجن,هوجن,noun,1,udan,Hujan lebat sekali,Very heavy rain,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,85
+wind,angin,اڠين,اڠين,noun,1,bayu,Angin sepoi-sepoi,Gentle breeze,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+storm,badai,بداي,بداي,noun,2,angin ribut,Badai besar datang,Big storm is coming,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+thunder,guntur,ګونتور,ګونتور,noun,2,gludhug,Guntur keras sekali,Thunder is very loud,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+lightning,kilat,کيلات,کيلات,noun,2,bledhek,Kilat menyambar pohon,Lightning strikes the tree,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+snow,salju,سالجو,سالجو,noun,2,salju,Salju putih dingin,Snow is white and cold,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,40
+ice,es,ايس,ايس,noun,1,banyu beku,Es dingin sekali,Ice is very cold,https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center,70
+fire,api,اڤي,اڤي,noun,1,geni,Api panas menyala,Fire burns hot,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+smoke,asap,اساڤ,اساڤ,noun,2,kukus,Asap hitam tebal,Black smoke is thick,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+earth,bumi,بومي,بومي,noun,2,lemah,Bumi bulat berputar,Earth is round and rotates,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+world,dunia,دونيا,دونيا,noun,2,jagad,Dunia ini luas,This world is vast,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+ground,tanah,تاناح,تاناح,noun,1,lemah,Tanah subur hijau,Fertile soil is green,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+soil,tanah,تاناح,تاناح,noun,1,lemah,Tanah kebun subur,Garden soil is fertile,https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop&crop=center,70
+mud,lumpur,لومڤور,لومڤور,noun,2,lendhut,Lumpur licin sekali,Mud is very slippery,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+dust,debu,ديبو,ديبو,noun,2,bledug,Debu berterbangan,Dust is flying around,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+already,sudah,سودح,سودح,adverb,2,telah,Aku sudah makan,I have already eaten,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,90
+not yet,belum,بلوم,بلوم,adverb,2,durung,Aku belum makan,I have not eaten yet,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,85
+very,sangat,سڠت,سڠت,adverb,2,banget,Sangat bagus,Very good,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+quite,agak,اګک,اګک,adverb,2,rada,Agak panas hari ini,It's quite hot today,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+too,terlalu,ترلالو,ترلالو,adverb,2,kakehan,Terlalu manis,Too sweet,https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=200&fit=crop&crop=center,65
+enough,cukup,چوکوڤ,چوکوڤ,adverb,2,pas,Cukup makan segini,Enough to eat this much,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,70
+more,lebih,لبيح,لبيح,adverb,2,luwih,Lebih banyak lagi,More and more,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+less,kurang,کوراڠ,کوراڠ,adverb,2,kirang,Kurang garam,Less salt,https://images.unsplash.com/photo-1544816155-12df9643f363?w=200&h=200&fit=crop&crop=center,70
+most,paling,ڤاليڠ,ڤاليڠ,adverb,2,sing paling,Paling bagus,The best,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+can/able,bisa,بيسا,بيسا,verb,1,sanggup,Aku bisa berenang,I can swim,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,85
+cannot,tidak bisa,تيدک بيسا,تيدک بيسا,verb,2,kada sanggup,Aku tidak bisa bahasa Inggris,I cannot speak English,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+must,harus,هاروس,هاروس,verb,2,kudu,Harus belajar rajin,Must study diligently,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,75
+should,seharusnya,سهاروسڽا,سهاروسڽا,verb,3,kudune,Seharusnya datang tepat waktu,Should come on time,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,65
+need,perlu,ڤرلو,ڤرلو,verb,2,butuh,Perlu bantuan orang,Need people's help,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,75
+yes,iya,ايا,ايا,interjection,1,nggih,Iya benar,Yes that's right,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,95
+no,tidak,تيدک,تيدک,interjection,1,kada,Tidak mau,Don't want to,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,95
+maybe,mungkin,موڠکين,موڠکين,adverb,2,kali,Mungkin besok hujan,Maybe it will rain tomorrow,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+of course,tentu saja,تنتو ساجا,تنتو ساجا,adverb,3,mestine,Tentu saja boleh,Of course it's allowed,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+because,karena,کارنا,کارنا,conjunction,3,sebab,Karena hujan tidak pergi,Because of rain not going,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+but,tapi,تاڤي,تاڤي,conjunction,2,tetapi,Mau pergi tapi hujan,Want to go but it's raining,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,85
+and,dan,دان,دان,conjunction,1,wan,Nasi dan lauk,Rice and side dish,https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center,90
+or,atau,اتاو,اتاو,conjunction,2,utawa,Nasi atau mie,Rice or noodles,https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center,80
+if,kalau,کالو,کالو,conjunction,2,yen,Kalau hujan tidak pergi,If it rains won't go,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+when,ketika,کتيکا,کتيکا,conjunction,2,nalika,Ketika malam gelap,When night is dark,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+while,selama,سلاما,سلاما,conjunction,2,sauntara,Selama hujan di rumah,While it rains stay home,https://images.unsplash.com/photo-1568605114red,merah,ميراح,ميراح,adjective,1,abang,Bunga merah cantik,Red flowers are beautiful,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,80
+blue,biru,بيرو,بيرو,adjective,1,biru muda,Langit biru cerah,The blue sky is bright,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+green,hijau,هيجاو,هيجاو,adjective,1,ijo,Daun hijau segar,Green leaves are fresh,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,75
+yellow,kuning,کونيڠ,کونيڠ,adjective,1,koneng,Pisang kuning matang,Yellow bananas are ripe,https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=200&h=200&fit=crop&crop=center,75
+black,hitam,هيتم,هيتم,adjective,1,ireng,Kucing hitam cantik,Black cats are beautiful,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,75
+white,putih,ڤوتيح,ڤوتيح,adjective,1,puti,Baju putih bersih,White clothes are clean,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,75
+brown,coklat,چوکلات,چوکلات,adjective,2,soklat,Tanah coklat subur,Brown soil is fertile,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+pink,merah muda,ميراح مودا,ميراح مودا,adjective,2,jambon,Bunga mawar merah muda,Pink roses,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,65
+purple,ungu,اوڠو,اوڠو,adjective,2,wungu,Bunga ungu indah,Purple flowers are beautiful,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,60
+orange,jingga,جيڠګا,جيڠګا,adjective,2,oranye,Matahari jingga sore,Orange sunset,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+gray,abu-abu,ابو-ابو,ابو-ابو,adjective,2,awu-awu,Awan abu-abu gelap,Dark gray clouds,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+house,rumah,رومح,رومح,noun,1,balai,Rumah aku jauh,My house is far,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,90
+door,pintu,ڤينتو,ڤينتو,noun,1,lawang,Pintu rumah terbuka,House door is open,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+window,jendela,جنديلا,جنديلا,noun,2,tingkap,Jendela kamar besar,Bedroom window is big,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+roof,atap,اتڤ,اتڤ,noun,1,payon,Atap rumah bocor,House roof is leaking,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+wall,dinding,ديڠديڠ,ديڠديڠ,noun,2,tembok,Dinding rumah putih,House wall is white,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+floor,lantai,لانتاي,لانتاي,noun,2,jubin,Lantai rumah bersih,House floor is clean,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+room,kamar,کامر,کامر,noun,1,bilik,Kamar tidur nyaman,Bedroom is comfortable,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+kitchen,dapur,داڤور,داڤور,noun,1,pawon,Dapur mama bersih,Mother's kitchen is clean,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,75
+bathroom,kamar mandi,کامر مندي,کامر مندي,noun,2,jedhing,Kamar mandi kecil,Bathroom is small,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,70
+living room,ruang tamu,رواڠ تامو,رواڠ تامو,noun,3,ruang keluarga,Ruang tamu luas,Living room is spacious,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,65
+yard,halaman,هالامان,هالامان,noun,2,pekarangan,Halaman rumah luas,House yard is wide,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+garden,kebun,کبون,کبون,noun,1,taman,Kebun sayur subur,Vegetable garden is fertile,https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop&crop=center,70
+school,sekolah,سکولح,سکولح,noun,2,madrasah,Sekolah tutup hari ini,School is closed today,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,85
+classroom,kelas,کلاس,کلاس,noun,2,ruang kelas,Kelas ini ramai,This classroom is crowded,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,75
+teacher,guru,ګورو,ګورو,noun,2,ustad,Guru ku pintar,My teacher is smart,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+student,murid,موريد,موريد,noun,2,pelajar,Murid rajin belajar,Students study diligently,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,80
+principal,kepala sekolah,کڤالا سکولح,کڤالا سکولح,noun,3,direktur,Kepala sekolah bijaksana,Principal is wise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+lesson,pelajaran,ڤلاجاران,ڤلاجاران,noun,3,pamulangan,Pelajaran hari ini sulit,Today's lesson is difficult,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+homework,pekerjaan rumah,ڤکرجاان رومح,ڤکرجاان رومح,noun,3,PR,Pekerjaan rumah banyak,Homework is a lot,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+exam,ujian,اوجيان,اوجيان,noun,2,tes,Ujian besok sulit,Tomorrow's exam is difficult,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+market,pasar,ڤاسر,ڤاسر,noun,2,warung,Ke pasar beli sayur,Go to market to buy vegetables,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,80
+shop,toko,توکو,توکو,noun,1,warung,Toko kelontong dekat,Grocery store is near,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,75
+store,kedai,کداي,کداي,noun,2,toko,Kedai kopi ramai,Coffee shop is busy,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&h=200&fit=crop&crop=center,70
+restaurant,rumah makan,رومح ماکن,رومح ماکن,noun,3,restoran,Rumah makan enak,Restaurant food is delicious,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,70
+hospital,rumah sakit,رومح ساکيت,رومح ساکيت,noun,3,puskesmas,Rumah sakit dekat sini,Hospital is near here,https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=200&h=200&fit=crop&crop=center,70
+doctor,dokter,دوکتر,دوکتر,noun,2,tabib,Dokter baik hati,Doctor is kind-hearted,https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face,75
+nurse,perawat,ڤراوات,ڤراوات,noun,2,mantri,Perawat cantik ramah,Nurse is beautiful and friendly,https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face,70
+medicine,obat,اوبات,اوبات,noun,1,jamu,Obat ini pahit,This medicine is bitter,https://images.unsplash.com/photo-1585435557343-3b092031d8d8?w=200&h=200&fit=crop&crop=center,75
+sick,sakit,ساکيت,ساکيت,adjective,1,lara,Badan sakit demam,Body is sick with fever,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+healthy,sehat,سهات,سهات,adjective,1,waras,Badan sehat kuat,Body is healthy and strong,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+mosque,masjid,مسجد,مسجد,noun,1,langgar,Masjid besar indah,The big mosque is beautiful,https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=200&h=200&fit=crop&crop=center,75
+church,gereja,ګرجا,ګرجا,noun,2,kapel,Gereja tua bersejarah,Old church is historic,https://images.unsplash.com/photo-1507692049790-de58290a4334?w=200&h=200&fit=crop&crop=center,65
+temple,pura,ڤورا,ڤورا,noun,2,candi,Pura Hindu suci,Hindu temple is sacred,https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=200&h=200&fit=crop&crop=center,60
+pray,sembahyang,سمبهيڠ,سمبهيڠ,verb,2,sholat,Sembahyang lima waktu,Pray five times,https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=200&h=200&fit=crop&crop=center,70
+god,allah,الله,الله,noun,1,tuhan,Allah maha pengasih,Allah is most merciful,https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=200&h=200&fit=crop&crop=center,80
+religion,agama,اګاما,اګاما,noun,2,din,Agama mengajarkan kebaikan,Religion teaches goodness,https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=200&h=200&fit=crop&crop=center,70
+river,sungai,سوڠاي,سوڠاي,noun,1,batang air,Sungai Martapura jernih,Martapura river is clear,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+lake,danau,دانو,دانو,noun,2,ranu,Danau besar indah,Big lake is beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+mountain,gunung,ګونوڠ,ګونوڠ,noun,2,bukit,Gunung tinggi indah,High mountains are beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+hill,bukit,بوکيت,بوکيت,noun,1,gundukan,Bukit hijau asri,Green hills are beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+forest,hutan,هوتان,هوتان,noun,2,alas,Hutan lebat rimbun,Dense forest is lush,https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop&crop=center,65
+tree,pohon,ڤوهون,ڤوهون,noun,1,wit,Pohon besar rindang,Big tree is shady,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,80
+leaf,daun,داون,داون,noun,1,ron,Daun hijau segar,Green leaves are fresh,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,75
+flower,bunga,بوڠا,بوڠا,noun,1,kembang,Bunga mawar wangi,Roses are fragrant,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,80
+grass,rumput,رومڤوت,رومڤوت,noun,1,suket,Rumput hijau lembut,Green grass is soft,https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=200&fit=crop&crop=center,70
+field,ladang,لادڠ,لادڠ,noun,2,sawah,Ladang padi luas,Rice field is wide,https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop&crop=center,70
+farm,pertanian,ڤرتانيان,ڤرتانيان,noun,3,tani,Pertanian padi subur,Rice farming is fertile,https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop&crop=center,65
+farmer,petani,ڤتاني,ڤتاني,noun,2,tani,Petani kerja keras,Farmers work hard,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+seed,benih,بنيح,بنيح,noun,2,wiji,Benih padi bagus,Rice seeds are good,https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop&crop=center,65
+harvest,panen,ڤانن,ڤانن,noun,2,panenan,Panen padi melimpah,Rice harvest is abundant,https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop&crop=center,65
+sea,laut,لاوت,لاوت,noun,2,segara,Laut biru tenang,The blue sea is calm,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+beach,pantai,ڤانتاي,ڤانتاي,noun,2,pesisir,Pantai pasir putih,White sand beach,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+wave,ombak,اومبک,اومبک,noun,2,gelombang,Ombak besar tinggi,Big waves are high,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+sand,pasir,ڤاسير,ڤاسير,noun,1,wedhi,Pasir pantai putih,Beach sand is white,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+stone,batu,باتو,باتو,noun,1,watu,Batu ini keras,This stone is hard,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+island,pulau,ڤولاو,ڤولاو,noun,2,pulo,Pulau kecil indah,Small island is beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+boat,perahu,ڤراهو,ڤراهو,noun,1,klotok,Perahu nelayan kuat,Fisherman's boat is strong,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+ship,kapal,کاڤال,کاڤال,noun,2,prau,Kapal besar cepat,Big ship is fast,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+fisherman,nelayan,نيلايان,نيلايان,noun,2,pangail,Nelayan tangkap ikan,Fisherman catches fish,https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center,65
+net,jala,جالا,جالا,noun,1,pukat,Jala ikan besar,Fishing net is big,https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center,60
+car,mobil,موبيل,موبيل,noun,2,oto,Mobil baru bagus,New car is nice,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,85
+motorcycle,motor,موتور,موتور,noun,1,sepeda motor,Motor cepat praktis,Motorcycles are fast and practical,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,80
+bicycle,sepeda,سڤدا,سڤدا,noun,1,pit,Sepeda ontel lawas,Old bicycle,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,75
+bus,bis,بيس,بيس,noun,1,kopaja,Bis kota ramai,City bus is crowded,https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=200&h=200&fit=crop&crop=center,70
+truck,truk,تروک,تروک,noun,2,mobil barang,Truk angkut barang,Truck carries goods,https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=200&h=200&fit=crop&crop=center,65
+train,kereta api,کرتا اڤي,کرتا اڤي,noun,3,sepur,Kereta api cepat,Train is fast,https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=200&h=200&fit=crop&crop=center,60
+airplane,pesawat,ڤساوات,ڤساوات,noun,2,kapal terbang,Pesawat terbang tinggi,Airplane flies high,https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200&h=200&fit=crop&crop=center,65
+road,jalan,جالن,جالن,noun,1,dalan,Jalan ini mulus,This road is smooth,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,85
+bridge,jembatan,جمباتان,جمباتان,noun,2,kreteg,Jembatan panjang kuat,Bridge is long and strong,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+traffic,lalu lintas,لالو لينتاس,لالو لينتاس,noun,3,lalulintas,Lalu lintas macet,Traffic is jammed,https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=200&h=200&fit=crop&crop=center,65
+gas station,pom bensin,ڤوم بنسين,ڤوم بنسين,noun,3,SPBU,Pom bensin tutup,Gas station is closed,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,60
+book,buku,بوکو,بوکو,noun,1,kitab,Buku cerita menarik,Story books are interesting,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,85
+pen,pulpen,ڤولڤن,ڤولڤن,noun,2,pena,Pulpen biru habis,Blue pen is finished,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,75
+pencil,pensil,ڤنسيل,ڤنسيل,noun,2,potlot,Pensil hitam tajam,Black pencil is sharp,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,75
+paper,kertas,کرتاس,کرتاس,noun,1,dluwang,Kertas putih bersih,White paper is clean,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,80
+bag,tas,تاس,تاس,noun,1,kanthong,Tas sekolah berat,School bag is heavy,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center,80
+table,meja,ميجا,ميجا,noun,1,lamari,Meja kayu bagus,Wooden table is nice,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,80
+chair,kursi,کورسي,کورسي,noun,1,bangku,Kursi empuk nyaman,Soft chair is comfortable,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,80
+bed,tempat tidur,تمڤات تيدور,تمڤات تيدور,noun,3,kasur,Tempat tidur empuk,Bed is soft,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,75
+pillow,bantal,بانتال,بانتال,noun,1,kendhil,Bantal empuk nyaman,Pillow is soft and comfortable,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,70
+blanket,selimut,سليموت,سليموت,noun,2,kemul,Selimut tebal hangat,Thick blanket is warm,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,70
+clock,jam,جم,جم,noun,1,arloji,Jam dinding rusak,Wall clock is broken,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,75
+television,televisi,تلويسي,تلويسي,noun,2,TV,Televisi rusak gelap,Television is broken and dark,https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=200&h=200&fit=crop&crop=center,75
+radio,radio,راديو,راديو,noun,2,tape,Radio lama masih bagus,Old radio is still good,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,65
+phone,telepon,تليڤون,تليڤون,noun,2,HP,Telepon rumah rusak,House phone is broken,https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&h=200&fit=crop&crop=center,75
+computer,komputer,کومڤوتر,کومڤوتر,noun,3,laptop,Komputer baru canggih,New computer is sophisticated,https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=200&fit=crop&crop=center,70
+lamp,lampu,لامڤو,لامڤو,noun,1,blencong,Lamknow,tahu,تاهو,تاهو,verb,1,weruh,Aku tahu jawabannya,I know the answer,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+understand,mengerti,مڠرتي,مڠرتي,verb,2,ngarti,Aku mengerti maksudnya,I understand the meaning,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+remember,ingat,ايڠات,ايڠات,verb,2,eling,Ingat pesan mama,Remember mother's message,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+forget,lupa,لوڤا,لوڤا,verb,2,kelalen,Jangan lupa bawa kunci,Don't forget to bring keys,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+buy,beli,بلي,بلي,verb,1,membeli,Beli sayur di pasar,Buy vegetables at the market,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,85
+sell,jual,جوال,جوال,verb,2,menjual,Jual ikan segar,Sell fresh fish,https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center,80
+give,kasih,کاسيح,کاسيح,verb,1,beri,Kasih makan kucing,Feed the cat,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,85
+take,ambil,امبيل,امبيل,verb,1,mengambil,Ambil buku di meja,Take the book from the table,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,80
+put,taruh,تاروح,تاروح,verb,1,letakkan,Taruh piring di meja,Put the plate on the table,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,75
+throw,buang,بواڠ,بواڠ,verb,2,mbuwang,Buang sampah di tempat sampah,Throw garbage in the trash,https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=200&h=200&fit=crop&crop=center,70
+catch,tangkap,تڠکڤ,تڠکڤ,verb,2,cekel,Tangkap bola itu,Catch that ball,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,70
+hold,pegang,ڤګڠ,ڤګڠ,verb,1,cekel,Pegang tangan mama,Hold mother's hand,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,75
+open,buka,بوکا,بوکا,verb,1,mbukak,Buka pintu rumah,Open the house door,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+close,tutup,توتوڤ,توتوڤ,verb,1,nutup,Tutup jendela kamar,Close the bedroom window,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+push,dorong,دوروڠ,دوروڠ,verb,2,nyorong,Dorong mobil yang mogok,Push the broken car,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,65
+pull,tarik,تاريک,تاريک,verb,2,nyeret,Tarik tali yang kuat,Pull the strong rope,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+climb,naik,نايک,نايک,verb,1,menek,Naik pohon kelapa,Climb the coconut tree,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,70
+fall,jatuh,جاتوح,جاتوح,verb,1,tiba,Jatuh dari pohon,Fall from the tree,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,70
+jump,lompat,لومڤات,لومڤات,verb,2,mlumpat,Lompat tinggi sekali,Jump very high,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,65
+swim,berenang,برناڠ,برناڠ,verb,2,nglangi,Berenang di sungai,Swim in the river,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+fly,terbang,تربڠ,تربڠ,verb,2,mabur,Burung terbang tinggi,Birds fly high,https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=200&h=200&fit=crop&crop=center,70
+drive,nyetir,ڽتير,ڽتير,verb,2,nyopir,Nyetir mobil hati-hati,Drive the car carefully,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,75
+ride,naik,نايک,نايک,verb,1,numpak,Naik sepeda motor,Ride a motorcycle,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,75
+cook,masak,ماسک,ماسک,verb,1,olah,Masak nasi untuk keluarga,Cook rice for the family,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,80
+wash,cuci,چوچي,چوچي,verb,1,umbah,Cuci piring setelah makan,Wash dishes after eating,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,75
+clean,bersih,برسيح,برسيح,verb,1,resik,Bersihkan rumah setiap hari,Clean the house every day,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+dirty,kotor,کوتور,کوتور,adjective,1,reged,Baju ini kotor,This shirt is dirty,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,75
+sweep,sapu,ساڤو,ساڤو,verb,2,nyapu,Sapu halaman rumah,Sweep the house yard,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+build,bangun,باڠون,باڠون,verb,2,mbangun,Bangun rumah baru,Build a new house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+break,pecah,ڤچاح,ڤچاح,verb,2,rusak,Piring pecah jatuh,The plate broke when it fell,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,65
+fix,betul,بتول,بتول,verb,2,ndandani,Betulkan sepeda yang rusak,Fix the broken bicycle,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,65
+help,bantu,بانتو,بانتو,verb,1,tulung,Bantu mama masak,Help mother cook,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,85
+ask,tanya,تاڽا,تاڽا,verb,1,takon,Tanya guru kalau tidak tahu,Ask the teacher if you don't know,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+answer,jawab,جاواب,جاواب,verb,2,mangsuli,Jawab pertanyaan dengan benar,Answer the question correctly,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+call,panggil,ڤڠګيل,ڤڠګيل,verb,2,nelpon,Panggil bapak dari jauh,Call father from afar,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+good/beautiful,bagus,باګوس,باګوس,adjective,1,cantik,Rumah ini bagus,This house is beautiful,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,85
+bad,jelek,جليک,جليک,adjective,1,ala,Cuaca hari ini jelek,Today's weather is bad,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+big,besar,بسر,بسر,adjective,1,gede,Rumah nya besar,His house is big,https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=200&h=200&fit=crop&crop=center,80
+small,kecil,کچيل,کچيل,adjective,1,cilik,Anjing kecil lucu,Small dogs are cute,https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&crop=center,80
+tall,tinggi,تيڠګي,تيڠګي,adjective,1,jangkung,Pohon kelapa tinggi,Coconut trees are tall,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,75
+short,pendek,ڤنديک,ڤنديک,adjective,1,rendah,Meja ini pendek,This table is short,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,75
+long,panjang,ڤانجڠ,ڤانجڠ,adjective,1,dawa,Jalan ini panjang,This road is long,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,75
+wide,lebar,ليبار,ليبار,adjective,2,wiyar,Sungai ini lebar,This river is wide,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+narrow,sempit,سمڤيت,سمڤيت,adjective,2,ciyut,Jalan ini sempit,This road is narrow,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,65
+thick,tebal,تبال,تبال,adjective,2,kandel,Buku ini tebal,This book is thick,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+thin,tipis,تيڤيس,تيڤيس,adjective,2,lancip,Kertas ini tipis,This paper is thin,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,65
+fat,gemuk,ګموک,ګموک,adjective,2,tambun,Kucing gemuk lucu,Fat cats are cute,https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&crop=center,70
+skinny,kurus,کوروس,کوروس,adjective,2,langsing,Badannya kurus,His/her body is thin,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+strong,kuat,کوات,کوات,adjective,1,kuwat,Laki-laki itu kuat,That man is strong,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+weak,lemah,ليماح,ليماح,adjective,2,lemes,Badan lemah karena sakit,Body is weak due to illness,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+heavy,berat,برات,برات,adjective,1,abot,Tas ini berat,This bag is heavy,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center,70
+light,ringan,ريڠان,ريڠان,adjective,2,entheng,Baju ini ringan,This clothes is light,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,65
+hot,panas,ڤاناس,ڤاناس,adjective,1,hangat,Cuaca hari ini panas,Today's weather is hot,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,80
+cold,dingin,ديڠين,ديڠين,adjective,1,sejuk,Air ini dingin,This water is cold,https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center,80
+warm,hangat,هڠات,هڠات,adjective,2,anget,Cuaca hangat nyaman,Warm weather is comfortable,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+cool,sejuk,سجوک,سجوک,adjective,2,adem,Angin sejuk sore hari,Cool breeze in the evening,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+dry,kering,کريڠ,کريڠ,adjective,1,garing,Tanah kering karena kemarau,Dry land due to drought,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+wet,basah,باسح,باسح,adjective,1,teles,Baju basah kehujanan,Clothes wet from rain,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,75
+sweet,manis,مانيس,مانيس,adjective,1,legi,Gula ini manis,This sugar is sweet,https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=200&fit=crop&crop=center,75
+sour,asam,اسم,اسم,adjective,1,kecut,Jeruk ini asam,This orange is sour,https://images.unsplash.com/photo-1547514701-42782101795e?w=200&h=200&fit=crop&crop=center,70
+bitter,pahit,ڤاهيت,ڤاهيت,adjective,2,pait,Obat ini pahit,This medicine is bitter,https://images.unsplash.com/photo-1585435557343-3b092031d8d8?w=200&h=200&fit=crop&crop=center,65
+salty,asin,اسين,اسين,adjective,2,payau,Ikan asin enak,Salted fish is delicious,https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center,70
+spicy,pedas,ڤداس,ڤداس,adjective,1,cabe,Makanan pedas nikmat,Spicy food is delicious,https://images.unsplash.com/photo-1596040419229-1bb1b4e3c0c0?w=200&h=200&fit=crop&crop=center,75
+delicious,enak,اينک,اينک,adjective,1,nikmat,Masakan mama enak,Mother's cooking is delicious,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,85
+tasty,sedap,سداڤ,سداڤ,adjective,2,gurih,Rendang ini sedap,This rendang is tasty,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,75
+bland,hambar,همبار,همبار,adjective,2,tawar,Sayur ini hambar,This vegetable is bland,https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop&crop=center,65
+fresh,segar,سګار,سګار,adjective,1,anyar,Sayur segar dari kebun,Fresh vegetables from the garden,https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop&crop=center,75
+stale,basi,باسي,باسي,adjective,2,bosok,Nasi ini sudah basi,This rice is already stale,https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center,65
+clean,bersih,برسيح,برسيح,adjective,1,resik,Rumah ini bersih,This house is clean,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+fast,cepat,چڤات,چڤات,adjective,1,laju,Mobil ini cepat,This car is fast,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,80
+slow,lambat,لامبات,لامبات,adjective,1,pelan,Jalan lambat-lambat,Walk slowly,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+loud,keras,کراس,کراس,adjective,1,banter,Suara musik keras,Music sound is loud,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,70
+quiet,sepi,سڤي,سڤي,adjective,1,sunyi,Kampung ini sepi,This village is quiet,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+noisy,berisik,بريسيک,بريسيک,adjective,2,rame,Jalan ini berisik,This road is noisy,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,65
+bright,terang,ترڠ,ترڠ,adjective,1,padhang,Lampu ini terang,This lamp is bright,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+dark,gelap,ګلاڤ,ګلاڤ,adjective,1,peteng,Malam ini gelap,Tonight is dark,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+clear,jernih,جرنيح,جرنيح,adjective,2,bening,Air sungai jernih,River water is clear,https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center,70
+cloudy,mendung,مندوڠ,مندوڠ,adjective,2,mendhung,Langit mendung akan hujan,Cloudy sky will rain,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+smooth,halus,هالوس,هالوس,adjective,2,alus,Kulit bayi halus,Baby skin is smooth,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,70
+rough,kasar,کاسر,کاسر,adjective,2,groyok,Permukaan batu kasar,Stone surface is rough,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+soft,lembut,لمبوت,لمبوت,adjective,2,alus,Kasur ini lembut,This mattress is soft,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,70
+hard,keras,کراس,کراس,adjective,1,atos,Batu ini keras,This stone is hard,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+sharp,tajam,تاجم,تاجم,adjective,2,landhep,Pisau ini tajam,This knife is sharp,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,65
+dull,tumpul,تومڤول,تومڤول,adjective,2,kothong,Pensil ini tumpul,This pencil is dull,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,60
+new,baru,بارو,بارو,adjective,1,anyar,Mobil baru bagus,New car is nice,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,85
+old,lama,لاما,لاما,adjective,1,lawas,Rumah lama bersejarah,Old house is historic,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+young,muda,مودا,مودا,adjective,1,nom,Anak muda energik,Young people are energetic,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+old (person),tua,توا,توا,adjective,1,sepuh,Orang tua bijaksana,Old people are wise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+easy,mudah,مودح,مودح,adjective,1,gampang,Soal ini mudah,This problem is easy,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,75
+difficult,sulit,سوليت,سوليت,adjective,2,angel,Pelajaran ini sulit,This lesson is difficult,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+simple,sederhana,سدرهانا,سدرهانا,adjective,3,prasaja,Hidup sederhana bahagia,Simple life is happy,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+complex,rumit,روميت,روميت,adjective,3,ruwet,Masalah ini rumit,This problem is complex,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+right,benar,بنار,بنار,adjective,1,bener,Jawaban mu benar,Your answer is right,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+wrong,salah,سالح,سالح,adjective,1,lepat,Jalan ini salah,This road is wrong,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,80
+true,betul,بتول,بتول,adjective,1,bener,Cerita ini betul,This story is true,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+false,bohong,بوهوڠ,بوهوڠ,adjective,2,goroh,Berita itu bohong,That news is false,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+full,penuh,ڤنوح,ڤنوح,adjective,1,kebak,Gelas ini penuh,This glass is full,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,75
+empty,kosong,کوسوڠ,کوسوڠ,adjective,1,suwung,Rumah ini kosong,This house is empty,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+red,merah,ميراح,ميراح,adjective,1,abang,Bunga merah cantik,Red flowers are beautiful,english,banjarese,pegon,jawi,word_type,difficulty,synonyms,example_sentence,example_translation,image_url,frequency
+I/me,aku,اکو,اکو,pronoun,1,ulun,Aku makan nasi,I eat rice,https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face,100
+you,ikam,ايکم,ايکم,pronoun,1,pian,Ikam baik hati,You are kind,https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face,100
+he/she,sidin,سيدين,سيدين,pronoun,1,dia,Sidin datang kemari,He/she comes here,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,90
+we (inclusive),kita,کيتا,کيتا,pronoun,2,kami,Kita pergi bersama,We go together,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,85
+we (exclusive),kami,کامي,کامي,pronoun,2,kita,Kami dari Banjar,We are from Banjar,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,85
+they,mereka,مريکا,مريکا,pronoun,2,sidin-sidin,Mereka sudah pulang,They have gone home,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,80
+this,ini,اين,اين,pronoun,1,iki,Ini rumah aku,This is my house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,95
+that,itu,ايتو,ايتو,pronoun,1,niku,Itu mobil bapak,That is father's car,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,90
+what,apa,اڤا,اڤا,question,2,naon,Apa yang dimakan?,What is being eaten?,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,85
+who,siapa,سياڤا,سياڤا,question,2,saha,Siapa yang datang?,Who is coming?,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+where,dimana,ديمانا,ديمانا,question,2,ning endi,Dimana rumah mu?,Where is your house?,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,80
+when,kapan,کاڤان,کاڤان,question,2,nalika,Kapan kamu pergi?,When are you going?,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,75
+why,kenapa,کناڤا,کناڤا,question,3,napa,Kenapa tidak datang?,Why didn't you come?,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+how,gimana,ګيمانا,ګيمانا,question,3,pripun,Gimana caranya?,How to do it?,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+rice,nasi,ناسي,ناسي,noun,1,beras,Nasi ini enak,This rice is delicious,https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center,95
+eat,makan,ماکن,ماکن,verb,1,santap,Makan dulu sebelum pergi,Eat first before going,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,95
+drink,minum,مينوم,مينوم,verb,1,teguk,Minum air putih banyak,Drink lots of water,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,90
+water,air,اير,اير,noun,1,banyu,Air ini jernih,This water is clear,https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center,100
+fish,iwak,ايوک,ايوک,noun,1,ikan,Iwak bakar enak,Grilled fish is delicious,https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center,85
+chicken,ayam,ايم,ايم,noun,1,manuk,Ayam goreng pedas,Spicy fried chicken,https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=200&h=200&fit=crop&crop=center,90
+beef,daging sapi,داګيڠ ساڤي,داګيڠ ساڤي,noun,2,daging,Daging sapi mahal,Beef is expensive,https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=200&h=200&fit=crop&crop=center,75
+vegetables,sayur,سايور,سايور,noun,1,lalap,Sayur kangkung enak,Water spinach is delicious,https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop&crop=center,80
+fruit,buah,بواح,بواح,noun,1,pelem,Buah mangga manis,Mango is sweet,https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop&crop=center,85
+banana,pisang,ڤيسڠ,ڤيسڠ,noun,1,gedang,Pisang goreng crispy,Crispy fried banana,https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=200&h=200&fit=crop&crop=center,80
+coconut,kelapa,کلاڤا,کلاڤا,noun,1,nyiur,Air kelapa segar,Fresh coconut water,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,75
+mango,mangga,ماڠګا,ماڠګا,noun,1,pelem,Mangga manis sekali,Mangoes are very sweet,https://images.unsplash.com/photo-1553279719-d2e42edd8e8d?w=200&h=200&fit=crop&crop=center,70
+orange,jeruk,جروک,جروک,noun,1,limau,Jeruk asam segar,Sour orange is fresh,https://images.unsplash.com/photo-1547514701-42782101795e?w=200&h=200&fit=crop&crop=center,75
+apple,apel,اڤل,اڤل,noun,2,tufah,Apel merah manis,Red apples are sweet,https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=200&h=200&fit=crop&crop=center,70
+coffee,kopi,کوڤي,کوڤي,noun,1,kawa,Kopi panas nikmat,Hot coffee is enjoyable,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&h=200&fit=crop&crop=center,85
+tea,teh,تيح,تيح,noun,1,es teh,Teh manis segar,Sweet tea is refreshing,https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=200&fit=crop&crop=center,80
+milk,susu,سوسو,سوسو,noun,1,dadih,Susu sapi putih,Cow milk is white,https://images.unsplash.com/photo-1550583724-b2692b85169f?w=200&h=200&fit=crop&crop=center,75
+bread,roti,روتي,روتي,noun,1,kue,Roti bakar mentega,Buttered toast,https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=200&h=200&fit=crop&crop=center,75
+egg,telur,تلور,تلور,noun,1,endog,Telur mata sapi,Fried egg sunny side up,https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=200&h=200&fit=crop&crop=center,85
+salt,garam,ګارم,ګارم,noun,1,uyah,Garam untuk masak,Salt for cooking,https://images.unsplash.com/photo-1544816155-12df9643f363?w=200&h=200&fit=crop&crop=center,70
+sugar,gula,ګولا,ګولا,noun,1,gendis,Gula aren manis,Palm sugar is sweet,https://images.unsplash.com/photo-1581579181842-54e8af41c16d?w=200&h=200&fit=crop&crop=center,70
+chili,cabe,چابي,چابي,noun,1,lombok,Cabe merah pedas,Red chili is spicy,https://images.unsplash.com/photo-1583062401623-aba7bf855169?w=200&h=200&fit=crop&crop=center,75
+onion,bawang,باواڠ,باواڠ,noun,1,brambang,Bawang merah harum,Red onions are fragrant,https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?w=200&h=200&fit=crop&crop=center,70
+garlic,bawang putih,باواڠ ڤوتيح,باواڠ ڤوتيح,noun,2,bawang bodas,Bawang putih untuk bumbu,Garlic for seasoning,https://images.unsplash.com/photo-1596040419229-1bb1b4e3c0c0?w=200&h=200&fit=crop&crop=center,65
+hand,tangan,تڠن,تڠن,noun,1,jari,Tangan ku sakit,My hand hurts,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,85
+eye,mata,ماتا,ماتا,noun,1,pandang,Mata nya indah,His/her eyes are beautiful,https://images.unsplash.com/photo-1582593089820-c8f8b9d98769?w=200&h=200&fit=crop&crop=center,80
+head,kepala,کڤالا,کڤالا,noun,1,ubun,Kepala ku pusing,My head is dizzy,https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop&crop=center,75
+foot,kaki,کاکي,کاکي,noun,1,suku,Kaki nya panjang,His/her legs are long,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,80
+mouth,mulut,مولوت,مولوت,noun,1,bibir,Mulut nya manis,His/her mouth is sweet,https://images.unsplash.com/photo-1588731113607-410a2b4de7cd?w=200&h=200&fit=crop&crop=center,75
+nose,hidung,هيدوڠ,هيدوڠ,noun,1,irung,Hidung mancung,Pointed nose,https://images.unsplash.com/photo-1614204424926-196a80bf0be8?w=200&h=200&fit=crop&crop=center,70
+ear,telinga,تليڠا,تليڠا,noun,1,kuping,Telinga sakit,Ear hurts,https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=200&h=200&fit=crop&crop=center,70
+hair,rambut,رامبوت,رامبوت,noun,1,bulu,Rambut panjang cantik,Long hair is beautiful,https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&h=200&fit=crop&crop=center,75
+tooth,gigi,ګيګي,ګيګي,noun,1,waos,Gigi putih bersih,Clean white teeth,https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=200&h=200&fit=crop&crop=center,70
+heart,hati,هاتي,هاتي,noun,1,ati,Hati nya baik,His/her heart is good,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,80
+stomach,perut,ڤروت,ڤروت,noun,1,weteng,Perut lapar sekali,Very hungry stomach,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,75
+back,punggung,ڤوڠګوڠ,ڤوڠګوڠ,noun,2,mburi,Punggung sakit,Back is painful,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,70
+shoulder,bahu,باهو,باهو,noun,2,pundhak,Bahu kaku sekali,Shoulder is very stiff,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,65
+finger,jari,جاري,جاري,noun,1,driji,Jari tangan lima,Five fingers on hand,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,80
+thumb,jempol,جمڤول,جمڤول,noun,2,pollex,Jempol kaki besar,Big toe is large,https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center,65
+neck,leher,ليهر,ليهر,noun,1,gulu,Leher panjang jerapah,Giraffe has long neck,https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop&crop=center,70
+chest,dada,دادا,دادا,noun,1,jaja,Dada sakit nafas,Chest hurts when breathing,https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&crop=center,70
+want/will,mau,ماو,ماو,verb,1,hendak,Aku mau makan,I want to eat,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,95
+go,pergi,ڤرګي,ڤرګي,verb,1,berangkat,Aku mau pergi,I want to go,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,90
+come,datang,داتڠ,داتڠ,verb,1,sampai,Sidin datang tadi,He/she came earlier,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+sleep,tidur,تيدور,تيدور,verb,1,istirahat,Aku mau tidur,I want to sleep,https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center,80
+walk,jalan,جالن,جالن,verb,1,berjalan,Jalan pagi sehat,Morning walk is healthy,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,80
+run,lari,لاري,لاري,verb,2,berlari,Lari pagi segar,Morning run is refreshing,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,75
+sit,duduk,دودوک,دودوک,verb,1,berdudu,Duduk di kursi,Sit on the chair,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,80
+stand,berdiri,بردري,بردري,verb,2,tegak,Berdiri tegak,Stand upright,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,75
+speak,bicara,بيچارا,بيچارا,verb,2,cakap,Bicara pelan-pelan,Speak slowly,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+listen,dengar,دڠر,دڠر,verb,2,rungu,Dengar baik-baik,Listen carefully,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,80
+see,lihat,ليهات,ليهات,verb,1,tengok,Lihat ke sana,Look over there,https://images.unsplash.com/photo-1582593089820-c8f8b9d98769?w=200&h=200&fit=crop&crop=center,85
+watch,nonton,نونتون,نونتون,verb,2,mirsani,Nonton televisi,Watch television,https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=200&h=200&fit=crop&crop=center,75
+read,baca,باچا,باچا,verb,2,membaca,Baca buku setiap hari,Read books every day,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,80
+write,tulis,توليس,توليس,verb,2,menulis,Tulis surat untuk mama,Write a letter to mom,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,75
+work,kerja,کرجا,کرجا,verb,1,gawe,Kerja keras biar sukses,Work hard to succeed,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,85
+play,main,ماين,ماين,verb,1,bermain,Main bola sore-sore,Play ball in the evening,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,80
+study,belajar,بلاجار,بلاجار,verb,2,sinau,Belajar bahasa Banjar,Study Banjarese language,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,80
+teach,mengajar,مڠاجار,مڠاجار,verb,3,mulang,Mengajar anak kecil,Teach small children,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+learn,belajar,بلاجار,بلاجار,verb,2,sinau,Belajar dari pengalaman,Learn from experience,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,80
+think,pikir,ڤيکير,ڤيکير,verb,2,mikir,Pikir dulu sebelum bertindak,Think before acting,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,75
+ecosystem,ekosistem,ايکوسيستم,ايکوسيستم,noun,3,sistem alam,Ekosistem laut kompleks,Marine ecosystem is complex,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,35
+species,spesies,سڤسيس,سڤسيس,noun,3,jenis,Spesies baru ditemukan,New species discovered,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,40
+evolution,evolusi,ايوولوسي,ايوولوسي,noun,3,perkembangan,Evolusi manusia panjang,Human evolution is long,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,35
+adaptation,adaptasi,اداڤتاسي,اداڤتاسي,noun,3,penyesuaian,Adaptasi hewan pintar,Animal adaptation is smart,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,40
+survival,kelangsungan,کلڠسوڠان,کلڠسوڠان,noun,4,kaslametan,Kelangsungan hidup penting,Survival is important,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,35
+extinct,punah,ڤوناح,ڤوناح,adjective,2,sirna,Dinosaurus sudah punah,Dinosaurs are extinct,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,40
+fossil,fosil,فوسيل,فوسيل,noun,2,peninggalan,Fosil dinosaurus tua,Dinosaur fossil is old,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,35
+archaeology,arkeologi,ارکيولوګي,ارکيولوګي,noun,4,ilmu purbakala,Arkeologi candi kuno,Temple archaeology is ancient,https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=200&h=200&fit=crop&crop=center,30
+history,sejarah,سجاراح,سجاراح,noun,2,babad,Sejarah Indonesia panjang,Indonesian history is long,https://images.unsplash.com/photo-1507692049790-de58290a4334?w=200&h=200&fit=crop&crop=center,65
+culture,budaya,بودايا,بودايا,noun,2,kabudayan,Budaya Banjar unik,Banjarese culture is unique,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+tradition,tradisi,ترادسي,ترادسي,noun,3,adat,Tradisi nenek moyang,Ancestral tradition,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+custom,adat,اادات,اادات,noun,2,tradisi,Adat istiadat lama,Old customs,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+ceremony,upacara,اوڤاچارا,اوڤاچارا,noun,3,ritual,Upacara pernikahan meriah,Wedding ceremony is festive,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,50
+festival,festival,فستيوال,فستيوال,noun,3,perayaan,Festival budaya tahunan,Annual cultural festival,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,45
+celebration,perayaan,ڤرايان,ڤرايان,noun,3,perayaan,Perayaan kemerdekaan meriah,Independence celebration is festive,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,50
+wedding,pernikahan,ڤرنيکاهان,ڤرنيکاهان,noun,3,pawiwahan,Pernikahan adik bulan depan,Sister's wedding next month,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+birthday,ulang tahun,اولڠ تاهون,اولڠ تاهون,noun,3,wiyosan,Ulang tahun anak pertama,Child's first birthday,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,60
+party,pesta,ڤستا,ڤستا,noun,2,perayaan,Pesta ulang tahun meriah,Birthday party is festive,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+gift,hadiah,هادياح,هادياح,noun,2,peparingän,Hadiah ulang tahun bagus,Birthday gift is nice,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,70
+present,kado,کادو,کادو,noun,2,hadiah,Kado untuk teman,Present for friend,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,65
+surprise,kejutan,کجوتان,کجوتان,noun,2,kaget,Kejutan ulang tahun,Birthday surprise,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,55
+invitation,undangan,اونداڠان,اونداڠان,noun,3,ajengan,Undangan pernikahan indah,Wedding invitation is beautiful,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,50
+guest,tamu,تامو,تامو,noun,1,pandhéréktur,Tamu datang banyak,Many guests came,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,70
+host,tuan rumah,توان رومح,توان رومح,noun,3,sing nduwe omah,Tuan rumah ramah,Host is friendly,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+visitor,pengunjung,ڤڠونجوڠ,ڤڠونجوڠ,noun,3,sing sowan,Pengunjung museum banyak,Museum visitors are many,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+welcome,selamat datang,سلامات داتڠ,سلامات داتڠ,interjection,3,sugeng rawuh,Selamat datang di rumah,Welcome to the house,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+goodbye,selamat tinggal,سلامات تيڠګال,سلامات تيڠګال,interjection,3,pamit,Selamat tinggal sampai jumpa,Goodbye see you later,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+farewell,perpisahan,ڤرڤيساهان,ڤرڤيساهان,noun,3,pisahan,Perpisahan sekolah sedih,School farewell is sad,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,50
+meeting,pertemuan,ڤرتموان,ڤرتموان,noun,3,patemon,Pertemuan keluarga besar,Big family meeting,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+appointment,janji,جانجي,جانجي,noun,2,prajanji,Janji bertemu dokter,Appointment to meet doctor,https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face,60
+schedule,jadwal,جادوال,جادوال,noun,2,jadwal,Jadwal pelajaran padat,Class schedule is packed,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,65
+program,program,ڤروګرام,ڤروګرام,noun,2,acara,Program televisi bagus,Television program is good,https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=200&h=200&fit=crop&crop=center,60
+plan,rencana,رنچانا,رنچانا,noun,2,planning,Rencana liburan seru,Vacation plan is fun,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+project,proyek,ڤرويک,ڤرويک,noun,2,proyék,Proyek sekolah sulit,School project is difficult,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,55
+task,tugas,توګاس,توګاس,noun,2,gaweyan,Tugas rumah banyak,Homework is a lot,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+assignment,penugasan,ڤنوګاسان,ڤنوګاسان,noun,3,tugas,Penugasan guru berat,Teacher's assignment is heavy,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+responsibility,tanggung jawab,تڠوڠ جاواب,تڠوڠ جاواب,noun,4,tanggungan,Tanggung jawab besar,Big responsibility,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+duty,kewajiban,کواجيبان,کواجيبان,noun,3,kuwajiban,Kewajiban anak sekolah,Child's duty is school,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,60
+obligation,kewajiban,کواجيبان,کواجيبان,noun,3,weweka,Kewajiban bayar pajak,Obligation to pay taxes,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,50
+right,hak,هک,هک,noun,1,hak,Hak asasi manusia,Human rights,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+privilege,hak istimewa,هک ايستيموا,هک ايستيموا,noun,3,kaistimewaan,Hak istimewa raja,King's privilege,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,40
+authority,wewenang,ووينڠ,ووينڠ,noun,2,kuwasa,Wewenang kepala desa,Village head's authority,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,45
+power,kekuasaan,ککواساان,ککواساان,noun,3,panguwasa,Kekuasaan harus bijaksana,Power must be wise,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,50
+control,kontrol,کونترول,کونترول,noun,2,pangendali,Kontrol diri penting,Self control is important,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+management,manajemen,مانجمن,مانجمن,noun,3,pangaturan,Manajemen waktu baik,Time management is good,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,50
+organization,organisasi,اورګانيساسي,اورګانيساسي,noun,4,organisasi,Organisasi mahasiswa aktif,Student organization is active,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,45
+committee,panitia,ڤانيتيا,ڤانيتيا,noun,3,panitia,Panitia acara sibuk,Event committee is busy,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,50
+member,anggota,اڠګوتا,اڠګوتا,noun,2,anggota,Anggota keluarga lengkap,Family members are complete,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+leader,pemimpin,ڤميمڤين,ڤميمڤين,noun,3,pimpinan,Pemimpin yang bijaksana,Wise leader,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+follower,pengikut,ڤڠيکوت,ڤڠيکوت,noun,3,sing ngetut,Pengikut setia loyal,Loyal follower is faithful,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,50
+partnership,kemitraan,کميتراان,کميتراان,noun,3,kerjasama,Kemitraan bisnis bagus,Business partnership is good,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,45
+cooperation,kerjasama,کرجاساما,کرجاساما,noun,3,gotong royong,Kerjasama tim solid,Team cooperation is solid,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+collaboration,kolaborasi,کولابوراسي,کولابوراسي,noun,4,gawean bareng,Kolaborasi seniman kreatif,Artist collaboration is creative,https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&h=200&fit=crop&crop=center,40
+communication,komunikasi,کومونيکاسي,کومونيکاسي,noun,4,pasrawungan,Komunikasi yang baik,Good communication,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+conversation,percakapan,ڤرچاکاڤان,ڤرچاکاڤان,noun,4,pacelathon,Percakapan santai,Casual conversation,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+discussion,diskusi,ديسکوسي,ديسکوسي,noun,3,rembugan,Diskusi kelompok seru,Group discussion is fun,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,55
+debate,debat,دبات,دبات,noun,2,adu argumentasi,Debat politik panas,Political debate is heated,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,45
+argument,argumen,ارګومن,ارګومن,noun,3,bantahan,Argumen yang kuat,Strong argument,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,50
+opinion,pendapat,ڤنداڤات,ڤنداڤات,noun,3,panemu,Pendapat berbeda wajar,Different opinions are normal,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+idea,ide,ايدي,ايدي,noun,2,gagasan,Ide kreatif bagus,Creative idea is good,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+suggestion,saran,ساران,ساران,noun,2,usul,Saran yang berguna,Useful suggestion,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+advice,nasihat,ناسيهات,ناسيهات,noun,2,wejangan,Nasihat orang tua,Parents' advice,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+recommendation,rekomendasi,رکوميندسي,رکوميندسي,noun,4,anjuran,Rekomendasi dokter,Doctor's recommendation,https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face,50
+proposal,proposal,ڤروڤوسال,ڤروڤوسال,noun,3,usulan,Proposal penelitian bagus,Research proposal is good,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,45
+solution,solusi,سولوسي,سولوسي,noun,3,pemecahan,Solusi masalah tepat,Problem solution is right,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+problem,masalah,مسأله,مسأله,noun,2,prekara,Masalah harus diselesaikan,Problems must be solved,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+challenge,tantangan,تانتڠان,تانتڠان,noun,3,wewaler,Tantangan hidup berat,Life challenges are heavy,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,60
+difficulty,kesulitan,کسوليتان,کسوليتان,noun,3,kangelan,Kesulitan bisa diatasi,Difficulties can be overcome,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+obstacle,rintangan,رينتڠان,رينتڠان,noun,3,alangan,Rintangan menghadang jalan,Obstacles block the way,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,50
+barrier,penghalang,ڤڠهالڠ,ڤڠهالڠ,noun,3,aling-aling,Penghalang jalan rusak,Road barrier is damaged,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,45
+opportunity,kesempatan,کسمڤاتان,کسمڤاتان,noun,4,kasempatan,Kesempatan emas langka,Golden opportunity is rare,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,55
+chance,peluang,ڤلواڠ,ڤلواڠ,noun,2,kasempatan,Peluang menang besar,Winning chance is big,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,60
+possibility,kemungkinan,کموڠکينان,کموڠکينان,noun,4,bisa dadi,Kemungkinan hujan besar,Rain possibility is big,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+probability,probabilitas,ڤروباباليتاس,ڤروباباليتاس,noun,5,kemungkinan,Probabilitas sukses tinggi,Success probability is high,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,40
+risk,risiko,ريسيکو,ريسيکو,noun,3,bebaya,Risiko investasi tinggi,Investment risk is high,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,50
+danger,bahaya,باهايا,باهايا,noun,2,bebaya,Bahaya jalan berlubang,Danger of potholed roads,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,60
+safety,keamanan,کاامانان,کاامانان,noun,3,kaslametan,Keamanan jalan penting,Road safety is important,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,65
+security,keamanan,کاامانان,کاامانان,noun,3,njaga,Keamanan rumah baik,House security is good,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60generator,generator,ګنراتور,ګنراتور,noun,3,pembangkit,Generator listrik rusak,Electric generator is broken,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,50
+motor,motor,موتور,موتور,noun,2,mesin,Motor listrik hemat,Electric motor is efficient,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,65
+engine,mesin,مسين,مسين,noun,2,motor,Mesin mobil panas,Car engine is hot,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,65
+machine,mesin,مسين,مسين,noun,2,piranti,Mesin cuci otomatis,Washing machine is automatic,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,60
+tool,alat,الات,الات,noun,2,piranti,Alat pertukangan lengkap,Carpentry tools are complete,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,70
+hammer,palu,ڤالو,ڤالو,noun,2,gandhik,Palu untuk paku,Hammer for nails,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,55
+nail,paku,ڤاکو,ڤاکو,noun,1,paku,Paku besi tajam,Iron nails are sharp,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,60
+screw,sekrup,سکروڤ,سکروڤ,noun,2,skrup,Sekrup kayu panjang,Wood screws are long,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,50
+drill,bor,بور,بور,noun,1,gurdi,Bor listrik kuat,Electric drill is strong,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,55
+saw,gergaji,ګرګاجي,ګرګاجي,noun,2,gergaji,Gergaji kayu tajam,Wood saw is sharp,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,50
+knife,pisau,ڤيساو,ڤيساو,noun,2,lading,Pisau dapur tajam,Kitchen knife is sharp,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,65
+fork,garpu,ګارڤو,ګارڤو,noun,2,garpu,Garpu untuk makan,Fork for eating,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,60
+spoon,sendok,سندوک,سندوک,noun,2,sendok,Sendok nasi besar,Rice spoon is big,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,70
+chopsticks,sumpit,سومڤيت,سومڤيت,noun,2,sumpit,Sumpit untuk mie,Chopsticks for noodles,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,50
+plate,piring,ڤيريڠ,ڤيريڠ,noun,2,piring,Piring putih bersih,White plate is clean,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,75
+bowl,mangkuk,ماڠکوک,ماڠکوک,noun,2,mangkok,Mangkuk nasi penuh,Rice bowl is full,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,70
+cup,cangkir,چاڠکير,چاڠکير,noun,2,cangkir,Cangkir kopi panas,Coffee cup is hot,https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&h=200&fit=crop&crop=center,65
+glass,gelas,ګلاس,ګلاس,noun,2,gelas,Gelas air jernih,Water glass is clear,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,75
+bottle,botol,بوتول,بوتول,noun,2,botol,Botol air mineral,Mineral water bottle,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,70
+can,kaleng,کالڠ,کالڠ,noun,2,kaleng,Kaleng susu bekas,Used milk can,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,60
+jar,toples,توڤليس,توڤليس,noun,2,gelas gedhe,Toples kue besar,Big cookie jar,https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=200&fit=crop&crop=center,55
+pot,panci,ڤانچي,ڤانچي,noun,2,panci,Panci masak besar,Big cooking pot,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,65
+pan,wajan,واجان,واجان,noun,2,wajan,Wajan goreng anti lengket,Non-stick frying pan,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,60
+stove,kompor,کومڤور,کومڤور,noun,2,kompor,Kompor gas biru,Blue gas stove,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,65
+oven,oven,اووين,اووين,noun,2,oven,Oven roti panas,Bread oven is hot,https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=200&h=200&fit=crop&crop=center,55
+refrigerator,kulkas,کولکاس,کولکاس,noun,2,lemari es,Kulkas penuh makanan,Refrigerator full of food,https://images.unsplash.com/photo-1571847140471-1d7766e825ea?w=200&h=200&fit=crop&crop=center,65
+freezer,freezer,فريزر,فريزر,noun,2,pembeku,Freezer untuk es,Freezer for ice,https://images.unsplash.com/photo-1571847140471-1d7766e825ea?w=200&h=200&fit=crop&crop=center,55
+microwave,microwave,ميکروويو,ميکروويو,noun,3,gelombang mikro,Microwave panaskan makanan,Microwave heats food,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,50
+blender,blender,بلندر,بلندر,noun,2,penghancur,Blender untuk jus,Blender for juice,https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop&crop=center,55
+mixer,mixer,ميکسر,ميکسر,noun,2,pengaduk,Mixer adonan kue,Mixer for cake batter,https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=200&h=200&fit=crop&crop=center,50
+toaster,pemanggang,ڤماڠڠ,ڤماڠڠ,noun,3,alat panggang,Pemanggang roti otomatis,Automatic bread toaster,https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=200&h=200&fit=crop&crop=center,45
+kettle,ketel,کتل,کتل,noun,2,cerek,Ketel air mendidih,Water kettle is boiling,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,55
+teapot,teko,تيکو,تيکو,noun,2,teko,Teko teh porselen,Porcelain tea pot,https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=200&fit=crop&crop=center,50
+thermos,termos,ترموس,ترموس,noun,2,botol panas,Termos air panas,Hot water thermos,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,50
+vacuum,vacuum,واکووم,واکووم,noun,2,penyedot debu,Vacuum cleaner kuat,Vacuum cleaner is strong,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,45
+broom,sapu,ساڤو,ساڤو,noun,1,sapu,Sapu lidi alami,Natural palm broom,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+mop,pel,ڤل,ڤل,noun,1,pel,Pel lantai basah,Wet floor mop,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+bucket,ember,امبر,امبر,noun,2,ember,Ember air besar,Big water bucket,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,65
+basin,baskom,باسکوم,باسکوم,noun,2,waskom,Baskom cuci plastik,Plastic wash basin,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,55
+soap,sabun,سابون,سابون,noun,2,sabun,Sabun mandi wangi,Fragrant bath soap,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,70
+shampoo,sampo,سامڤو,سامڤو,noun,2,sampo,Sampo rambut lembut,Gentle hair shampoo,https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&h=200&fit=crop&crop=center,60
+toothbrush,sikat gigi,سيکات ګيګي,سيکات ګيګي,noun,3,sikat waos,Sikat gigi baru,New toothbrush,https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=200&h=200&fit=crop&crop=center,65
+toothpaste,pasta gigi,ڤاستا ګيګي,ڤاستا ګيګي,noun,3,odol,Pasta gigi mint segar,Fresh mint toothpaste,https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=200&h=200&fit=crop&crop=center,60
+towel,handuk,هاندوک,هاندوک,noun,2,anduk,Handuk mandi tebal,Thick bath towel,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,65
+tissue,tisu,تيسو,تيسو,noun,2,kertas tisu,Tisu wajah lembut,Gentle facial tissue,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,60
+cotton,kapas,کاڤاس,کاڤاس,noun,2,kapuk,Kapas putih halus,White cotton is soft,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,55
+comb,sisir,سيسير,سيسير,noun,2,sisir,Sisir rambut halus,Fine hair comb,https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&h=200&fit=crop&crop=center,60
+brush,sikat,سيکات,سيکات,noun,2,sikat,Sikat rambut lembut,Soft hair brush,https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&h=200&fit=crop&crop=center,60
+razor,pisau cukur,ڤيساو چوکور,ڤيساو چوکور,noun,3,alat cukur,Pisau cukur tajam,Sharp razor,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,50
+scissors,gunting,ګونتيڠ,ګونتيڠ,noun,2,gunting,Gunting kertas tajam,Paper scissors are sharp,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,60
+needle,jarum,جاروم,جاروم,noun,2,jarum,Jarum jahit halus,Fine sewing needle,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,55
+thread,benang,بناڠ,بناڠ,noun,2,benang,Benang jahit kuat,Strong sewing thread,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,55
+button,kancing,کانچيڠ,کانچيڠ,noun,2,kancing,Kancing baju lepas,Shirt button came off,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,60
+zipper,resleting,رسلتيڠ,رسلتيڠ,noun,2,sleting,Resleting tas rusak,Bag zipper is broken,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center,55
+fabric,kain,کاين,کاين,noun,1,kain,Kain batik indah,Batik fabric is beautiful,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,65
+cotton,katun,کاتون,کاتون,noun,2,kapas,Baju katun adem,Cotton clothes are cool,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,60
+silk,sutra,سوترا,سوترا,noun,2,sutra,Kain sutra halus,Silk fabric is smooth,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,50
+wool,wol,وول,وول,noun,1,bulu domba,Jaket wol hangat,Wool jacket is warm,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,50
+leather,kulit,کوليت,کوليت,noun,2,kulit,Sepatu kulit mahal,Leather shoes are expensive,https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=center,55
+plastic,plastik,ڤلاستيک,ڤلاستيک,noun,2,plastik,Tas plastik tipis,Plastic bag is thin,https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=200&h=200&fit=crop&crop=center,65
+rubber,karet,کارت,کارت,noun,2,karet,Sepatu karet anti air,Rubber shoes are waterproof,https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=center,60
+metal,logam,لوګم,لوګم,noun,2,wesi,Pagar logam kuat,Metal fence is strong,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,55
+iron,besi,بسي,بسي,noun,2,wesi,Besi keras kuat,Iron is hard and strong,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,60
+steel,baja,باجا,باجا,noun,2,waja,Baja tahan karat,Stainless steel,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,50
+aluminum,aluminium,الومينيوم,الومينيوم,noun,3,almunium,Panci aluminium ringan,Aluminum pot is light,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,45
+copper,tembaga,تمباګا,تمباګا,noun,2,tembaga,Kawat tembaga bagus,Copper wire is good,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,45
+gold,emas,اماس,اماس,noun,2,emas,Cincin emas mahal,Gold ring is expensive,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center,60
+silver,perak,ڤراک,ڤراک,noun,2,salaka,Gelang perak cantik,Silver bracelet is beautiful,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center,55
+bronze,perunggu,ڤروڠګو,ڤروڠګو,noun,2,gangsa,Patung perunggu tua,Old bronze statue,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center,40
+wood,kayu,کايو,کايو,noun,1,kayu,Meja kayu jati,Teak wood table,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,70
+bamboo,bambu,بامبو,بامبو,noun,2,pring,Rumah bambu sejuk,Bamboo house is cool,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+glass,kaca,کاچا,کاچا,noun,2,kaca,Jendela kaca bening,Clear glass window,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+cement,semen,سمن,سمن,noun,2,semen,Semen untuk bangunan,Cement for construction,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,55
+brick,bata,باتا,باتا,noun,2,bata,Dinding bata merah,Red brick wall,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+tile,genteng,ګنتڠ,ګنتڠ,noun,2,genting,Genteng rumah bocor,House tiles are leaking,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,55
+paint,cat,چات,چات,noun,1,cat,Cat tembok putih,White wall paint,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+brush,kuas,کواس,کواس,noun,2,kuas,Kuas cat besar,Big paint brush,https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=200&h=200&fit=crop&crop=center,55
+sand,pasir,ڤاسير,ڤاسير,noun,2,wedhi,Pasir halus putih,Fine white sand,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+gravel,kerikil,کريکيل,کريکيل,noun,2,krikil,Kerikil jalan kasar,Road gravel is rough,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,50
+rock,batu,باتو,باتو,noun,1,watu,Batu gunung besar,Mountain rock is big,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+crystal,kristal,کريستال,کريستال,noun,2,kristal,Kristal jernih indah,Clear crystal is beautiful,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center,45
+mineral,mineral,مينرال,مينرال,noun,2,mineral,Air mineral sehat,Mineral water is healthy,https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center,55
+oil,minyak,مينيک,مينيک,noun,2,lenga,Minyak goreng habis,Cooking oil is finished,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,70
+gas,gas,ګاس,ګاس,noun,1,gas,Gas kompor bocor,Stove gas is leaking,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,65
+fuel,bahan bakar,باهان باکار,باهان باکار,noun,3,bensin,Bahan bakar mahal,Fuel is expensive,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,60
+gasoline,bensin,بنسين,بنسين,noun,2,premium,Bensin mobil habis,Car gasoline is empty,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,65
+diesel,solar,سولار,سولار,noun,2,solar,Truk pakai solar,Truck uses diesel,https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=200&h=200&fit=crop&crop=center,55
+coal,batu bara,باتو بارا,باتو بارا,noun,3,areng,Batu bara untuk listrik,Coal for electricity,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+charcoal,arang,اراڠ,اراڠ,noun,2,areng,Arang untuk bakar,Charcoal for burning,https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center,55
+smoke,asap,اساڤ,اساڤ,noun,2,kukus,Asap hitam tebal,Thick black smoke,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+pollution,polusi,ڤولوسي,ڤولوسي,noun,2,pencemaran,Polusi udara berbahaya,Air pollution is dangerous,https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=200&h=200&fit=crop&crop=center,55
+environment,lingkungan,ليڠکوڠان,ليڠکوڠان,noun,3,lingkungan,Lingkungan bersih sehat,Clean environment is healthy,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+nature,alam,علم,علم,noun,2,alam,Alam Indonesia indah,Indonesian nature is beautiful,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+ecology,ekologi,ايکولوګي,ايکولوګي,noun,3,ilmu lingkungan,Ekologi hutan penting,Forest ecology is important,https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop&crop=center,45
+conservation,konservasi,کونسرواسي,کونسرواسي,noun,4,pelestarian,Konservasi hutan penting,Forest conservation is important,https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop&crop=center,40
+protection,perlindungan,ڤرليندوڠان,ڤرليندوڠان,noun,4,pangayoman,Perlindungan satwa langka,Protection of rare animals,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,45
+wildlife,satwa liar,ساتوا ليار,ساتوا ليار,noun,3,kewan alas,Satwa liar dilindungi,Wildlife is protected,https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=200&h=200&fit=crop&crop=center,40
+habitat,habitat,هابيتات,هابيتات,noun,3,papan panggonan,Habitat orangutan hutan,Orangutan habitat is forest,https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop&crop=center,40
+ecosystem,ekosistem,ايکوسيستم,ايکوbetween,antara,انتارا,انتارا,preposition,2,antarane,Antara rumah dan sekolah,Between house and school,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+beside,samping,سامڤيڠ,سامڤيڠ,preposition,2,sisih,Samping rumah ada taman,Beside the house there is a garden,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+behind,belakang,بلاکڠ,بلاکڠ,preposition,2,mburi,Belakang rumah luas,Behind the house is spacious,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+front,depan,دڤان,دڤان,preposition,2,ngarep,Depan rumah ada mobil,In front of house there is a car,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,75
+with,dengan,دڠان,دڠان,preposition,2,karo,Pergi dengan teman,Go with friends,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,85
+without,tanpa,تاڤا,تاڤا,preposition,2,tanpo,Tanpa uang tidak bisa beli,Without money cannot buy,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,70
+for,untuk,اونتوک,اونتوک,preposition,2,kanggo,Hadiah untuk anak,Gift for children,https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&h=200&fit=crop&crop=face,80
+from,dari,داري,داري,preposition,1,saka,Surat dari keluarga,Letter from family,https://images.unsplash.com/photo-1455390582262-044cdead277a?w=200&h=200&fit=crop&crop=center,85
+to,ke,کي,کي,preposition,1,menyang,Pergi ke pasar,Go to market,https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center,90
+in,di,دي,دي,preposition,1,ing,Di dalam rumah,In the house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,95
+on,di atas,دي اتاس,دي اتاس,preposition,2,nang,Di atas meja,On the table,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,85
+at,di,دي,دي,preposition,1,ning,Di rumah nenek,At grandmother's house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,90
+under,di bawah,دي باووح,دي باووح,preposition,3,ngisor,Di bawah pohon teduh,Under the shady tree,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,70
+through,melalui,ملالوي,ملالوي,preposition,2,liwat,Melalui jalan tol,Through the toll road,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,65
+across,seberang,سبرڠ,سبرڠ,preposition,2,sebrang,Seberang sungai jauh,Across the river is far,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+around,sekitar,سکيتار,سکيتار,preposition,2,sakubenge,Sekitar rumah bersih,Around the house is clean,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+during,selama,سلاما,سلاما,preposition,2,sadurunge,Selama liburan senang,During vacation happy,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,70
+before,sebelum,سبلوم,سبلوم,preposition,2,sadurunge,Sebelum makan cuci tangan,Before eating wash hands,https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&crop=center,75
+after,setelah,ستلح,ستلح,preposition,2,sawise,Setelah makan sikat gigi,After eating brush teeth,https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=200&h=200&fit=crop&crop=center,75
+until,sampai,سامڤاي,سامڤاي,preposition,2,nganti,Sampai malam masih kerja,Until night still working,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,70
+since,sejak,سجک,سجک,preposition,2,wiwit,Sejak pagi tidak makan,Since morning haven't eaten,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+against,melawan,ملاوان,ملاوان,preposition,2,nglawan,Melawan angin kencang,Against strong wind,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+toward,menuju,منوجو,منوجو,preposition,2,tumuju,Menuju ke arah utara,Toward the north direction,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+among,di antara,دي انتارا,دي انتارا,preposition,3,ing antarane,Di antara teman-teman,Among friends,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,65
+within,dalam,دالم,دالم,preposition,2,sajroning,Dalam waktu singkat,Within a short time,https://images.unsplash.com/photo-1501139083538-0139583c060f?w=200&h=200&fit=crop&crop=center,60
+beyond,melampaui,ملامڤاوي,ملامڤاوي,preposition,3,ngluwihi,Melampaui batas kota,Beyond city limits,https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&crop=center,50
+except,kecuali,کچوالي,کچوالي,preposition,2,kajaba,Semua datang kecuali dia,Everyone came except him,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,60
+including,termasuk,ترماسوک,ترماسوک,preposition,3,kalebu,Termasuk biaya transport,Including transportation costs,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,55
+instead,sebagai gantinya,سباګاي ګانتيڽا,سباګاي ګانتيڽا,preposition,4,gantine,Sebagai gantinya ambil ini,Instead take this,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+despite,meskipun,مسکيڤون,مسکيڤون,preposition,3,senadyan,Meskipun hujan tetap berangkat,Despite rain still departed,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+according,menurut,منوروت,منوروت,preposition,2,miturut,Menurut cuaca hari ini cerah,According to weather today is clear,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+regarding,mengenai,مڠناي,مڠناي,preposition,3,babagan,Mengenai masalah kemarin,Regarding yesterday's problem,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+concerning,tentang,تنتڠ,تنتڠ,preposition,2,babagan,Tentang pelajaran matematika,Concerning mathematics lesson,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,60
+about,tentang,تنتڠ,تنتڠ,preposition,2,babagan,Cerita tentang keluarga,Story about family,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,75
+upon,di atas,دي اتاس,دي اتاس,preposition,3,nang,Buku di atas rak,Book upon the shelf,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,60
+onto,ke atas,کي اتاس,کي اتاس,preposition,3,menyang ndhuwur,Naik ke atas gunung,Climb onto the mountain,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+into,ke dalam,کي دالم,کي دالم,preposition,3,menyang njero,Masuk ke dalam rumah,Go into the house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+out of,keluar dari,کلوار داري,کلوار داري,preposition,3,metu saka,Keluar dari rumah,Out of the house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,70
+off,lepas,ليڤاس,ليڤاس,preposition,2,copot,Lepas sepatu masuk rumah,Take off shoes entering house,https://images.unsplash.com/photo-1549298916-b41d501d3772?w=200&h=200&fit=crop&crop=center,65
+up,naik,نايک,نايک,preposition,1,munggah,Naik ke lantai dua,Go up to second floor,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,75
+down,turun,تورون,تورون,preposition,2,mudhun,Turun dari pohon,Come down from tree,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,70
+over,lewat,ليوات,ليوات,preposition,2,liwat,Lewat jembatan panjang,Over the long bridge,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,65
+along,sepanjang,سڤانجڠ,سڤانجڠ,preposition,3,sadawane,Sepanjang jalan ramai,Along the road is busy,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,60
+past,melewati,ملواتي,ملواتي,preposition,2,ngliwati,Melewati rumah nenek,Past grandmother's house,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,65
+per,per,ڤر,ڤر,preposition,1,saben,Per hari lima ribu,Five thousand per day,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,60
+via,melalui,ملالوي,ملالوي,preposition,2,liwat,Via jalan alternatif,Via alternative route,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,55
+plus,tambah,تامبح,تامبح,conjunction,2,lan,Dua tambah tiga lima,Two plus three five,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+minus,kurang,کوراڠ,کوراڠ,conjunction,2,dikurangi,Lima kurang dua tiga,Five minus two three,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+times,kali,کالي,کالي,conjunction,2,ping,Tiga kali empat dua belas,Three times four twelve,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,70
+divided,bagi,باګي,باګي,conjunction,2,dibagi,Sepuluh bagi dua lima,Ten divided two five,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+equals,sama dengan,ساما دڠان,ساما دڠان,conjunction,3,padha karo,Dua tambah dua sama dengan empat,Two plus two equals four,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,60
+mathematics,matematika,ماتماتيکا,ماتماتيکا,noun,4,ilmu angka,Matematika pelajaran sulit,Mathematics is difficult subject,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,65
+calculation,perhitungan,ڤرهيتوڠان,ڤرهيتوڠان,noun,4,petungan,Perhitungan uang belanja,Calculation of shopping money,https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=200&fit=crop&crop=center,60
+addition,penjumlahan,ڤنجوملاهان,ڤنجوملاهان,noun,4,tambahan,Penjumlahan angka mudah,Addition of numbers is easy,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,55
+subtraction,pengurangan,ڤڠوراڠان,ڤڠوراڠان,noun,4,pengurangan,Pengurangan lebih sulit,Subtraction is more difficult,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+multiplication,perkalian,ڤرکاليان,ڤرکاليان,noun,4,perkalian,Perkalian tabel hafal,Memorize multiplication table,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+division,pembagian,ڤمباګيان,ڤمباګيان,noun,4,pembagian,Pembagian yang rumit,Complex division,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,45
+fraction,pecahan,ڤچاهان,ڤچاهان,noun,3,pecahan,Pecahan setengah,Half fraction,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+decimal,desimal,دسيمال,دسيمال,noun,3,koma,Bilangan desimal rumit,Decimal numbers are complex,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,45
+percentage,persentase,ڤرسنتاسي,ڤرسنتاسي,noun,4,persen,Persentase kelulusan tinggi,Graduation percentage is high,https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center,50
+geometry,geometri,ګيومتري,ګيومتري,noun,3,ilmu bentuk,Geometri bentuk ruang,Geometry spatial shapes,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,45
+algebra,aljabar,الجبار,الجبار,noun,3,ilmu huruf,Aljabar pakai huruf,Algebra uses letters,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,40
+triangle,segitiga,سګيتيګا,سګيتيګا,noun,3,segi telu,Segitiga tiga sisi,Triangle has three sides,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+square,persegi,ڤرسګي,ڤرسګي,noun,3,segi papat,Persegi empat sisi sama,Square has four equal sides,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+rectangle,persegi panjang,ڤرسګي ڤانجڠ,ڤرسګي ڤانجڠ,noun,4,segi papat dawa,Persegi panjang bentuk pintu,Rectangle shape like door,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,45
+circle,lingkaran,ليڠکاران,ليڠکاران,noun,3,bunder,Lingkaran bentuk bola,Circle shape like ball,https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop&crop=center,55
+oval,oval,اووال,اووال,noun,2,lonjong,Bentuk oval seperti telur,Oval shape like egg,https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=200&h=200&fit=crop&crop=center,50
+diamond,berlian,برليان,برليان,noun,3,intan,Berlian sangat mahal,Diamond is very expensive,https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center,45
+star,bintang,بينتڠ,بينتڠ,noun,2,lintang,Bintang lima sudut,Star has five points,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,60
+line,garis,ګاريس,ګاريس,noun,2,garis,Garis lurus panjang,Straight line is long,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,60
+curve,lengkung,ليڠکوڠ,ليڠکوڠ,noun,3,mlengkung,Garis lengkung indah,Curved line is beautiful,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,50
+angle,sudut,سودوت,سودوت,noun,2,pojok,Sudut siku-siku tepat,Right angle is exact,https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop&crop=center,55
+corner,pojok,ڤوجوک,ڤوجوک,noun,2,sudut,Pojok ruangan gelap,Room corner is dark,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+edge,tepi,تڤي,تڤي,noun,2,pinggir,Tepi meja tajam,Table edge is sharp,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,55
+surface,permukaan,ڤرموکاان,ڤرموکاان,noun,3,lumahing,Permukaan meja halus,Table surface is smooth,https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&crop=center,50
+area,luas,لواس,لواس,noun,2,ambane,Luas rumah besar,House area is big,https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center,60
+volume,volume,وولومي,وولومي,noun,3,isi,Volume kotak besar,Box volume is big,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop&crop=center,50
+length,panjang,ڤانجڠ,ڤانجڠ,noun,2,dawane,Panjang jalan lima kilometer,Road length is five kilometers,https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center,60
+width,lebar,ليبار,ليبار,noun,2,ambane,Lebar sungai dua meter,River width is two meters,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+height,tinggi,تيڠګي,تيڠګي,noun,2,dhuwure,Tinggi pohon sepuluh meter,Tree height is ten meters,https://images.unsplash.com/photo-1447279506476-3faec8071eee?w=200&h=200&fit=crop&crop=center,60
+depth,dalam,دالم,دالم,noun,2,jerone,Kedalaman sumur lima meter,Well depth is five meters,https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center,50
+size,ukuran,اوکوران,اوکوران,noun,3,gedhene,Ukuran baju medium,Clothes size is medium,https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200&h=200&fit=crop&crop=center,60
+weight,berat,برات,برات,noun,2,bobote,Berat badan naik,Body weight increased,https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face,65
+mass,massa,ماسا,ماسا,noun,2,bobot,Massa benda berat,Object mass is heavy,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,45
+density,kepadatan,کڤادتان,کڤادتان,noun,3,rapatne,Kepadatan penduduk tinggi,Population density is high,https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&h=200&fit=crop&crop=center,45
+speed,kecepatan,کچڤاتان,کچڤاتان,noun,3,kencenge,Kecepatan mobil tinggi,Car speed is high,https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=200&fit=crop&crop=center,60
+velocity,kecepatan,کچڤاتان,کچڤاتان,noun,3,lajune,Kecepatan angin kencang,Wind velocity is strong,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+acceleration,percepatan,ڤرچڤاتان,ڤرچڤاتان,noun,4,cepetan,Percepatan motor bagus,Motorcycle acceleration is good,https://images.unsplash.com/photo-1558618978-fcd61c61cd04?w=200&h=200&fit=crop&crop=center,45
+force,gaya,ګايا,ګايا,noun,2,daya,Gaya tarik magnet,Magnetic force pull,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,50
+energy,energi,اينرګي,اينرګي,noun,3,tenaga,Energi matahari gratis,Solar energy is free,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center,55
+power,kekuatan,ککواتان,ککواتان,noun,3,kuwat,Kekuatan listrik besar,Electric power is big,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,55
+electricity,listrik,ليستريک,ليستريک,noun,3,setrum,Listrik rumah mati,House electricity is off,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=200&fit=crop&crop=center,70
+battery,baterai,باتراي,باتراي,noun,3,aki,Baterai handphone habis,Phone battery is dead,https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&h=200&fit=crop&crop=center,65
+generator,generator,ګنراتور,ګنراتور,noun,3,pembangkit,Generator listrik rusak,Electric generator is broken,https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0

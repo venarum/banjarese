@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banjarese-English Learning System</title>
+<title>Banjarese-English Learning</title>
 <style>
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,90 +20,45 @@ body {
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
-h1 {
-    text-align: center;
-    color: #4a5568;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-}
-.section {
-    margin-bottom: 30px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #667eea;
-}
-.section h2 {
-    color: #667eea;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-button {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-}
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-select, input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #e2e8f0;
-    border-radius: 6px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-.generated-sentence, #randomSentenceResult {
-    background: linear-gradient(135deg, #48bb78, #38a169);
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 10px 0;
-    font-size: 18px;
-    white-space: pre-wrap;
-}
-.practice-area {
-    background: #fff5d6;
-    padding: 20px;
-    border-radius: 10px;
-}
-.correct {background-color: #c6f6d5 !important; border-color: #48bb78 !important;}
-.incorrect {background-color: #fed7d7 !important; border-color: #f56565 !important;}
-.grammar-label {font-weight: bold; margin-bottom: 5px;}
+h1 { text-align: center; color: #4a5568; margin-bottom: 30px; font-size: 2.2em; }
+.section { margin-bottom: 30px; background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #667eea; }
+.section h2 { color: #667eea; margin-top: 0; margin-bottom: 15px; }
+button { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 5px; }
+button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); }
+select, input[type="text"] { width: 100%; padding: 10px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 16px; margin-bottom: 10px; }
+.generated-sentence, #randomSentenceResult { background: linear-gradient(135deg, #48bb78, #38a169); color: white; padding: 15px; border-radius: 8px; margin: 10px 0; font-size: 18px; white-space: pre-wrap; }
+.practice-area { background: #fff5d6; padding: 20px; border-radius: 10px; margin-top: 15px; }
+.correct { background-color: #c6f6d5 !important; border-color: #48bb78 !important; }
+.incorrect { background-color: #fed7d7 !important; border-color: #f56565 !important; }
+.grammar-label { font-weight: bold; margin-bottom: 5px; }
 </style>
 </head>
 <body>
 <div class="container">
 <h1>🇮🇩 Banjarese-English Learning</h1>
 
-<!-- Random Sentence -->
-<div class="section">
-<h2>🎲 Random Sentence</h2>
-<div id="randomSentenceResult">Click "New Random" to start!</div>
-<button onclick="randomSentence()">New Random Sentence</button>
-</div>
-
 <!-- Sentence Builder -->
 <div class="section">
 <h2>🔧 Sentence Builder</h2>
+<p>Build sentences using grammar categories:</p>
 <div class="sentence-builder">
 <div><div class="grammar-label">Subject</div><select id="subjectSelect"><option value="">Select Subject</option></select></div>
 <div><div class="grammar-label">Verb</div><select id="verbSelect"><option value="">Select Verb</option></select></div>
 <div><div class="grammar-label">Object</div><select id="objectSelect"><option value="">Select Object</option></select></div>
-<div><div class="grammar-label">Adjective</div><select id="adjSelect"><option value="">Select Adjective</option></select></div>
+<div><div class="grammar-label">Adjective</div><select id="adjSelect"><option value="">Add Adjective</option></select></div>
 <div><div class="grammar-label">Conjunction</div><select id="conjSelect"><option value="">Select Conjunction</option></select></div>
 <div><div class="grammar-label">Pronoun</div><select id="pronounSelect"><option value="">Select Pronoun</option></select></div>
 <div><div class="grammar-label">Noun</div><select id="nounSelect"><option value="">Select Noun</option></select></div>
 </div>
 <button onclick="generateSentence()">Generate Sentence</button>
 <div id="generatedSentence" class="generated-sentence"></div>
+</div>
+
+<!-- Random Sentence -->
+<div class="section">
+<h2>🎲 Random Sentence</h2>
+<div id="randomSentenceResult">Click "New Random" to start!</div>
+<button onclick="randomSentence()">New Random Sentence</button>
 </div>
 
 <!-- Practice Mode -->
@@ -135,29 +90,15 @@ const dictionary = {
     "Pasar": { jawi: "ڤاسار", en: "Market" },
     "Rumah": { jawi: "روماه", en: "House" },
     "Besar": { jawi: "بيسار", en: "Big" },
-    "Kecil": { jawi: "كچيل", en: "Small" },
-    "Panas": { jawi: "ڤانس", en: "Hot" },
-    "Dingin": { jawi: "ديڠين", en: "Cold" },
-    "Dan": { jawi: "دان", en: "And" },
-    "Atau": { jawi: "اتاو", en: "Or" },
-    "Tetapi": { jawi: "تتابي", en: "But" },
-    "Karena": { jawi: "كرين", en: "Because" },
-    "Di": { jawi: "دي", en: "In / at / on" },
-    "Ke": { jawi: "ك", en: "To / toward" },
-    "Dari": { jawi: "دري", en: "From" },
-    "Untuk": { jawi: "اونتوق", en: "For" },
-    "Cepat": { jawi: "چڤات", en: "Fast" },
-    "Perlahan": { jawi: "ڤرلاهن", en: "Slowly" },
-    "Selalu": { jawi: "سلاو", en: "Always" },
-    "Kadang": { jawi: "كادڠ", en: "Sometimes" }
+    "Kecil": { jawi: "كچيل", en: "Small" }
 };
 
 // --- Populate selects ---
 const subjects = ["Ulun","Dia","Kami","Pian"];
 const verbs = ["Makan","Lari","Tidur","Baca"];
 const objects = ["Kue","Buku","Pasar","Rumah"];
-const adjectives = ["Besar","Kecil","Panas","Dingin"];
-const conjunctions = ["Dan","Atau","Tetapi","Karena"];
+const adjectives = ["Besar","Kecil"];
+const conjunctions = ["Dan","Atau","Tetapi"];
 const pronouns = ["Ulun","Dia","Kami","Pian"];
 const nouns = ["Anak","Bapa","Ibu","Teman"];
 
@@ -178,7 +119,7 @@ populateSelect("conjSelect", conjunctions);
 populateSelect("pronounSelect", pronouns);
 populateSelect("nounSelect", nouns);
 
-// --- Sentence Builder ---
+// --- Display sentence with Jawi and English ---
 function displaySentence(sentence){
     const words = sentence.split(" ");
     let jawi = words.map(w=>dictionary[w]?dictionary[w].jawi:w).join(" ");
@@ -186,6 +127,7 @@ function displaySentence(sentence){
     return `${sentence}\n(${jawi})\n"${english}"`;
 }
 
+// --- Sentence Builder ---
 function generateSentence(){
     const s = document.getElementById("subjectSelect").value;
     const v = document.getElementById("verbSelect").value;
@@ -194,15 +136,13 @@ function generateSentence(){
     const c = document.getElementById("conjSelect").value;
     const p = document.getElementById("pronounSelect").value;
     const n = document.getElementById("nounSelect").value;
-
     const parts = [s,v,o,a,c,p,n].filter(x=>x).join(" ");
     document.getElementById("generatedSentence").innerText = displaySentence(parts);
 }
 
 // --- Random Sentences ---
-const practiceSentences = ["Ulun makan kue","Dia lari cepat","Kami tidur di rumah","Pian baca buku"];
+const practiceSentences = ["Ulun makan kue","Dia lari besar","Kami tidur di rumah","Pian baca buku"];
 let currentSentence = "";
-
 function randomSentence(){
     const index = Math.floor(Math.random()*practiceSentences.length);
     currentSentence = practiceSentences[index];
@@ -247,7 +187,9 @@ let correctAnswers = 0;
 function updateStats(correct){
     totalAttempts++;
     if(correct) correctAnswers++;
-    // Optional: display stats if you want
+    document.getElementById("totalAttempts").innerText = totalAttempts;
+    document.getElementById("correctAnswers").innerText = correctAnswers;
+    document.getElementById("accuracy").innerText = Math.round((correctAnswers / totalAttempts) * 100) + "%";
 }
 </script>
 </div>

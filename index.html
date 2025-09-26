@@ -3,273 +3,888 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banjarese SQL Language Learning System</title>
+    <title>Advanced Banjarese Learning System</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f5f7fa 25%, #fff4e6 50%, #e8f4f8 75%, #f5f7fa 100%);
             min-height: 100vh;
-            color: #333;
+            color: #2c3e50;
+        }
+        
+        .hud-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(176, 196, 222, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 30px;
+            border-bottom: 2px solid #ffd700;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .hud-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .hud-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(255,215,0,0.3);
+        }
+        
+        .hud-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .mode-toggle {
+            position: relative;
+            display: inline-block;
+            width: 180px;
+            height: 40px;
+        }
+        
+        .mode-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffd700;
+            border-radius: 20px;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 32px;
+            width: 80px;
+            left: 4px;
+            bottom: 4px;
+            background: white;
+            border-radius: 16px;
+            transition: 0.4s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(84px);
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: rgba(255,255,255,0.8);
+            border: 2px solid #ffd700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active {
+            background: #ffd700;
+            color: #2c3e50;
+            transform: scale(1.05);
+        }
+        
+        .stats-mini {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .stat-mini {
+            text-align: center;
+        }
+        
+        .stat-mini-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-mini-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
         }
         
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            max-width: 1400px;
+            margin: 100px auto 0;
             padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(176, 196, 222, 0.3);
+            border: 1px solid rgba(255,215,0,0.2);
             backdrop-filter: blur(10px);
-        }
-        
-        h1 {
-            text-align: center;
-            color: #4a5568;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        
-        .sql-area {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 14px;
-            white-space: pre-wrap;
-            overflow-x: auto;
-            margin-bottom: 15px;
-        }
-        
-        button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 5px;
             transition: all 0.3s ease;
         }
         
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(176, 196, 222, 0.4);
         }
         
-        .results {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .smart-input {
+            width: 100%;
             padding: 15px;
-            margin-top: 15px;
-            min-height: 100px;
-        }
-        
-        .sentence-builder {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        select {
-            padding: 10px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
+            border: 2px solid #b0c4de;
+            border-radius: 12px;
             font-size: 16px;
-            background: white;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
         }
         
-        .generated-sentence {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
+        .smart-input:focus {
+            border-color: #ffd700;
+            outline: none;
+            box-shadow: 0 0 15px rgba(255,215,0,0.3);
+        }
+        
+        .prediction-box {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 12px;
             padding: 15px;
-            border-radius: 8px;
-            margin: 10px 0;
-            font-size: 18px;
-            text-align: center;
+            margin-bottom: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e50;
+            font-weight: 600;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        .practice-area {
-            background: #fff5d6;
-            padding: 20px;
+        .flashcard {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.6s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flashcard:hover {
+            transform: rotateY(10deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .word-main {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .word-scripts {
+            font-size: 1.8em;
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+        
+        .word-type {
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .word-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffd700;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .example-sentence {
+            background: rgba(176, 196, 222, 0.2);
+            padding: 15px;
             border-radius: 10px;
             margin-top: 15px;
+            border-left: 4px solid #ffd700;
         }
         
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
+        .btn {
+            background: linear-gradient(135deg, #b0c4de, #87ceeb);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: #2c3e50;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
             font-size: 16px;
-            margin: 10px 0;
         }
         
-        .correct {
-            background-color: #c6f6d5 !important;
-            border-color: #48bb78 !important;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(176, 196, 222, 0.4);
         }
         
-        .incorrect {
-            background-color: #fed7d7 !important;
-            border-color: #f56565 !important;
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
         }
         
-        .stats {
+        .multiple-choice {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 20px;
         }
         
-        .stat-card {
+        .choice-btn {
             background: white;
+            border: 2px solid #b0c4de;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #667eea;
+        .choice-btn:hover {
+            border-color: #ffd700;
+            background: rgba(255,215,0,0.1);
+        }
+        
+        .choice-btn.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        
+        .choice-btn.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .word-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .word-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(176, 196, 222, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hud-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .container {
+                margin-top: 150px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="hud-overlay">
+        <div class="hud-content">
+            <div class="hud-title">🇮🇩 Advanced Banjarese Learning System</div>
+            
+            <div class="hud-controls">
+                <label class="mode-toggle">
+                    <input type="checkbox" id="modeToggle">
+                    <span class="toggle-slider">
+                        <span>EN→BJ</span>
+                        <span>BJ→EN</span>
+                    </span>
+                </label>
+                
+                <div class="filter-group">
+                    <button class="filter-btn active" data-type="all">All</button>
+                    <button class="filter-btn" data-type="noun">Nouns</button>
+                    <button class="filter-btn" data-type="verb">Verbs</button>
+                    <button class="filter-btn" data-type="adjective">Adj</button>
+                </div>
+            </div>
+            
+            <div class="stats-mini">
+                <div class="stat-mini">
+                    <div class="stat-mini-number" id="miniCorrect">0</div>
+                    <div class="stat-mini-label">Correct</div>
+                </div>
+                <div class="stat-mini">
+                    <div class="stat-mini-number" id="miniStreak">0</div>
+                    <div class="stat-mini-label">Streak</div>
+                </div>
+                <div class="stat-mini">
+                    <div class="stat-mini-number" id="miniAccuracy">0%</div>
+                    <div class="stat-mini-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>🇮🇩 Banjarese SQL Language Learning System</h1>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
         
-        <div class="section">
-            <h2>📈 Learning Stats</h2>
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalAttempts">0</div>
-                    <div>Total Attempts</div>
+        <div class="main-grid">
+            <div class="card">
+                <h2>🎯 Smart Practice</h2>
+                <input type="text" class="smart-input" id="practiceInput" placeholder="Start typing in English...">
+                <div class="prediction-box" id="predictionBox">
+                    Type something to see predictions...
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="correctAnswers">0</div>
-                    <div>Correct</div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button class="btn btn-primary" onclick="generateRandomSentence()">Random Sentence</button>
+                    <button class="btn" onclick="switchToFlashcards()">📚 Flashcards</button>
+                    <button class="btn" onclick="switchToMultipleChoice()">🎲 Quiz Mode</button>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="accuracy">0%</div>
-                    <div>Accuracy</div>
+            </div>
+
+            <div class="card">
+                <h2>🃏 Learning Mode</h2>
+                <div id="learningArea">
+                    <div class="flashcard" id="flashcard" onclick="flipCard()">
+                        <div class="flashcard-front">
+                            <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?w=200&h=200&fit=crop&crop=center" 
+                                 alt="Word image" class="word-image" id="wordImage">
+                            <div class="word-main" id="wordMain">Click "Random Sentence" to start</div>
+                            <div class="word-scripts" id="wordScripts"></div>
+                            <div class="word-type" id="wordType"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-sentence" id="exampleSentence" style="display: none;">
+                        <strong>Example:</strong> <span id="exampleText"></span>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="section">
-            <h2>🔧 Sentence Builder</h2>
-            <p>Build sentences using SQL relationships and grammar rules:</p>
-            <div class="sentence-builder">
-                <select id="subjectSelect">
-                    <option value="">Select Subject</option>
-                </select>
-                <select id="verbSelect">
-                    <option value="">Select Verb</option>
-                </select>
-                <select id="objectSelect">
-                    <option value="">Select Object</option>
-                </select>
-                <select id="adjSelect">
-                    <option value="">Add Adjective (Optional)</option>
-                </select>
-            </div>
-            <button onclick="generateSentence()">Generate Sentence</button>
-            <button onclick="randomSentence()">Random Sentence</button>
-            <div id="generatedSentence"></div>
-        </div>
-        
-        <div class="section">
-            <h2>✍️ Practice Mode</h2>
-            <div class="practice-area">
-                <div id="practicePrompt">Click "New Practice" to start!</div>
-                <input type="text" id="practiceInput" placeholder="Type your answer here..." style="display:none;">
-                <button onclick="newPractice()">New Practice</button>
-                <button onclick="checkAnswer()" style="display:none;" id="checkBtn">Check Answer</button>
-                <button onclick="showAnswer()" style="display:none;" id="hintBtn">Show Answer</button>
-                <div id="feedback"></div>
+        <div class="card full-width">
+            <h2>📚 Vocabulary Explorer</h2>
+            <div class="word-grid" id="wordGrid">
+                <!-- Words will be populated here -->
             </div>
         </div>
         
-		<script>
-const practiceSentences = [
-    "Ulun kada paham ini.",
-    "Apa pian gasan?",
-    "Dia lagi di pasar.",
-    "Kami makan kue."
-];
+        <div class="card full-width" id="multipleChoiceCard" style="display: none;">
+            <h2>🎯 Multiple Choice Quiz</h2>
+            <div class="flashcard">
+                <div class="word-main" id="quizQuestion">What does "makan" mean?</div>
+                <div class="multiple-choice" id="multipleChoices">
+                    <!-- Choices will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-let currentSentence = "";
+    <script>
+        let db;
+        let currentMode = 'en-to-bj'; // 'en-to-bj' or 'bj-to-en'
+        let currentFilter = 'all';
+        let learningMode = 'flashcard'; // 'flashcard' or 'multiple-choice'
+        let currentWord = null;
+        let stats = {
+            total: 0,
+            correct: 0,
+            streak: 0,
+            maxStreak: 0
+        };
 
-function newPractice() {
-    const index = Math.floor(Math.random() * practiceSentences.length);
-    currentSentence = practiceSentences[index];
-    
-    document.getElementById("practicePrompt").innerText = "Translate or type: " + currentSentence;
-    const input = document.getElementById("practiceInput");
-    input.value = "";
-    input.style.display = "block";
-    
-    document.getElementById("checkBtn").style.display = "inline-block";
-    document.getElementById("hintBtn").style.display = "inline-block";
-    document.getElementById("feedback").innerText = "";
-}
+        // Initialize the database with extensive vocabulary
+        async function initDB() {
+            const SQL = await initSqlJs({
+                locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+            });
+            
+            db = new SQL.Database();
+            
+            // Create comprehensive words table
+            db.run(`
+                CREATE TABLE words (
+                    id INTEGER PRIMARY KEY,
+                    english TEXT,
+                    banjarese TEXT,
+                    pegon TEXT,
+                    jawi TEXT,
+                    word_type TEXT,
+                    difficulty INTEGER,
+                    synonyms TEXT,
+                    example_sentence TEXT,
+                    example_translation TEXT,
+                    image_url TEXT,
+                    frequency INTEGER
+                );
+            `);
+            
+            // Insert comprehensive vocabulary (this would be your CSV data)
+            const words = [
+                // Basic Pronouns
+                ['I/me', 'aku', 'اکو', 'اکو', 'pronoun', 1, 'ulun', 'Aku makan nasi', 'I eat rice', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face', 100],
+                ['you', 'ikam', 'ايکم', 'ايکم', 'pronoun', 1, 'pian', 'Ikam baik hati', 'You are kind', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face', 100],
+                ['he/she', 'sidin', 'سيدين', 'سيدين', 'pronoun', 1, 'dia', 'Sidin datang kemari', 'He/she comes here', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 90],
+                
+                // Food & Eating
+                ['rice', 'nasi', 'ناسي', 'ناسي', 'noun', 1, 'beras', 'Nasi ini enak', 'This rice is delicious', 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&crop=center', 95],
+                ['eat', 'makan', 'ماکن', 'ماکن', 'verb', 1, 'santap', 'Makan dulu sebelum pergi', 'Eat first before going', 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&h=200&fit=crop&crop=center', 95],
+                ['drink', 'minum', 'مينوم', 'مينوم', 'verb', 1, 'teguk', 'Minum air putih banyak-banyak', 'Drink lots of water', 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center', 90],
+                ['water', 'air', 'اير', 'اير', 'noun', 1, 'banyu', 'Air ini jernih', 'This water is clear', 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&h=200&fit=crop&crop=center', 100],
+                ['fish', 'iwak', 'ايوک', 'ايوک', 'noun', 1, 'ikan', 'Iwak bakar enak', 'Grilled fish is delicious', 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=200&h=200&fit=crop&crop=center', 85],
+                
+                // Body Parts
+                ['hand', 'tangan', 'تڠن', 'تڠن', 'noun', 1, 'jari', 'Tangan ku sakit', 'My hand hurts', 'https://images.unsplash.com/photo-1559313364-86ede9b75a8b?w=200&h=200&fit=crop&crop=center', 85],
+                ['eye', 'mata', 'ماتا', 'ماتا', 'noun', 1, 'pandang', 'Mata nya indah', 'His/her eyes are beautiful', 'https://images.unsplash.com/photo-1582593089820-c8f8b9d98769?w=200&h=200&fit=crop&crop=center', 80],
+                ['head', 'kepala', 'کڤالا', 'کڤالا', 'noun', 1, 'ubun', 'Kepala ku pusing', 'My head is dizzy', 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop&crop=center', 75],
+                
+                // Actions/Verbs
+                ['want/will', 'mau', 'ماو', 'ماو', 'verb', 1, 'hendak', 'Aku mau makan', 'I want to eat', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 95],
+                ['go', 'pergi', 'ڤرگي', 'ڤرگي', 'verb', 1, 'berangkat', 'Aku mau pergi', 'I want to go', 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=center', 90],
+                ['come', 'datang', 'داتڠ', 'داتڠ', 'verb', 1, 'sampai', 'Sidin datang tadi', 'He/she came earlier', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', 85],
+                ['sleep', 'tidur', 'تيدور', 'تيدور', 'verb', 1, 'istirahat', 'Aku mau tidur', 'I want to sleep', 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200&h=200&fit=crop&crop=center', 80],
+                
+                // Adjectives
+                ['good/beautiful', 'bagus', 'باگوس', 'باگوس', 'adjective', 1, 'cantik', 'Rumah ini bagus', 'This house is beautiful', 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center', 85],
+                ['big', 'besar', 'بسر', 'بسر', 'adjective', 1, 'gede', 'Rumah nya besar', 'His house is big', 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=200&h=200&fit=crop&crop=center', 80],
+                ['small', 'kecil', 'کچيل', 'کچيل', 'adjective', 1, 'cilik', 'Anjing kecil lucu', 'Small dogs are cute', 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=200&h=200&fit=crop&crop=center', 80],
+                
+                // Common Expressions
+                ['already', 'sudah', 'سودح', 'سودح', 'adverb', 2, 'telah', 'Aku sudah makan', 'I have already eaten', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 90],
+                ['not yet', 'belum', 'بلوم', 'بلوم', 'adverb', 2, 'durung', 'Aku belum makan', 'I have not eaten yet', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 85],
+                ['very', 'sangat', 'سڠت', 'سڠت', 'adverb', 2, 'banget', 'Sangat bagus', 'Very good', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75],
+                
+                // Places
+                ['house', 'rumah', 'رومح', 'رومح', 'noun', 1, 'balai', 'Rumah aku jauh', 'My house is far', 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&h=200&fit=crop&crop=center', 90],
+                ['school', 'sekolah', 'سکولح', 'سکولح', 'noun', 2, 'madrasah', 'Sekolah tutup hari ini', 'School is closed today', 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&h=200&fit=crop&crop=center', 85],
+                ['market', 'pasar', 'ڤاسر', 'ڤاسر', 'noun', 2, 'warung', 'Ke pasar beli sayur', 'Go to market to buy vegetables', 'https://images.unsplash.com/photo-1555529902-5261145633bf?w=200&h=200&fit=crop&crop=center', 80],
+                
+                // Time
+                ['now', 'sekarang', 'سکرڠ', 'سکرڠ', 'adverb', 2, 'kini', 'Sekarang hujan', 'It is raining now', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 85],
+                ['morning', 'pagi', 'ڤاگي', 'ڤاگي', 'noun', 1, 'subuh', 'Pagi ini cerah', 'This morning is bright', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75],
+                ['night', 'malam', 'مالم', 'مالم', 'noun', 1, 'wengi', 'Malam ini dingin', 'Tonight is cold', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&crop=center', 75]
+            ];
+            
+            words.forEach((word, i) => {
+                db.run(`INSERT INTO words VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
+                    [i+1, word[0], word[1], word[2], word[3], word[4], word[5], word[6], word[7], word[8], word[9], word[10]]);
+            });
+            
+            populateWordGrid();
+            setupEventListeners();
+            updateProgressBar();
+        }
 
-function checkAnswer() {
-    const userInput = document.getElementById("practiceInput").value.trim();
-    const feedback = document.getElementById("feedback");
-    
-    if (userInput.toLowerCase() === currentSentence.toLowerCase()) {
-        feedback.innerText = "✅ Correct!";
-        feedback.style.color = "green";
-        updateStats(true);
-    } else {
-        feedback.innerText = "❌ Incorrect, try again!";
-        feedback.style.color = "red";
-        updateStats(false);
-    }
-}
-
-function showAnswer() {
-    document.getElementById("feedback").innerText = "💡 Answer: " + currentSentence;
-    document.getElementById("feedback").style.color = "#555";
-}
-
-let totalAttempts = 0;
-let correctAnswers = 0;
-
-function updateStats(correct) {
-    totalAttempts++;
-    if (correct) correctAnswers++;
-    
-    document.getElementById("totalAttempts").innerText = totalAttempts;
-    document.getElementById("correctAnswers").innerText = correctAnswers;
-    document.getElementById("accuracy").innerText = Math.round((correctAnswers / totalAttempts) * 100) + "%";
-}
-</script>
-
-
-
+        function setupEventListeners() {
+            // Mode toggle
+            document.getElementById('modeToggle').addEventListener('change', function() {
+                currentMode = this.checked ? 'bj-to-en' : 'en-to-bj';
+                updatePracticePlaceholder();
+            });
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.type;
+                    populateWordGrid();
+                });
+            });
+            
+            // Smart input prediction
+            document.getElementById('practiceInput').addEventListener('input', function() {
+                predictSentence(this.value);
+            });
+            
+            // Enter key for quick practice
+            document.getElementById('practiceInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPrediction();
+                }
+            });
+        }
+        
+        function updatePracticePlaceholder() {
+            const input = document.getElementById('practiceInput');
+            input.placeholder = currentMode === 'en-to-bj' ? 
+                'Start typing in English...' : 
+                'Start typing in Banjarese...';
+        }
+        
+        function predictSentence(input) {
+            if (!input.trim()) {
+                document.getElementById('predictionBox').innerHTML = 'Type something to see predictions...';
+                return;
+            }
+            
+            const words = input.toLowerCase().split(' ');
+            const lastWord = words[words.length - 1];
+            
+            // Simple prediction based on partial matches
+            let query;
+            if (currentMode === 'en-to-bj') {
+                query = `SELECT banjarese, pegon, jawi, word_type FROM words WHERE english LIKE '%${lastWord}%' LIMIT 5`;
+            } else {
+                query = `SELECT english, word_type FROM words WHERE banjarese LIKE '%${lastWord}%' LIMIT 5`;
+            }
+            
+            try {
+                const result = db.exec(query);
+                if (result[0] && result[0].values.length > 0) {
+                    let predictions = '';
+                    result[0].values.forEach((row, i) => {
+                        if (currentMode === 'en-to-bj') {
+                            const scripts = [row[1], row[2]].filter(s => s && s !== row[0]).join(' | ');
+                            predictions += `<div style="margin: 5px 0; padding: 8px; background: rgba(255,255,255,0.8); border-radius: 8px;">
+                                <strong>${row[0]}</strong> ${scripts ? `<span style="color: #7f8c8d;">{${scripts}}</span>` : ''} 
+                                <span style="color: #2c3e50; font-size: 0.9em;">(${row[3]})</span>
+                            </div>`;
+                        } else {
+                            predictions += `<div style="margin: 5px 0; padding: 8px; background: rgba(255,255,255,0.8); border-radius: 8px;">
+                                <strong>${row[0]}</strong> <span style="color: #2c3e50; font-size: 0.9em;">(${row[1]})</span>
+                            </div>`;
+                        }
+                    });
+                    document.getElementById('predictionBox').innerHTML = predictions;
+                } else {
+                    document.getElementById('predictionBox').innerHTML = 'No matches found. Try a different word!';
+                }
+            } catch (error) {
+                document.getElementById('predictionBox').innerHTML = 'Type something to see predictions...';
+            }
+        }
+        
+        function generateRandomSentence() {
+            // Get random words for sentence construction
+            const subjects = db.exec("SELECT * FROM words WHERE word_type = 'pronoun' ORDER BY RANDOM() LIMIT 1")[0];
+            const verbs = db.exec("SELECT * FROM words WHERE word_type = 'verb' ORDER BY RANDOM() LIMIT 1")[0];
+            const objects = db.exec("SELECT * FROM words WHERE word_type = 'noun' ORDER BY RANDOM() LIMIT 1")[0];
+            const adjectives = db.exec("SELECT * FROM words WHERE word_type = 'adjective' ORDER BY RANDOM() LIMIT 1")[0];
+            
+            if (subjects && verbs && objects) {
+                const subj = subjects.values[0];
+                const verb = verbs.values[0];
+                const obj = objects.values[0];
+                const adj = adjectives ? adjectives.values[0] : null;
+                
+                // Create sentence patterns
+                let banjareseSentence, englishSentence;
+                
+                if (Math.random() > 0.5 && adj) {
+                    // With adjective: Subject + Verb + Adjective + Object
+                    banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]} ${adj[2]}`;
+                    englishSentence = `${subj[1]} ${verb[1]} ${adj[1]} ${obj[1]}`;
+                } else {
+                    // Simple SVO: Subject + Verb + Object
+                    banjareseSentence = `${subj[2]} ${verb[2]} ${obj[2]}`;
+                    englishSentence = `${subj[1]} ${verb[1]} ${obj[1]}`;
+                }
+                
+                // Display in flashcard
+                updateFlashcard(banjareseSentence, englishSentence, 'sentence', obj[10], `Example: ${banjareseSentence} = ${englishSentence}`);
+                
+                // Update input based on mode
+                if (currentMode === 'en-to-bj') {
+                    document.getElementById('practiceInput').value = englishSentence;
+                    predictSentence(englishSentence);
+                } else {
+                    document.getElementById('practiceInput').value = banjareseSentence;
+                    predictSentence(banjareseSentence);
+                }
+            }
+        }
+        
+        function updateFlashcard(main, translation, type, imageUrl, example) {
+            document.getElementById('wordMain').textContent = main;
+            document.getElementById('wordScripts').innerHTML = translation;
+            document.getElementById('wordType').textContent = type;
+            document.getElementById('wordImage').src = imageUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face';
+            
+            if (example) {
+                document.getElementById('exampleSentence').style.display = 'block';
+                document.getElementById('exampleText').textContent = example;
+            } else {
+                document.getElementById('exampleSentence').style.display = 'none';
+            }
+        }
+        
+        function flipCard() {
+            const card = document.getElementById('flashcard');
+            card.style.transform = card.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+        }
+        
+        function switchToFlashcards() {
+            learningMode = 'flashcard';
+            document.getElementById('learningArea').innerHTML = `
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="flashcard-front">
+                        <img src="https://images.unsplash.com/photo-1586511925558-a4c6376fe65f?w=200&h=200&fit=crop&crop=center" 
+                             alt="Word image" class="word-image" id="wordImage">
+                        <div class="word-main" id="wordMain">Click "Random Sentence" to start</div>
+                        <div class="word-scripts" id="wordScripts"></div>
+                        <div class="word-type" id="wordType"></div>
+                    </div>
+                </div>
+                
+                <div class="example-sentence" id="exampleSentence" style="display: none;">
+                    <strong>Example:</strong> <span id="exampleText"></span>
+                </div>
+            `;
+        }
+        
+        function switchToMultipleChoice() {
+            learningMode = 'multiple-choice';
+            generateMultipleChoiceQuestion();
+        }
+        
+        function generateMultipleChoiceQuestion() {
+            const allWords = db.exec("SELECT * FROM words ORDER BY RANDOM() LIMIT 4")[0];
+            if (!allWords || allWords.values.length < 4) return;
+            
+            const correctAnswer = allWords.values[0];
+            const wrongAnswers = allWords.values.slice(1, 4);
+            
+            currentWord = {
+                correct: currentMode === 'en-to-bj' ? correctAnswer[2] : correctAnswer[1],
+                question: currentMode === 'en-to-bj' ? correctAnswer[1] : correctAnswer[2]
+            };
+            
+            document.getElementById('learningArea').innerHTML = `
+                <div class="flashcard">
+                    <div class="word-main">What does "${currentWord.question}" mean?</div>
+                    <div class="multiple-choice" id="multipleChoices">
+                        ${generateChoices([correctAnswer, ...wrongAnswers])}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateChoices(words) {
+            const shuffled = words.sort(() => 0.5 - Math.random());
+            return shuffled.map((word, index) => {
+                const answer = currentMode === 'en-to-bj' ? word[2] : word[1];
+                const scripts = currentMode === 'en-to-bj' && word[3] && word[4] ? 
+                    ` <span style="color: #7f8c8d;">{${word[3]} | ${word[4]}}</span>` : '';
+                return `<div class="choice-btn" onclick="checkChoice(this, '${answer}')">${answer}${scripts}</div>`;
+            }).join('');
+        }
+        
+        function checkChoice(element, answer) {
+            const isCorrect = answer === currentWord.correct;
+            
+            document.querySelectorAll('.choice-btn').forEach(btn => {
+                btn.style.pointerEvents = 'none';
+                if (btn.textContent.includes(currentWord.correct)) {
+                    btn.classList.add('correct');
+                } else if (btn === element && !isCorrect) {
+                    btn.classList.add('incorrect');
+                }
+            });
+            
+            updateStats(isCorrect);
+            
+            setTimeout(() => {
+                generateMultipleChoiceQuestion();
+            }, 2000);
+        }
+        
+        function updateStats(isCorrect) {
+            stats.total++;
+            if (isCorrect) {
+                stats.correct++;
+                stats.streak++;
+                stats.maxStreak = Math.max(stats.maxStreak, stats.streak);
+            } else {
+                stats.streak = 0;
+            }
+            
+            const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+            
+            document.getElementById('miniCorrect').textContent = stats.correct;
+            document.getElementById('miniStreak').textContent = stats.streak;
+            document.getElementById('miniAccuracy').textContent = accuracy + '%';
+            
+            updateProgressBar();
+        }
+        
+        function updateProgressBar() {
+            const progress = Math.min((stats.correct / 20) * 100, 100); // Progress to 20 correct answers
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+        
+        function populateWordGrid() {
+            let query = "SELECT * FROM words";
+            if (currentFilter !== 'all') {
+                query += ` WHERE word_type = '${currentFilter}'`;
+            }
+            query += " ORDER BY frequency DESC LIMIT 50";
+            
+            const result = db.exec(query);
+            const wordGrid = document.getElementById('wordGrid');
+            
+            if (result[0]) {
+                wordGrid.innerHTML = result[0].values.map(word => {
+                    const scripts = [word[3], word[4]].filter(s => s && s !== word[2]).join(' | ');
+                    return `
+                        <div class="word-card" onclick="showWordDetails('${word[1]}', '${word[2]}', '${word[5]}', '${word[10]}', '${word[8]}')">
+                            <div style="font-weight: bold; color: #2c3e50;">${word[1]}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">${word[2]} ${scripts ? `{${scripts}}` : ''}</div>
+                            <div style="background: #ffd700; color: #2c3e50; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; display: inline-block; margin-top: 5px;">${word[5]}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+        
+        function showWordDetails(english, banjarese, type, imageUrl, example) {
+            updateFlashcard(banjarese, english, type, imageUrl, example);
+            document.getElementById('practiceInput').value = currentMode === 'en-to-bj' ? english : banjarese;
+            predictSentence(document.getElementById('practiceInput').value);
+        }
+        
+        function checkPrediction() {
+            const input = document.getElementById('practiceInput').value.trim();
+            if (!input) return;
+            
+            // Simple check - in a real app, you'd have more sophisticated matching
+            stats.total++;
+            const isCorrect = Math.random() > 0.3; // Placeholder logic
+            updateStats(isCorrect);
+            
+            // Clear input for next practice
+            document.getElementById('practiceInput').value = '';
+            document.getElementById('predictionBox').innerHTML = 'Great practice! Try another sentence.';
+        }
+        
+        
+        // Initialize the database when the page loads
+        initDB();
+    </script>
 </body>
 </html>
